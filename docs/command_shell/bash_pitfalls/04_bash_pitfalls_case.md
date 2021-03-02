@@ -56,4 +56,5 @@ x"$foo" hack是必需的，这些代码必须在非常古老的shell上运行，
 请注意，需要此解决方法的 shell 并不符合 POSIX。 甚至是 Heirloom Bourne shell 也不需要这样做（可能是非POSIX Bourne shell clone，仍被最广泛地用作系统 shell ）。 这种极端的可移植性很少是必需的，并且会使你的代码可读性更差（更难看）。
 
 ## 拓展阅读
+
 [\[\[ keyword](http://mywiki.wooledge.org/BashFAQ/031)
