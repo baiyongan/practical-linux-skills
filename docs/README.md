@@ -3,6 +3,7 @@
 <!-- 标签生成网站 https://img.shields.io  -->
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![Awesome](https://awesome.re/badge.svg)
 
 <!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) -->
 <!-- [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/amzn/style-dictionary/blob/master/CONTRIBUTING.md#submitting-pull-requests)
@@ -12,9 +13,9 @@
 
 
 # Practical Linux Skills
-> *从实践中来，到实践中去*
-<br/>
-*from practice, to practice*
+> **从实践中来，到实践中去**
+
+> *from practice, to practice*
 
 
 ## 写作初衷
