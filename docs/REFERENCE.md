@@ -7,7 +7,7 @@
 - Mostly awesome-like github repos with an enviable number of stars and forks
 
 #### 知识归纳类
-- 相关领域知识的水平在我之上, 且成体系，较全面，影响力较大的
+- 相关领域知识的技术水平不错，且总结成体系，较全面，影响力较大的
 - 我最终选读并实践，并且从中有所收获的
 - 印象深刻，受益较多，后期若有需要，会第一时间返回去浏览参阅的
 

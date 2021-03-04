@@ -19,7 +19,7 @@
 
 这两个指标，是**从应用负载的视角**，来考察性能，直接影响了产品终端的用户体验。与其对应的，是**从系统资源的视角**出发的指标，比如资源使用率、饱和度等。
 
-<img src='images/performace_tuning/001_performance_indicator.png'></img>
+![01_01_performance_indicator.png](https://i.loli.net/2021/03/04/xRIFmgHKBo1E9z6.png)
 
 性能问题的本质，即是系统资源已经达到瓶颈，但是请求的处理却还不够快，无法支撑更多的请求。
 性能分析，其实就是**找出应用或者系统的瓶颈，并设法去避免或者缓解它们**，从而更高效地利用系统资源，处理更多地请求。一般包含以下六个步骤：
@@ -42,17 +42,18 @@
 
 #### 性能优化大师：Brendan Gregg
 Linux 性能工具图谱，是Linux 性能分析最重要的参考资料之一，它指明了在 Linux不同子系统出现性能问题后，应该用什么样的工具来观测和分析。
+> [!TIP]
+> Brendan Gregg 博客： http://brendangregg.com
 
-http://brendangregg.com
+![01_02_performance_tool.png](https://i.loli.net/2021/03/04/DraFgfI92RBhseV.png)
 
-<img src='images/performace_tuning/002_performance_tool.jpg'></img>
 
 **性能工具的选用**很重要，一个正确的选择胜过千百次的努力。要懂得在什么场景选用什么样子的工具，以及怎么学会选择合适的工具。但是，**千万不要把性能工具当成学习的全部**
 ，工具只是解决问题的手段，关键在于用法。只有真正理解了其背后的原理，并结合具体场景，融汇贯通系统的不同组件，才算是真正掌握它们。
 
 #### 性能优化思维导图
 
-<img src='images/performace_tuning/003_performance_mindmap.jpg'></img>
+![01_03_performance_mindmap.jpg](https://i.loli.net/2021/03/04/B7SFyLwUbuJOlni.jpg)
 
 ### 怎么学习更高效？
 

@@ -68,25 +68,25 @@
 - ansible
 - ...
 
-
 ## 写作工具
 - docsify: 文档生成工具
 - github pages: 托管平台
 - VS Code: markdown 编写工具
 - asciinema: 命令行录屏软件
 - Anki: 高效记忆工具
+- PicGo + SM.MS: 图床工具
 
 ## 写作风格
 - 中英文混杂
-- 笔记翻译，知识点注疏为主，原创输出为辅，其中，夹杂一些简要的点评
+- 笔记翻译，知识点注疏为主，原创输出为辅，其中，夹杂一些简要的点评和扩展
 - 水平毕竟有限，故以实用为主，如需准确理解，建议原文阅读
 
-## 联系作者
+## 关于作者
 
 [BYA's Blog](http://bya.cool) 
 
 [LSF_handbook](http://baiyongan.gitbook.io)
 
-## 版权
+## 版权信息
 
 [MIT](https://github.com/baiyongan/practical_linux_skills/docs/LICENSE)
