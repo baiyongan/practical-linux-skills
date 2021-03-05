@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="//unpkg.com/docsify@4.8.0/lib/themes/vue.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500|Source+Sans+Pro:400,400i,600" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+
 </head>
 <body>
   <div id="app"></div>
@@ -22,23 +24,36 @@
       auto2top: true,
       autoHeader: false,
       subMaxLevel: 3,
+      sidebarDisplayLevel: 1, // set sidebar display level
       maxLevel: 4,
       repo: 'https://github.com/baiyongan/practical_linux_skills',
+      /* docsify-search */
       search: {
         paths: 'auto',
         placeholder: 'Search',
         noData: 'No Results.',
       },
+      /* docsify-flexible-alerts */
       'flexible-alerts': {
       style: 'flat'
       },
+      /* docsify-progress */      
       progress: {
         position: "top",
         color: "var(--theme-color,#42b983)",
         height: "5px",
-      } 
+      },
+      /* docsify-pagination */      
+      pagination: {
+/*         previousText: '上一章节',
+        nextText: '下一章节', */
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
     }
   </script>
+
   <script src="//unpkg.com/docsify@4.8.0/lib/docsify.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
@@ -46,9 +61,24 @@
   <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-objectivec.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-json5.min.js"></script>
+  <!-- docsify-search -->
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <!-- Latest -->
+  <!-- docsify-plugin-flexible-alerts -->
   <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <!-- docsify-progress -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+  <!-- docsify-mermaid -->
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
+  <!-- docsify-zoom-image -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- docsify-pagination -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- docsify-pangu -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+  <!-- docsify-sidebar-collapse -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
 </body>
 </html>

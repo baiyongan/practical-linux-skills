@@ -71,14 +71,16 @@
 ## 1. for f in $(ls *.mp3)
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
  [阅读译文][1]
+
 
 ## 2. cp $file $target
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][2]
+
 
 ## 3. Filenames with leading dashes
 > [!NOTE]
@@ -86,315 +88,429 @@
  </br></br>
 [阅读译文][3]
 
+
 ## 4. [ $foo = "bar" ]
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][4]
  
+
 ## 5. cd $(dirname "$f")
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][5]
  
+
 ## 6. [ "$foo" = bar && "$bar" = foo ]
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][6]
  
+
 ## 7. [[ $foo > 7 ]]
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][7]
  
+
 ## 8. grep foo bar | while read -r; do ((count++)); done
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][8]
+ 
  
 ## 9. if [grep foo myfile]
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][9]
  
+
 ## 10. if [bar="$foo"]; then ...
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][10]
- 
+
+
 ## 11. if [ [ a = b ] && [ c = d ] ]; then ...
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][11]
 
-涉及知识点
  
 ## 12. read $foo
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][12]
 
-涉及知识点
  
 ## 13. cat file | sed s/foo/bar/ > file
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][13]
 
-涉及知识点
  
 ## 14. echo $foo
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][14]
 
-涉及知识点
 
 ## 15. $foo=bar
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][15]
 
-涉及知识点
  
 ## 16. foo = bar
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][16]
 
-涉及知识点
  
 ## 17. echo <<EOF
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][17]
 
-涉及知识点
  
 ## 18. su -c 'some command'
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][18]
 
-涉及知识点
  
 ## 19. cd /foo; bar
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][19]
 
-涉及知识点
  
 ## 20. [ bar == "$foo" ]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][20]
 
-涉及知识点
  
 ## 21. for i in {1..10}; do ./something &; done
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][21]
 
-涉及知识点
  
 ## 22. cmd1 && cmd2 || cmd3
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][22]
 
-涉及知识点
  
 ## 23. echo "Hello World!"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][23]
 
-涉及知识点
  
 ## 24. for arg in $*
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][24]
 
-涉及知识点
  
 ## 25. function foo()
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][25]
 
-涉及知识点
  
 ## 26. echo "~"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][26]
 
-涉及知识点
  
 ## 27. local var=$(cmd)
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][27]
-
-涉及知识点
  
 ## 28. export foo=~/bar
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][28]
 
-涉及知识点
  
 ## 29. sed 's/$foo/good bye/'
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][29]
 
-涉及知识点
  
 ## 30. tr [A-Z] [a-z]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][30]
 
-涉及知识点
  
 ## 31. ps ax | grep gedit
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][31]
 
-涉及知识点
  
 ## 32. printf "$foo"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][32]
-
-涉及知识点
  
+
 ## 33. for i in {1..$n}
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][33]
-
-涉及知识点
  
+
 ## 34. if [[ $foo = $bar ]] (depending on intent)
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][34]
-
-涉及知识点
  
+
 ## 35. if [[ $foo =~ 'some RE' ]]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][35]
-
-涉及知识点
  
+
 ## 36. [ -n $foo ] or [ -z $foo ]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][36]
-
-涉及知识点
  
+
 ## 37. [[ -e "$broken_symlink" ]] returns 1 even though $broken_symlink exists
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][37]
-
-涉及知识点
  
+
 ## 38. ed file <<<"g/d\{0,3\}/s//e/g" fails
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][38]
-
-涉及知识点
  
+
 ## 39. expr sub-string fails for "match"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][39]
-
-涉及知识点
  
+
 ## 40. On UTF-8 and Byte-Order Marks (BOM)
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][40]
-
-涉及知识点
  
+
 ## 41. content=$(<file)
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][41]
-
-涉及知识点
  
+
 ## 42. for file in ./* ; do if [[ $file != *.* ]]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][42]
-
-涉及知识点
  
+
 ## 43. somecmd 2>&1 >>logfile
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][43]
-
-涉及知识点
  
+
 ## 44. cmd; (( ! $? )) || die
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][44]
-
-涉及知识点
  
+
 ## 45. y=$(( array[$x] ))
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][45]
-
-涉及知识点
  
+
 ## 46. read num; echo $((num+1))
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][46]
-
-涉及知识点
  
+
 ## 47. IFS=, read -ra fields <<< "$csv_line"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][47]
-
-涉及知识点
  
+
 ## 48. export CDPATH=.:~/myProject
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][48]
-
-涉及知识点
  
+
 ## 49. OIFS="$IFS"; ...; IFS="$OIFS"
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][49]
-
-涉及知识点
  
+
 ## 50. hosts=( $(aws ...) )
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][50]
-
-涉及知识点
  
+
 ## 51. Non-atomic writes with xargs -P
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][51]
-
-涉及知识点
  
+
 ## 52. find . -exec sh -c 'echo {}' \;
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][52]
-
-涉及知识点
  
+
 ## 53. sudo mycmd > /myfile
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][53]
-
-涉及知识点
  
+
 ## 54. sudo ls /foo/*
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][54]
-
-涉及知识点
  
+
 ## 55. myprogram 2>&-
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][55]
-
-涉及知识点
  
+
 ## 56. Using xargs without -0
+> [!NOTE]
+> **涉及知识点**::
+ </br></br><p align="right">
 [阅读译文][56]
-
-涉及知识点
  
+
 ## 57. unset a[0]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][57]
-
-涉及知识点
  
+
 ## 58. month=$(date +%m); day=$(date +%d)
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][58]
-
-涉及知识点
  
+
 ## 59. i=$(( 10#$i ))
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][59]
-
-涉及知识点
  
+
 ## 60. set -euo pipefail
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][60]
-
-涉及知识点
  
+
 ### 60.1. errexit
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][60-1]
-
-涉及知识点
  
+
 ### 60.2. pipefail
+> [!NOTE]
+> **涉及知识点**::
+ </br></br><p align="right">
 [阅读译文][60-2]
-
-涉及知识点
  
+
 ### 60.3. nounset
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
 [阅读译文][60-3]
-
-涉及知识点
  
+
 ## 参考资料
 [★★★★★ | Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
+
 
 ## 小白点评
 译文参考自上述参考资料中的 wiki 网站， 截止到 2021-01-20 的内容，共计 60 个例子。
