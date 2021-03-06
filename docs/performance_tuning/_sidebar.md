@@ -1,14 +1,14 @@
 <!-- - [Overview](performance_tuning/overview.md) -->
-- ———— Start ————
+- Start
 - [01_如何学习Linux性能优化？](performance_tuning/how_to/01_overview.md)
 
-- ———— CPU 13讲 ————
+- CPU 性能 13讲
 
 - [02_平均负载](performance_tuning/cpu/02_basic.md)
 - [03_上下文切换-上](performance_tuning/cpu/03_basic.md)
 - [04_上下文切换-下](performance_tuning/cpu/04_basic.md)
-- [05_CPU 使用率排查](performance_tuning/cpu/05_basic.md)
-- [06_CPU 使用率排查](performance_tuning/cpu/06_case.md)
+- [05_CPU 使用率排查-上](performance_tuning/cpu/05_basic.md)
+- [06_CPU 使用率排查-下](performance_tuning/cpu/06_case.md)
 - [07_处理不可中断进程和僵尸进程-上](performance_tuning/cpu/07_case.md)
 - [08_处理不可中断进程和僵尸进程-下](performance_tuning/cpu/08_case.md)
 - [09_Linux软中断](performance_tuning/cpu/09_basic.md)
@@ -18,7 +18,7 @@
 - [13_无法模拟出 RES 中断的问题，怎么办？](performance_tuning/cpu/13_QA.md)
 - [14_如何用perf工具分析Java程序？](performance_tuning/cpu/14_QA.md)
 
-- ———— Memory 8讲 ————
+- Memory 性能 8讲
 
 - [15_Linux内存如何工作](performance_tuning/memory/15_basic.md)
 - [16_理解内存中的Buffer和Cache](performance_tuning/memory/16_basic.md)
@@ -30,7 +30,7 @@
 - [22_文件系统与磁盘的区别](performance_tuning/memory/22_QA.md)
 
 
-- ———— Disk I/O 10讲 ————
+- Disk I/O 性能 10讲
 
 - [23_Linux文件系统如何工作](performance_tuning/disk_io/23_basic.md)
 - [24_Linux磁盘I/O如何工作-上](performance_tuning/disk_io/24_basic.md)
@@ -44,7 +44,7 @@
 - [32_阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系](performance_tuning/disk_io/32_QA.md)
 - [33_书单推荐：性能优化和Linux 系统原理](performance_tuning/disk_io/33_explore.md)
 
-- ———— Network 13讲 ————
+- Network 性能 13讲
 
 - [34_Linux网络必知-上](performance_tuning/network/34_basic.md)
 - [35_Linux网络必知-下](performance_tuning/network/35_basic.md)
@@ -62,7 +62,7 @@
 - [47_书单推荐：网络原理和 Linux 内核实现](performance_tuning/network/47_explore.md)
 
 
-- ———— 综合 13讲 ————
+- 综合实战 13讲
 
 - [48_为什么应用容器化后，启动慢了很多？](performance_tuning/integrate/48_case.md)
 - [49_解决服务器总是时不时丢包的问题-上](performance_tuning/integrate/49_case.md)
@@ -78,7 +78,7 @@
 - [59_Linux 性能工具速查](performance_tuning/integrate/59_routine.md)
 - [60_容器冷启动的性能分析](performance_tuning/integrate/60_QA.md)
 
-- ———— Finish ————
+- Finish
 
 - [61_结束语 | 愿你攻克性能难关](performance_tuning/how_to/61_end.md)
 <!-- - 用户故事 | “半路出家 ”，也要顺利拿下性能优化！

@@ -2,13 +2,15 @@
 
 ## vim
 
+## VS Code
+
 ## regular expression
+
+## grep
 
 ## sed
 
 ## awk
-
-## grep
 
 ## git
 

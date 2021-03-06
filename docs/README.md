@@ -61,7 +61,7 @@
 
 > **6. Essential Tools Series**
 
-- vim
+- vim/VS Code
 - sed/awk/grep/regular expression
 - git/svn
 - docker/k8s

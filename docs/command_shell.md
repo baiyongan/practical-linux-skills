@@ -17,9 +17,9 @@
 ### ssh
 ### iptables
 <!-- ### 正则表达式 -->
+### grep
 ### sed
 ### awk
-### grep
 ### find
 ### lsof
 ### ps 

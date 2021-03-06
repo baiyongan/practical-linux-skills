@@ -8,6 +8,7 @@
 > - **blog :** [Feisky](https://feisky.xyz/)
 - **github :** [feiskyer](https://github.com/feiskyer) 
 
+
 **``把观察到的性能问题跟系统原理关联起来，特别是把系统从应用程序、库函数、系统调用、再到内核和硬件等不同的层级贯穿起来。``**
 
 性能问题为什么这么难呢？主要是因为性能优化是一个系统工程，总是牵一发而动全身。它涉及了从程序设计、算法分析、编程语言，再到系统、存储、网络等各种底层基础设施的方方面面。每一个组件都有可能出问题，而且很可能多个组件同时出问题。
@@ -24,6 +25,10 @@
 ![00_01_performance_tuning_content.jpg](https://i.loli.net/2021/03/04/po3XAzvxEaib2Lm.jpg)
 
 ### 课程简介
+
+> [!NOTE]
+> - **课程代码仓库 ：** [feiskyer/linux-perf-examples](https://github.com/feiskyer/linux-perf-examples)
+- **课程官网 ：** [Linux性能优化实战-10分钟帮你找到系统瓶颈](https://time.geekbang.org/column/intro/140)
 
 主要有5个模块。
 
