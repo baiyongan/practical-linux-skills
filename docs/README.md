@@ -90,4 +90,4 @@
 
 ## 版权信息
 
-[MIT](https://github.com/baiyongan/practical_linux_skills/docs/LICENSE)
+[MIT License](https://github.com/baiyongan/practical_linux_skills/docs/LICENSE)

@@ -33,9 +33,14 @@
 
 [Github: dylanaraps/pure-bash-bible](https://github.com/dylanaraps/pure-bash-bible)
 
-[DingGuodong/LinuxBashShellScriptForOps](https://github.com/DingGuodong/LinuxBashShellScriptForOps)
+[Github: DingGuodong/LinuxBashShellScriptForOps](https://github.com/DingGuodong/LinuxBashShellScriptForOps)
 
 [Github: ninjaaron/replacing-bash-scripting-with-python](https://github.com/ninjaaron/replacing-bash-scripting-with-python)(Whoops)
+
+[Github: iggredible/Learn-Vim](https://github.com/iggredible/Learn-Vim)
+
+[Github: wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn)
+
 
 #### 行业规范类
 
@@ -117,7 +122,6 @@
 [知乎](https://www.zhihu.com/)
 
 [Stack Overflow](https://stackoverflow.com/)
-
 
 <!-- [China Unix](http://bbs.chinaunix.net/forum-24-1.html) -->
 
