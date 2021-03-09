@@ -81,6 +81,9 @@
 ## Finish
 
 - [61_结束语 | 愿你攻克性能难关](performance_tuning/how_to/61_end.md)
-<!-- - 用户故事 | “半路出家 ”，也要顺利拿下性能优化！
-用户故事 | 运维和开发工程师们怎么说？-->
+
+## Explore
+
+- [Linux 性能分析工具整理](performance_tuning/explore/tool.md)
+- [Linux 性能分析资源汇总](performance_tuning/explore/resource.md)
 
