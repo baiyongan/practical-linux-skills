@@ -5,7 +5,7 @@
 - [vim 初体验](essential_tools_series/vim/vim_basic?id=vim-初体验)
 - [vim 模式介绍](essential_tools_series/vim/vim_basic?id=vim-模式介绍)
 - [vim 插入模式](essential_tools_series/vim/vim_basic?id=vim-插入模式)
-- [vim 快速异动](essential_tools_series/vim/vim_basic?id=vim-快速异动)
+- [vim 快速移动](essential_tools_series/vim/vim_basic?id=vim-快速异动)
 - [vim 快速增删改查](essential_tools_series/vim/vim_basic?id=vim-快速增删改查)
 - [vim 替换](essential_tools_series/vim/vim_basic?id=vim-替换)
 - [vim 多文件操作](essential_tools_series/vim/vim_basic?id=vim-多文件操作)
