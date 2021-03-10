@@ -27,6 +27,10 @@
 
 ### 反人类的 hjkl
 
+> [!NOTE]
+> - [Why does vim use hjkl for cursor keys?](https://vi.stackexchange.com/questions/9313/why-does-vim-use-hjkl-for-cursor-keys)
+> - 《Unix&Linux大学教程》（Harley Hahn著）第513页和第522页里的解释—— 1976年Vi发明人BillJoy使用的ADM-3A终端的键盘上的Esc键在现在键盘的Tab键的位置，而方向键刚好在HJKL上，所以他这就这么规定了。
+
 ### 单词之间移动
 
 - w/W 移动到下一个 word/WORD 的开头
@@ -65,11 +69,53 @@
 - H/M/L 跳转到屏幕的开头（Head）、中间（Middle）和底部（Lower）
 - ctrl+u ctrl+f 上下翻页（upword/forward），zz 把屏幕置为中间
 
-### 总结
+### 本节小结
 
 - 这些移动命令都是在 normal 模式下的命令，因为我们很大一部分时间，是用在跳转移动上面。
+- 在 normal 模式下，使用 :help xxx , 查询 xxx 相关的帮助文档，使用 :q 返回 normal 模式
 
 ## vim 快速增删改查
+
+### vim 增加字符
+
+- 使用a/i/o 进入插入模式，或者 A/I/O 进入
+
+### vim 快速删除
+
+- 在 normal 模式下，使用 x 快速删除一个字符
+- 在 normal 模式下，使用 d（delete）配合文本对象，快速删除一个单词 dw， 也有 daw（d around word），diw，使用 dw 默认执行 daw
+- 在 normal 模式下，使用 dd 快速删除一行
+- d 和 x 可以搭配数字多次执行，如 3d，5x 等
+- 在 normal 模式下，使用 d$ 快速删除到行尾
+- 在 normal 模式下，使用 d0 快速删除到行首
+
+> [!TIP]
+> - 光标置于（）内的左括号后一位时，想要快速删除括号内的内容，使用 dt) ，即 delete to )
+> - 同理，光标置于 "" 内的左引号后一位时，想要快速删除括号内的内容，使用 dt"
+
+- 在 visual 模式下，即 normal 模式下按 v 进入，或者按 V 进入行选择的 visual 模式
+
+> [!NOTE]
+> 总的删除操作，还是围绕着 x 和 d 进行的
+
+### vim 快速修改
+
+- 常用的有三个命令—— r，c，s ，分别代表 replace、change、substitute
+- normal 模式下，使用 r 替换一个字符，使用 R 一直替换
+- normal 模式下，使用 s 替换并进入插入模式， 使用 S 删除整行至行首，并进入插入模式
+- normal 模式下，使用 c 配合文本对象，可以进行快速的修改， 使用 C 删除当前光标后整行，并进入插入模式
+- 同样可以搭配数字使用
+
+> [!TIP]
+> - 使用 cw 删除单词并进入插入模式 (change word)
+> - 和删除操作类似，光标置于 "" 内的左引号后一位时，使用 ct"，快速删除括号内的内容，并进入插入模式
+
+### vim 查询
+
+- normal 模式下，使用 / 或者 ? 进行前向或者后向的搜索
+- normal 模式下，使用 n/N 跳转到下一个或者上一个匹配
+- normal 模式下，使用 * 或者 # 进行当前单词的前向和后向匹配
+
 ## vim 替换
 ## vim 多文件操作
 ## vim 的 text object
