@@ -7,7 +7,7 @@
 - [vim 插入模式](essential_tools_series/vim/vim_basic?id=vim-插入模式)
 - [vim 快速移动](essential_tools_series/vim/vim_basic?id=vim-快速异动)
 - [vim 快速增删改查](essential_tools_series/vim/vim_basic?id=vim-快速增删改查)
-- [vim 替换](essential_tools_series/vim/vim_basic?id=vim-替换)
+- [vim 替换](essential_tools_series/vim/vim_basic?id=vim-的搜索替换)
 - [vim 多文件操作](essential_tools_series/vim/vim_basic?id=vim-多文件操作)
 - [vim 的 text object](essential_tools_series/vim/vim_basic?id=vim-的-text-object)
 - [vim 的复制粘贴与寄存器使用](essential_tools_series/vim/vim_basic?id=vim-的复制粘贴与寄存器使用)
