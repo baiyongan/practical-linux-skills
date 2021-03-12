@@ -21,7 +21,7 @@ gantt
 
     section Linux 性能优化
     目录整理                             : done,          task_1, 2021-03-04, 3d
-    CPU 篇                               : crit,         task_2, 2021-03-06, 10d
+    CPU 篇                               : crit,         task_2, 2021-03-06, 12d
     内存篇                               :                task_3, after task_2, 10d
     磁盘 I/O 篇                          :                task_4, after task_3, 10d
     网络篇                               : crit,          task_5, after task_4, 15d
@@ -34,9 +34,9 @@ gantt
     Case 41~60                          :                 tmp_4, after tmp_3, 10d
 
     section 高频必要工具
-    明确清单                             : active,         tmp_9, 2021-03-06, 6d
-    vim 总结                             : crit,           tmp_10, after task_1, 7d
-    VS Code 整理                         : crit,           tmp_11, after task_2, 15d
+    明确需求                             : done,         tmp_9, 2021-03-06, 6d
+    vim 基础&配置总结                     : crit,           tmp_10, after task_1, 8d
+    VS Code 基础整理                     : crit,           tmp_11, after task_2, 15d
     sed 整理                             :                 tmp_11, after task_4, 10d
     awk 整理                             :                 tmp_12, after tmp_11, 10d
 
