@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500|Source+Sans+Pro:400,400i,600" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
-
+  <!-- docsify-toc -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
 </head>
 <body>
   <div id="app"></div>
@@ -45,12 +46,17 @@
       },
       /* docsify-pagination */      
       pagination: {
-/*         previousText: '上一章节',
+    /*  previousText: '上一章节',
         nextText: '下一章节', */
         crossChapter: true,
         crossChapterText: true,
       },
-
+      toc: {
+        scope: '.markdown-section',
+/*         headings: 'h1, h2, h3, h4, h5, h6', */
+        headings: 'h1, h2, h3',
+        title: 'Table of Contents',
+      },
     }
   </script>
 
@@ -79,6 +85,10 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
   <!-- docsify-sidebar-collapse -->
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-
+  <!-- docsify-toc -->
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+  <!-- docsify-pdf-embed -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
 </body>
 </html>
