@@ -128,6 +128,19 @@ graph LR
 
 ### 内嵌 pdf  —— 已完成 2021-03-13
 
+### 支持 LaTex 数学公式 —— 已完成 2021-03-30
+
+$$
+\left[
+\begin{matrix}
+ 1      & 2      & \cdots & 4      \\
+ 7      & 6      & \cdots & 5      \\
+ \vdots & \vdots & \ddots & \vdots \\
+ 8      & 9      & \cdots & 0      \\
+\end{matrix}
+\right]
+$$
+
 ### 预加载提示
 
 ### Top banner 提示
