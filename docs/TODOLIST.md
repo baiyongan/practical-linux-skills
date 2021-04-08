@@ -22,14 +22,14 @@ gantt
     section Linux 性能优化
     目录整理                             : done,          task_1, 2021-03-04, 3d
     CPU 篇                               : crit,         task_2, 2021-03-06, 12d
-    内存篇                               :                task_3, after task_2, 10d
-    磁盘 I/O 篇                          :                task_4, after task_3, 10d
-    网络篇                               : crit,          task_5, after task_4, 15d
+    内存篇                               :                task_3, after task_2, 16d
+    磁盘 I/O 篇                          :                task_4, after task_3, 20d
+    网络篇                               : crit,          task_5, after task_4, 20d
     综合篇                               : crit,          task_6, after task_5, 20d
 
     section Bash Pitfalls 翻译
     目录整理                             : done,           tmp_1, 2021-03-01, 2d
-    Case 1~20                           :                 tmp_2, 2021-04-01, 6d
+    Case 1~20                           :                 tmp_2, 2021-05-01, 6d
     Case 21~40                          :                 tmp_3, after tmp_2, 7d
     Case 41~60                          :                 tmp_4, after tmp_3, 10d
 
