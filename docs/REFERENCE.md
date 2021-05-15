@@ -106,8 +106,6 @@
 
 [慕课网：玩转Vim 从放弃到爱不释手](https://www.imooc.com/learn/1129)
 
-[慕课网：SVN从入门到放弃](https://www.imooc.com/learn/845)
-
 [《Linux/UNIX系统编程手册》](https://book.douban.com/subject/25809330/)
 
 [IBM Developer: LPIC-1 学习路线图](https://developer.ibm.com/zh/technologies/linux/tutorials/l-lpic1-map/)

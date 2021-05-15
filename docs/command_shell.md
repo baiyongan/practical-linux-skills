@@ -9,6 +9,7 @@
 ## 重难点
 ### echo
 ### alias
+### eval
 ### set
 ### trap
 ### IFS
