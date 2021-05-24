@@ -66,16 +66,17 @@
 59 | i=$(( 10#$i ))          |
 60 | set -euo pipefail       | 
 -->
+
 ---------------------
 
-## 1. for f in $(ls *.mp3)
+## 1. for f in \$(ls *.mp3)
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
  [阅读译文][1]
 
 
-## 2. cp $file $target
+## 2. cp \$file \$target
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -89,28 +90,28 @@
 [阅读译文][3]
 
 
-## 4. [ $foo = "bar" ]
+## 4. [ \$foo = "bar" ]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][4]
  
 
-## 5. cd $(dirname "$f")
+## 5. cd \$(dirname "\$f")
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][5]
  
 
-## 6. [ "$foo" = bar && "$bar" = foo ]
+## 6. [ "\$foo" = bar && "\$bar" = foo ]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][6]
  
 
-## 7. [[ $foo > 7 ]]
+## 7. [[ \$foo > 7 ]]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -131,7 +132,7 @@
 [阅读译文][9]
  
 
-## 10. if [bar="$foo"]; then ...
+## 10. if [bar="\$foo"]; then ...
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -145,7 +146,7 @@
 [阅读译文][11]
 
  
-## 12. read $foo
+## 12. read \$foo
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -159,14 +160,14 @@
 [阅读译文][13]
 
  
-## 14. echo $foo
+## 14. echo \$foo
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][14]
 
 
-## 15. $foo=bar
+## 15. \$foo=bar
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -201,7 +202,7 @@
 [阅读译文][19]
 
  
-## 20. [ bar == "$foo" ]
+## 20. [ bar == "\$foo" ]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -229,7 +230,7 @@
 [阅读译文][23]
 
  
-## 24. for arg in $*
+## 24. for arg in \$*
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -250,7 +251,7 @@
 [阅读译文][26]
 
  
-## 27. local var=$(cmd)
+## 27. local var=\$(cmd)
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -263,7 +264,7 @@
 [阅读译文][28]
 
  
-## 29. sed 's/$foo/good bye/'
+## 29. sed 's/\$foo/good bye/'
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -284,42 +285,42 @@
 [阅读译文][31]
 
  
-## 32. printf "$foo"
+## 32. printf "\$foo"
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][32]
  
 
-## 33. for i in {1..$n}
+## 33. for i in {1..\$n}
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][33]
  
 
-## 34. if [[ $foo = $bar ]] (depending on intent)
+## 34. if [[ \$foo = \$bar ]] (depending on intent)
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][34]
  
 
-## 35. if [[ $foo =~ 'some RE' ]]
+## 35. if [[ \$foo =~ 'some RE' ]]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][35]
  
 
-## 36. [ -n $foo ] or [ -z $foo ]
+## 36. [ -n \$foo ] or [ -z \$foo ]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][36]
  
 
-## 37. [[ -e "$broken_symlink" ]] returns 1 even though $broken_symlink exists
+## 37. [[ -e "\$broken_symlink" ]] returns 1 even though \$broken_symlink exists
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -347,14 +348,14 @@
 [阅读译文][40]
  
 
-## 41. content=$(<file)
+## 41. content=\$(<file)
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][41]
  
 
-## 42. for file in ./* ; do if [[ $file != *.* ]]
+## 42. for file in ./* ; do if [[ \$file != *.* ]]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -368,28 +369,28 @@
 [阅读译文][43]
  
 
-## 44. cmd; (( ! $? )) || die
+## 44. cmd; (( ! \$? )) || die
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][44]
  
 
-## 45. y=$(( array[$x] ))
+## 45. y=\$(( array[\$x] ))
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][45]
  
 
-## 46. read num; echo $((num+1))
+## 46. read num; echo \$((num+1))
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][46]
  
 
-## 47. IFS=, read -ra fields <<< "$csv_line"
+## 47. IFS=, read -ra fields <<< "\$csv_line"
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -403,14 +404,14 @@
 [阅读译文][48]
  
 
-## 49. OIFS="$IFS"; ...; IFS="$OIFS"
+## 49. OIFS="\$IFS"; ...; IFS="\$OIFS"
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][49]
  
 
-## 50. hosts=( $(aws ...) )
+## 50. hosts=( \$(aws ...) )
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
@@ -466,14 +467,14 @@
 [阅读译文][57]
  
 
-## 58. month=$(date +%m); day=$(date +%d)
+## 58. month=\$(date +%m); day=\$(date +%d)
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][58]
  
 
-## 59. i=$(( 10#$i ))
+## 59. i=\$(( 10#\$i ))
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
