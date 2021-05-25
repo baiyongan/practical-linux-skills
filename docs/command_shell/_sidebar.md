@@ -3,6 +3,9 @@
 
   - [nfs4_acl](command_shell/command_part/nfs4_acl.md)
 
+  - [lsof](command_shell/command_part/lsof.md)
+
+
 - Shell Scripting Series
 
   - [Shell 十三问](command_shell/13_questions_of_shell/_13_questions_of_shell_index.md)

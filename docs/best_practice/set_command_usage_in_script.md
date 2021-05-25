@@ -253,7 +253,6 @@ echo "bar"
 这就是-x选项，非常简单，但是对于调试很有帮助。 接下来，我们将看一个我以前从未听说过的选项，是此博客的读者建议这样做的。
 
 ## Reader suggestion: set -E
-Traps are pieces of code that fire when a bash script catches certain signals. Aside from the usual signals (e.g. SIGINT, SIGTERM, …), traps can also be used to catch special bash signals like EXIT, DEBUG, RETURN, and ERR. However, reader Kevin Gibbs pointed out that using -e without -E will cause an ERR trap to not fire in certain scenarios.
 Traps 是当bash脚本捕获某些信号时触发的代码段。 除了通常的信号（例如SIGINT，SIGTERM等）之外，traps 还可以用于捕获特殊的bash信号，例如EXIT，DEBUG，RETURN和ERR。 但是，读者Kevin Gibbs指出，在不使用-E的情况下使用-e，将导致在某些情况下并不触发ERR trap。
 
 #### Before
