@@ -2,72 +2,8 @@
 
 本系列汇总了 Bash 编程中的一些常见错误，每个例子在某些方面都有缺陷。
 
-<!-- 
-编号|示例|涉及知识点
---|:--:|:--:
-1 | for f in $(ls *.mp3)        | for 循环相关注意事项
-2 | cp $file $target            |
-3 | Filenames with leading dashes       |
-4 | [ $foo = "bar" ]                |
-5 | cd $(dirname "$f")              |
-6 | [ "$foo" = bar && "$bar" = foo ]    |
-7 | [[ $foo > 7 ]]                  |
-8 | grep foo bar \| while read -r; do ((count++)); done  |
-9 | if [grep foo myfile]            |
-10 | if [bar="$foo"]; then ...           |
-11 | if [ [ a = b ] && [ c = d ] ]; then ...     |
-12 | read $foo               |
-13 | cat file \| sed s/foo/bar/ > file            |
-14 | echo $foo           |
-15 | $foo=bar            |
-16 | foo = bar           |
-17 | echo <<EOF          |
-18 | su -c 'some command'        |
-19 | cd /foo; bar            |
-20 | [ bar == "$foo" ]           |
-21 | for i in {1..10}; do ./something &; done        |
-22 | cmd1 && cmd2 || cmd3            |
-23 | echo "Hello World!"         |
-24 | for arg in $*           |
-25 | function foo()          |
-26 | echo "~"                |
-27 | local var=$(cmd)            |
-28 | export foo=~/bar            |
-29 | sed 's/$foo/good bye/'      |
-30 | tr [A-Z] [a-z]              |
-31 | ps ax \| grep gedit          |
-32 | printf "$foo"               |
-33 | for i in {1..$n}            |
-34 | if [[ $foo = $bar ]] (depending on intent)      |
-35 | if [[ $foo =~ 'some RE' ]]              |
-36 | [ -n $foo ] or [ -z $foo ]              |
-37 | [[ -e "$broken_symlink" ]] returns 1 even though $broken_symlink exists     |
-38 | ed file <<<"g/d\{0,3\}/s//e/g" fails            |
-39 | expr sub-string fails for "match"           |
-40 | On UTF-8 and Byte-Order Marks (BOM)         |
-41 | content=$(<file)                |
-42 | for file in ./* ; do if [[ $file != *.* ]]      |
-43 | somecmd 2>&1 >>logfile              |
-44 | cmd; (( ! $? )) || die              |
-45 | y=$(( array[$x] ))                  |
-46 | read num; echo $((num+1))           |
-47 | IFS=, read -ra fields <<< "$csv_line"           |
-48 | export CDPATH=.:~/myProject     |
-49 | OIFS="$IFS"; ...; IFS="$OIFS"       |
-50 | hosts=( $(aws ...) )            |
-51 | Non-atomic writes with xargs -P     |
-52 | find . -exec sh -c 'echo {}' \;     |
-53 | sudo mycmd > /myfile            |
-54 | sudo ls /foo/*              |
-55 | myprogram 2>&-              |
-56 | Using xargs without -0      |
-57 | unset a[0]          |
-58 | month=$(date +%m); day=$(date +%d)      |
-59 | i=$(( 10#$i ))          |
-60 | set -euo pipefail       | 
--->
-
 ---------------------
+
 ## 1. for f in \$(ls *.mp3)
 > [!NOTE]
 > **涉及知识点**:
@@ -85,7 +21,7 @@
 ## 3. Filenames with leading dashes
 > [!NOTE]
 > **涉及知识点**:
- </br></br>
+ </br></br><p align="right">
 [阅读译文][3]
 
 
@@ -516,6 +452,7 @@
 译文参考自上述参考资料中的 wiki 网站， 截止到 2021-01-20 的内容，共计 60 个例子。
 
 ---------------------
+
 [1]: command_shell/bash_pitfalls/01_bash_pitfalls_case.md
 [2]: command_shell/bash_pitfalls/02_bash_pitfalls_case.md
 [3]: command_shell/bash_pitfalls/03_bash_pitfalls_case.md
@@ -579,3 +516,69 @@
 [60-1]: command_shell/bash_pitfalls/60-1_bash_pitfalls_case.md
 [60-2]: command_shell/bash_pitfalls/60-2_bash_pitfalls_case.md
 [60-3]: command_shell/bash_pitfalls/60-3_bash_pitfalls_case.md
+
+
+<!-- 
+编号|示例|涉及知识点
+--|:--:|:--:
+1 | for f in $(ls *.mp3)        | for 循环相关注意事项
+2 | cp $file $target            |
+3 | Filenames with leading dashes       |
+4 | [ $foo = "bar" ]                |
+5 | cd $(dirname "$f")              |
+6 | [ "$foo" = bar && "$bar" = foo ]    |
+7 | [[ $foo > 7 ]]                  |
+8 | grep foo bar \| while read -r; do ((count++)); done  |
+9 | if [grep foo myfile]            |
+10 | if [bar="$foo"]; then ...           |
+11 | if [ [ a = b ] && [ c = d ] ]; then ...     |
+12 | read $foo               |
+13 | cat file \| sed s/foo/bar/ > file            |
+14 | echo $foo           |
+15 | $foo=bar            |
+16 | foo = bar           |
+17 | echo <<EOF          |
+18 | su -c 'some command'        |
+19 | cd /foo; bar            |
+20 | [ bar == "$foo" ]           |
+21 | for i in {1..10}; do ./something &; done        |
+22 | cmd1 && cmd2 || cmd3            |
+23 | echo "Hello World!"         |
+24 | for arg in $*           |
+25 | function foo()          |
+26 | echo "~"                |
+27 | local var=$(cmd)            |
+28 | export foo=~/bar            |
+29 | sed 's/$foo/good bye/'      |
+30 | tr [A-Z] [a-z]              |
+31 | ps ax \| grep gedit          |
+32 | printf "$foo"               |
+33 | for i in {1..$n}            |
+34 | if [[ $foo = $bar ]] (depending on intent)      |
+35 | if [[ $foo =~ 'some RE' ]]              |
+36 | [ -n $foo ] or [ -z $foo ]              |
+37 | [[ -e "$broken_symlink" ]] returns 1 even though $broken_symlink exists     |
+38 | ed file <<<"g/d\{0,3\}/s//e/g" fails            |
+39 | expr sub-string fails for "match"           |
+40 | On UTF-8 and Byte-Order Marks (BOM)         |
+41 | content=$(<file)                |
+42 | for file in ./* ; do if [[ $file != *.* ]]      |
+43 | somecmd 2>&1 >>logfile              |
+44 | cmd; (( ! $? )) || die              |
+45 | y=$(( array[$x] ))                  |
+46 | read num; echo $((num+1))           |
+47 | IFS=, read -ra fields <<< "$csv_line"           |
+48 | export CDPATH=.:~/myProject     |
+49 | OIFS="$IFS"; ...; IFS="$OIFS"       |
+50 | hosts=( $(aws ...) )            |
+51 | Non-atomic writes with xargs -P     |
+52 | find . -exec sh -c 'echo {}' \;     |
+53 | sudo mycmd > /myfile            |
+54 | sudo ls /foo/*              |
+55 | myprogram 2>&-              |
+56 | Using xargs without -0      |
+57 | unset a[0]          |
+58 | month=$(date +%m); day=$(date +%d)      |
+59 | i=$(( 10#$i ))          |
+60 | set -euo pipefail       | 
+-->

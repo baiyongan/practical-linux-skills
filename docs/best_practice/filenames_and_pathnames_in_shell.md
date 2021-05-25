@@ -1,4 +1,4 @@
-# Filenames and Pathnames in Shell: How to do it Correctly
+# Shell 中的文件名与路径名：如何正确地设置
 
 
 Many Bourne shell scripts (as run by bash, dash, ash, ksh, and so on) do not handle filenames and pathnames correctly on Unix-like/POSIX systems. Some shell programming books teach it wrongly, and even the POSIX standard sometimes gets it wrong. Thus, many shell scripts are buggy, leading to surprising failures and in some cases security vulnerabilities (see the “Secure Programming for Linux and Unix HOWTO” section on filenames, CERT’s “Secure Coding” item MSC09-C, CWE 78, CWE 73, CWE 116, and the CWE/SANS Top 25 Most Dangerous Programming Errors). This is a real problem, because on Unix-like systems (e.g., Unix, Linux, or POSIX) shells are universally available and widely used for lots of basic tasks.
@@ -13,10 +13,11 @@ However, this flaw in Unix-like kernels (allowing dangerous filenames) combines 
 
 First, though, some key terminology. A pathname is used to identify a particular file, and may include zero or more “/” characters. Each pathname component (separated by “/”) is a officially called a filename; pathname components (aka filenames) cannot contain “/”. So officially “/usr/bin/sh” is a pathname, with pathname components (filenames) inside it, that refers to a particular file. (Note: on Cygwin, “\” is a synonym for “/”, so it also separates pathname components.) In practice, many people use the term “filename” to mean both pathname components (which are officially filenames) and entire pathnames. Neither pathname components nor full pathnames can contain the NUL character (\0), because that is the terminator, and pathname components also cannot include “/”; those turn out to be the only rules you can really count on today.
 
-# 1 Doing it correctly: A quick summary
+# 1 正确地设置：快速总结
 So, how can you process pathnames correctly in shell? Here’s a quick summary about how to do it correctly, for the impatient who “just want the answer”.
 
 ## 1.1 Basic rules
+## 1.1 基本原则
 1. Double-quote all variable references and command substitutions unless you are certain they can only contain alphanumeric characters or you have specially prepared things (i.e., use "$variable" instead of $variable). In particular, you should practically always put $@ inside double-quotes; POSIX defines this to be special (it expands into the positional parameters as separate fields even though it is inside double-quotes).
 
 2. Set IFS to just newline and tab, if you can, to reduce the risk of mishandling filenames with spaces. Use newline or tab to separate options stored in a single variable. Set IFS with IFS="$(printf '\n\t')"
@@ -44,6 +45,7 @@ So, how can you process pathnames correctly in shell? Here’s a quick summary a
 10. Use a tool like shellcheck to find problems you missed.
 
 ## 1.2 Template: Using globs
+## 1.2 模板：使用 globs
 
 ```shell
  # Correct portable glob use: use "for" loop, prefix glob, check for existence:
@@ -74,6 +76,8 @@ So, how can you process pathnames correctly in shell? Here’s a quick summary a
 ```
 
 ## 1.3 Template: Using find
+## 1.3 模板：使用 find
+
 The find command is great for recursively processing directories. Typically you would specify other parameters to find (e.g., select only normal files using “-type f”). For example, here's an example of using find to walk the filesystem, skipping all "hidden" directories and files (names beginning with ".") and processing only files ending in .c or .h:
 
 ```shell
@@ -83,6 +87,7 @@ The find command is great for recursively processing directories. Typically you 
 Below are the forms that always work (though some require nonstandard extensions or fail with Cygwin), followed by simpler ones with serious limitations.
 
 ### 1.3.1 Always works
+### 1.3.1 一直有效
 
 ```shell
  # Simple find -exec; unwieldy if COMMAND is large, and creates 1 process/file:
@@ -144,6 +149,8 @@ Below are the forms that always work (though some require nonstandard extensions
 ```
 
 ### 1.3.2 Limitations
+### 1.3.2 局限性
+
 It is sometimes easier to not fully handle pathnames, especially if you are trying to write portable shell code. However, that code can quickly become a security vulnerability if you use it to examine expanded archives (such as zip or tar files), or examine a directory with files created by another (e.g., a remote filesystem, a virtual machine controlled by someone else or an attacker, another mobile app, etc.). Here are examples (and their limitations):
 
 ```shell
@@ -188,6 +195,8 @@ It is sometimes easier to not fully handle pathnames, especially if you are tryi
 ```
 
 ## 1.4 Template: Building up a variable
+## 1.4 模板：设置一个变量
+
 There’s no easy portable way to handle multiple arbitrary filenames in one variable and then directly use them. Shell arrays work, but can be tricky to use in this case and are not portable. I suggest forbidding filenames with tabs and newlines; then you can easily use those characters as separators like this:
 
 ```shell
@@ -204,6 +213,8 @@ There’s no easy portable way to handle multiple arbitrary filenames in one var
 ```
 
 ## 1.5 Template: Saving and restoring “set -f”
+## 1.5 模板：保存和还原 “set -f”
+
 Sometimes you need to disable file globbing in shell, especially when receiving information from find. POSIX includes various portable mechanisms to disable and re-enable file globbing in shell. The “set -f” command disables file globbing. You can use “set -f” to disable file globbing, and “set +f” to re-enable it. But what if you want to use “set -f” to disable file globbing temporarily, and later restore whatever it was before? One way is to put the “set -f” and what it depends on in a subshell; that works, but then variable settings are lost once the subshell is done. You can also save and restore shell option settings by doing this:
 
 ```shell
@@ -213,6 +224,8 @@ Sometimes you need to disable file globbing in shell, especially when receiving 
 ```
 
 # 2 How to do it wrongly
+# 2 如何错误地设置
+
 But why do you need to follow those rules? The easiest way to find out is to go through some examples that are wrong, because to truly understand how to fix things you need to know what’s broken. These examples assume default settings (e.g., there is no “set -f” or “IFS=...”):
 
 ```shell
@@ -271,9 +284,13 @@ cat $file
 > Wrong. If $file can contain whitespace, then it could broken up and interpreted as multiple file names, and if $file starts with dash, then the name will be interpreted as an option. Also, if $file contains metacharacters like “*” they will be expanded first, producing the wrong set of filenames.
 
 # 3 Rationale for the basic rules
+# 3 基本规则的依据
+
 Here is the rationale for most of the basic rules.
 
 ## 3.1 Double-quote parameter (variable) references and command substitutions
+## 3.1 双引号参数（变量）引用和命令替换
+
 As described by any Bourne shell programming book, always use double-quotes (") to surround variable references and command substitutions, unless you are certain they can only produce alphanumeric characters or you have specially prepared things. The dangerous characters are whitespace or shell pathname expansion (glob) characters like “*”, because unquoted variable references and command substitutions undergo shell field splitting and pathname expansion:
 
 - Field splitting splits a word into multiple words; by default they are split by space, tab, or newline. This expansion can be controlled or disabled by setting the variable IFS, but you have to specially set it.
@@ -288,6 +305,8 @@ $(dirname $file)	"$(dirname "$file")"
 By the way, it turns out that the POSIX spec is unclear whether or not field splitting applies to arithmetic expansion in shell; most (but not all) implementations do apply field splitting in this case.
 
 ## 3.2 Set IFS to just newline and tab at the start of each script
+## 3.2 在每个脚本的开头将 IFS 设置为仅换行符和制表符
+
 One of the first non-comment commands in every shell script should be:
 
 ```shell
@@ -313,6 +332,8 @@ You might also want to put “set -eu” or at least “set -u” at the beginni
 By the way, the need for proper quoting is not limited to Bourne shells. The Windows shell also requires proper quoting, and improper quoting can lead to vulnerabilities. A user merely needs to create filenames with characters such as ampersands, and an improperly-quoted shell program might end up running it. For example, imagine if an attacker can create a directory of the form “name&command_to_execute”, say on a fileserver. Then a Windows script which fails to quote properly (e.g., it has ECHO %CD% or SET CurrentPath=%CD% without putting double-quotes around %CD%) would end up running the command of the attacker’s choosing.
 
 ## 3.3 Prefix all globs so they cannot expand to begin with “-”
+## 3.3 前缀所有 glob，以便它们无法扩展以“-”开头
+
 A “glob” is a pattern for pathname matching like “*.pdf”. Whenever you use globbing to select files, never begin with a globbing character (typically the characters “*”, “?”, or “[”). If you’re starting from the current directory, prefix the glob with “./” like this:
 
 ```shell
@@ -327,9 +348,13 @@ This is important because almost all commands will interpret a string beginning 
 If you always prefix pathnames (e.g., those acquired through globs), then pathnames starting with “-” will always be handled correctly. Globbing is often the easiest way to handle all files, or a subset of them, in a specific directory, but you need to make sure you do it correctly.
 
 ## 3.4 Check if a pathname begins with “-” when accepting pathnames, and then prepend “./” if it does
+## 3.4 接受路径名时，请检查路径名是否以“-”开头，然后是否以“ ./”开头
+
 Similar to the previous rule, if you read in a pathname, as early as possible see if it begins with “-”... if it does, prepend “./”. This eliminates this source of pathnames that are confused as option flags.
 
 ## 3.5 Be careful about displaying or storing pathnames
+## 3.5 在显示或存储路径名时要小心
+
 Filter or encode pathnames before displaying them. The biggest problem is that pathnames could contain control characters that control the terminal and/or the GUI display, causing nasty side-effects on display. Displaying pathnames can even cause a security vulnerability in some situations (!). If you must display pathnames, consider encoding or stripping out control characters first (many ls implementations do this when the output is a terminal). You can strip out the control characters this way:
 
 ```shell
@@ -349,6 +374,8 @@ One way you can avoid displaying non-UTF-8 filenames in shell is to try to conve
 A common approach for storing pathnames in files, or to transmit them in data formats, is to separate them with newlines and/or tabs. Sadly, this does not work in the general case, since pathnames can include both characters. You need to forbid such nasty filenames, escape them, or use \0 to separate the pathnames. If you can forbid them, that is the easiest... but you may not have that option.
 
 ## 3.6 Do not depend on “--”
+## 3.6 不要依赖“--”
+
 Many books, and the POSIX standard, mistakenly advocate using “--” between the options and pathnames as the primary method to deal with filenames beginning with “-”. This is impractical and bad advice:
 
 1. For “--” to work, all maintainers would have to faithfully use “--” in practically every command invocation. That just doesn’t happen in real life, even after decades of people trying. People forget it all the time; no one is that consistent, especially since code seems to work without it. Very few commands require it, after all.
@@ -358,6 +385,8 @@ Thus, as a practical matter you need to do something else; by always prefixing f
 Do feel free to use “--” between options and pathnames, when you can do it, as an additional protective measure. But using “--” as your primary (or only) mechanism for dash-prefixed filenames is bad idea. You are better off prefixing the pathnames when you get the pathname, since then you only have to do it once per pathname. Once you prefix the pathname it doesn’t matter if you remember “--” or not; it just works correctly.
 
 ## 3.7 Use globbing and find appropriately (and handle empty matches)
+## 3.7 使用通配符并适当查找（并处理空匹配项）
+
 There are two major ways to get sets of pathnames in the shell, glob patterns and the find command. Globs are primarily useful for a short list of unhidden filenames in one directory; find is useful for other situations, including recursively descending into subdirectories.
 
 In both cases you have to worry around what happens when there are zero matches. If you just gave “command” and something that gave a list of filenames, most commands will hang while trying to read from standard input. The easy solution in this case is to add “/dev/null” to the end... assuming you can do that.
