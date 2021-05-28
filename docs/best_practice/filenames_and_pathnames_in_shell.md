@@ -1,6 +1,5 @@
 # Shell 中的文件名与路径名：如何正确地设置
 
-
 许多Bourne Shell脚本（比如由bash，dash，ash，ksh等运行）在类 Unix/POSIX 的系统上，并不能正确处理文件名和路径名。一些 shell 编程书籍错误地教，甚至POSIX标准有时也把它弄错了。因此，许多shell脚本都是错误的，会导致意外的失败，并在某些情况下会导致安全漏洞。这是一个真正的问题，因为在类 Unix 系统（例如Unix，Linux或POSIX）上，shell是通用的，并且广泛用于许多基本任务。
 
 本文总结了如何为没有耐心的人正确处理文件名。然后，通过在 Bourne shell 中处理文件名和路径名的常见错误方法这一节，来证明这些理由。然后，历数其中的基本原理，从而使你可以了解——为什么通用技术不起作用...以及替代方案为什么能起作用。前提假设你已经知道如何编写Bourne Shell脚本。
@@ -9,17 +8,19 @@
 
 这不仅仅是 shell 中会有的问题。 所有语言（不仅是 shell 程序）中的许多代码，以及至少某些 GUI 工具包，都无法正确地处理所有允许的文件名和路径名。某些GUI工具箱（例如 file-pickers) 假定文件名始终为UTF-8，并且从不包含控制字符，虽然名字中包含它们的做法，不一定都是正确的。
 
-However, this flaw in Unix-like kernels (allowing dangerous filenames) combines with additional weaknesses in the Bourne shell language, making it even more difficult in shell to correctly handle filenames and pathnames. I think shell is a reasonable language for short scripts, when properly used, but the excessive permissiveness of filenames turns easy tasks into easily-done-wrong tasks. A few small changes would make it much easier to write secure code for handling filenames for all languages including shell. So if your script may handle unarchived files, or files created by different user or mobile app, then your script needs to handle this botched situation. Tools like shellcheck can help you find some of these problems, but not all of them, and you can use such tools more effectively if you understand the problem.
+但是，类Unix内核中的此缺陷（即允许使用危险的文件名）与 Bourne Shell 语言中的其他弱点相结合，使得 Shell 在正确处理文件名和路径名时更加困难。对于简短的脚本来说，使用 shell 是一种合适的方式。但是其对于文件名的过度宽容，会使得简单的任务变得容易出错。进行一些小的更改，将使编写用于处理包括 shell 程序在内的所有语言的文件名的安全代码变得更加容易。因此，如果你的脚本需要处理未存档的文件，或由其他用户或移动应用程序创建的文件，那么，你的脚本就需要应对这种糟糕的情况。诸如 shellcheck 之类的工具，可以帮助你发现其中一些问题，但并非全部。如果你了解问题，则可以更有效地使用这些工具。
 
-First, though, some key terminology. A pathname is used to identify a particular file, and may include zero or more “/” characters. Each pathname component (separated by “/”) is a officially called a filename; pathname components (aka filenames) cannot contain “/”. So officially “/usr/bin/sh” is a pathname, with pathname components (filenames) inside it, that refers to a particular file. (Note: on Cygwin, “\” is a synonym for “/”, so it also separates pathname components.) In practice, many people use the term “filename” to mean both pathname components (which are officially filenames) and entire pathnames. Neither pathname components nor full pathnames can contain the NUL character (\0), because that is the terminator, and pathname components also cannot include “/”; those turn out to be the only rules you can really count on today.
+首先，一些关键术语。路径名用于标识特定文件，并且可以包含零个或多个 “/” 字符。每个路径名组件（由“/”分隔）是一个正式名称，即文件名；路径名组件（即文件名）不能包含“ /”。因此，准确来说，“/usr/bin/sh” 是一个路径名，其中包含路径名组件（文件名），它指向一个特定的文件。（注意：在Cygwin上，“\” 是 “/” 的同义词，因此它也分隔路径名组件。）实际上，许多人使用术语“文件名”来表示路径名组件（正式来说是文件名）和整个路径名。路径名组件和完整路径名都不能包含NUL字符（\0），因为那是终止符，并且路径名组件也不能包含“ /”。
 
 # 1 正确地设置：快速总结
-So, how can you process pathnames correctly in shell? Here’s a quick summary about how to do it correctly, for the impatient who “just want the answer”.
+
+那么，如何在shell中正确处理路径名呢？ 以下是简要说明。
 
 ## 1.1 基本原则
-1. Double-quote all variable references and command substitutions unless you are certain they can only contain alphanumeric characters or you have specially prepared things (i.e., use "$variable" instead of $variable). In particular, you should practically always put $@ inside double-quotes; POSIX defines this to be special (it expands into the positional parameters as separate fields even though it is inside double-quotes).
 
-2. Set IFS to just newline and tab, if you can, to reduce the risk of mishandling filenames with spaces. Use newline or tab to separate options stored in a single variable. Set IFS with IFS="$(printf '\n\t')"
+1. 将所有变量引用和命令替换都用双引号引起来，除非你能确定它们只包含字母数字字符，或你有特殊准备的内容（即，使用“ $ variable”而不是$ variable）。尤其是，您实际上应该始终将 $@ 放在双引号内； POSIX 将其定义为特殊情况（即使它在双引号内，它也会作为单独的字段扩展到位置参数中）。
+
+2. 如果可以的话，将 IFS 设置为仅换行符和制表符，以减少对文件名使用空格进行错误处理的风险。使用换行符或制表符，来分隔存储在单个变量中的选项。 使用 IFS =“$（printf '\n\t'）” 设置 IFS
 
 3. Prefix all pathname globs so they cannot expand to begin with “-”. In particular, never start a glob with “?” or “*” (such as “*.pdf”); always prepend globs with something (like “./”) that cannot expand to a dash. So never use a pattern like “*.pdf”; use “./*.pdf” instead.
 
