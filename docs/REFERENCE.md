@@ -65,11 +65,13 @@
 
 [★★★★★ | Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
 
+[★★★★ | Baeldung](https://www.baeldung.com/linux/)
+
 [commandlinefu.com](https://www.commandlinefu.com/commands/browse)
 
 [正则表达式30分钟入门教程](https://www.jb51.net/tools/zhengze.html)
 
-[★★★★★ | Use the Unofficial Bash Strict Mode (Unless You Love Debugging)](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
+[★★★★ | Use the Unofficial Bash Strict Mode (Unless You Love Debugging)](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
 
 [★★★★ | 团子的小窝](https://kodango.com/article-series)
 
@@ -78,7 +80,6 @@
 [Bash-Oneliner](https://onceupon.github.io/Bash-Oneliner/)
 
 [★★★★ | ViEmu](http://www.viemu.com/)
-
 
 
 <!-- [Unix-Shell.ZEEF.com](https://unix-shell.zeef.com/caleb.xu) -->
@@ -109,6 +110,8 @@
 [《Linux/UNIX系统编程手册》](https://book.douban.com/subject/25809330/)
 
 [IBM Developer: LPIC-1 学习路线图](https://developer.ibm.com/zh/technologies/linux/tutorials/l-lpic1-map/)
+
+[Linux Shell Scripting Tutorial (LSST) v2.0](https://bash.cyberciti.biz/guide/Main_Page)
 
 
 ## 浏览器 & 社区
