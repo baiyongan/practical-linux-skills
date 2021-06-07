@@ -11,7 +11,7 @@
 但是，类Unix内核中的此缺陷(即允许使用危险的文件名)与 Bourne Shell 语言中的其他弱点相结合，使得 Shell 在正确处理文件名和路径名时更加困难。对于简短的脚本来说，使用 shell 是一种合适的方式。但是其对于文件名的过度宽容，会使得简单的任务变得容易出错。进行一些小的更改，将更加容易地编写出用于处理(包括 shell 程序在内的所有语言)文件名的安全代码。因此，如果你的脚本需要处理未存档的文件，或由其他用户或移动应用程序创建的文件，那么，你的脚本就需要应对这种糟糕的情况。诸如 shellcheck 之类的工具，可以帮助你发现其中一些问题，但并非全部。如果你了解问题，则可以更有效地使用这些工具。
 
 首先，一些关键术语。
-**路径名(pathname)**，用于标识特定文件，并且可以包含零个或多个 "/" 字符。每个**路径名组件(pathname component)**(由"/"分隔)是一个正式名称，即**文件名(filename)**；路径名组件(即文件名)不能包含" /"。
+**路径名(pathname)**，用于标识特定文件，并且可以包含零个或多个 "/" 字符。每个**路径名组件(pathname component)**(由"/"分隔)是一个正式名称，即**文件名(filename)**；路径名组件(即文件名)不能包含 "/"。
 
 因此，准确来说，"/usr/bin/sh" 是一个路径名，其中包含路径名组件(文件名)，它指向一个特定的文件。(注意：在Cygwin上，"\" 是 "/" 的同义词，因此它也分隔路径名组件。)实际上，许多人使用术语"文件名"来表示路径名组件(正式来说是文件名)和整个路径名。路径名组件和完整路径名都不能包含NUL字符(\0)，因为那是终止符，并且路径名组件也不能包含 "/"。
 
@@ -53,44 +53,44 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
 ## 1.2 模板：使用 globs
 
 ```shell
- # Correct portable glob use: use "for" loop, prefix glob, check for existence:
- # (remember that globs normally do NOT include files beginning with "."):
- for file in ./* ; do        # Prefix with "./*", NEVER begin with bare "*"
-   if [ -e "$file" ] ; then  # Make sure it isn't an empty match
+ # 正确的便捷的 glob 使用： 使用 "for" 循环，前缀有 glob， 检查是否存在：
+ # （请记住，globs 匹配通常不包含以“.”开头的文件）
+ for file in ./* ; do        # 以“./*”为前缀，切勿仅仅以“*”开头
+   if [ -e "$file" ] ; then  # 确保它不是空匹配
      COMMAND ... "$file" ...
    fi
  done
 
- # Correct portable glob use, including hidden files (beginning with "."):
- for file in ./* ./.[!.]* ./..?* ; do        # Prefix with "./*"
-   if [ -e "$file" ] ; then  # Make sure it isn't an empty match
+ # 正确的便捷的 glob 使用，包括隐藏文件（以“.”开头）：
+ for file in ./* ./.[!.]* ./..?* ; do        # 以 "./*" 为前缀
+   if [ -e "$file" ] ; then  # 保证不是空匹配
      COMMAND ... "$file" ...
    fi
  done
 
- # Correct glob use, simpler but requires nonstandard bash extension nullglob:
- shopt -s nullglob  # Bash extension, so globs with no matches return empty
- for file in ./* ; do        # Use "./*", NEVER bare "*"
+ #正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob：
+ shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
+ for file in ./* ; do        # 使用“./*”，永远不要直接使用“*”
    COMMAND ... "$file" ...
  done
 
- # Correct glob use, simpler but requires nonstandard bash extension nullglob;
- # you can do things on one line if you can add /dev/null as an input.
- shopt -s nullglob  # Bash extension, so globs with no matches return empty
+ # 正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob；
+ # 如果您可以添加 /dev/null 作为输入，您可以在一行上做一些事情。
+ shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
  COMMAND ... ./* /dev/null
 ```
 
 ## 1.3 模板：使用 find
 
-The find command is great for recursively processing directories. Typically you would specify other parameters to find (e.g., select only normal files using "-type f"). For example, here's an example of using find to walk the filesystem, skipping all "hidden" directories and files (names beginning with ".") and processing only files ending in .c or .h:
+find 命令非常适合用于递归处理目录。 通常，您会指定要 find 的其他参数（例如，使用 “-type f” 仅选择普通文件）。 例如，以下是使用 find 遍历文件系统、跳过所有 “隐藏” 目录和文件（名称以“.”开头）并仅处理以 .c 或 .h 结尾的文件的示例：
 
 ```shell
   find . \( -path '*/.*' -prune -o ! -name '.*' \) -a -name '*.[ch]'
 ```
 
-Below are the forms that always work (though some require nonstandard extensions or fail with Cygwin), followed by simpler ones with serious limitations.
+以下是始终有效的形式（尽管有些需要非标准扩展或在 Cygwin 中失败），其次是具有严格限制的更简单的形式。
 
-### 1.3.1 一直有效
+### 1.3.1 始终有效的方式
 
 ```shell
  # Simple find -exec; unwieldy if COMMAND is large, and creates 1 process/file:
@@ -153,7 +153,7 @@ Below are the forms that always work (though some require nonstandard extensions
 
 ### 1.3.2 局限性
 
-It is sometimes easier to not fully handle pathnames, especially if you are trying to write portable shell code. However, that code can quickly become a security vulnerability if you use it to examine expanded archives (such as zip or tar files), or examine a directory with files created by another (e.g., a remote filesystem, a virtual machine controlled by someone else or an attacker, another mobile app, etc.). Here are examples (and their limitations):
+有时不完全处理路径名会更容易，尤其是当您尝试编写可移植的 shell 代码时。但是，如果您使用该代码来检查扩展档案（例如 zip 或 tar 文件），或检查包含由其他人创建的文件的目录（例如，远程文件系统、由其他人或攻击者控制的虚拟机、另一个移动应用程序等），该代码很快就会成为安全漏洞）。以下是示例（及其限制）：
 
 ```shell
  # Okay if pathnames can't contain tabs or newlines; beware the assumption:
@@ -200,6 +200,8 @@ It is sometimes easier to not fully handle pathnames, especially if you are tryi
 
 There’s no easy portable way to handle multiple arbitrary filenames in one variable and then directly use them. Shell arrays work, but can be tricky to use in this case and are not portable. I suggest forbidding filenames with tabs and newlines; then you can easily use those characters as separators like this:
 
+没有简单的可移植方法来处理一个变量中的多个任意文件名，然后直接使用它们。Shell 数组可以工作，但在这种情况下使用起来可能很棘手，而且不可移植。我建议禁止带有制表符和换行符的文件名； 那么您可以轻松地将这些字符用作分隔符，如下所示：
+
 ```shell
  # If you build up options in a string, use tab|newline to separate filenames
  IFS="$(printf '\n\t')"
@@ -215,17 +217,17 @@ There’s no easy portable way to handle multiple arbitrary filenames in one var
 
 ## 1.5 模板：保存和还原 "set -f"
 
-Sometimes you need to disable file globbing in shell, especially when receiving information from find. POSIX includes various portable mechanisms to disable and re-enable file globbing in shell. The "set -f" command disables file globbing. You can use "set -f" to disable file globbing, and "set +f" to re-enable it. But what if you want to use "set -f" to disable file globbing temporarily, and later restore whatever it was before? One way is to put the "set -f" and what it depends on in a subshell; that works, but then variable settings are lost once the subshell is done. You can also save and restore shell option settings by doing this:
+有时您需要在 shell 中禁用 globbing，尤其是在从 find 接收信息时。POSIX 包括各种便捷的机制，来禁用和重新启用 shell 中的 globbing。“set -f”命令禁用文件通配。 您可以使用“set -f”禁用文件通配，并使用“set +f”重新启用它。 但是，如果您想使用“set -f”暂时禁用文件通配，然后恢复之前的所有内容，该怎么办？ 一种方法是将“set -f”及其所依赖的内容放在子shell中； 这样可行，但是一旦子shell完成，变量设置就会丢失。 您还可以通过执行以下操作来保存和恢复 shell 选项设置：
 
 ```shell
- oldSetOptions=$(set +o)             # Save shell option settings
+ oldSetOptions=$(set +o)             # 保存 shell 选项设置
  ... (set -f, etc.)
- eval "$oldSetOptions" 2> /dev/null  # Restore shell option settings
+ eval "$oldSetOptions" 2> /dev/null  # 恢复 shell 选项设置
 ```
 
 # 2 如何错误地设置
 
-But why do you need to follow those rules? The easiest way to find out is to go through some examples that are wrong, because to truly understand how to fix things you need to know what’s broken. These examples assume default settings (e.g., there is no "set -f" or "IFS=..."):
+但是为什么你需要遵守这些规则呢？ 找出问题的最简单方法是查看一些错误的示例，因为要真正了解如何修复问题，您需要知道哪里出了问题。这些示例假定默认设置（例如，没有“set -f”或“IFS=...”）：
 
 ```shell
 cat * > ../collection  # WRONG
@@ -281,6 +283,7 @@ cat $file
 ```
 
 > Wrong. If $file can contain whitespace, then it could broken up and interpreted as multiple file names, and if $file starts with dash, then the name will be interpreted as an option. Also, if $file contains metacharacters like "*" they will be expanded first, producing the wrong set of filenames.
+
 
 # 3 基本规则的依据
 
