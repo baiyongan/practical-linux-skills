@@ -236,36 +236,36 @@ cat * > ../collection  # 错误
 这种方式是错误的。如果当前目录中的文件名以“-”开头，则会被误解为选项而不是文件名。 例如，如果有一个名为“-n”的文件，它会立即启用 cat 的“-n”选项，而不是视作要被 cat 的一个文件（GNU cat 就是这样做，它会为行编号）。 一般来说，你不应该有一个以 `“*”` 开头的glob——它应该以 “./” 为前缀。 此外，如果目录中没有（未隐藏的）文件，则 glob 模式将改为返回模式（`“*”`）； 这意味着命令 (cat) 将尝试打开一个不可能的名为“*”的文件。
 
 ```shell
-for file in * ; do  # WRONG
+for file in * ; do  # 错误
   cat "$file" >> ../collection
 done
 ```
 
-> Also wrong, for the same reason; a file named "-n" will fool the cat program, and if the pattern does not match, it will loop once with the pattern itself as the value.
+也是错误的，出于同样的原因； 名为“-n”的文件会欺骗 cat 程序，如果模式不匹配，它将以模式本身作为值循环一次。
 
 ```shell
-cat $(find . -type f) > ../collection  # WRONG
+cat $(find . -type f) > ../collection  # 错误
 ```
 
-> Wrong. If any pathname contains a space, newline, or tab, its name will be split (file "a b" will be incorrectly parsed as two files, "a" and "b"). If a pathname contains a globbing character like *, the shell will try to expand it, potentially creating additional problems. Also, if the find command matches no files, the command will be run with no parameters; on many commands (like cat) this will cause the program to hang on input from standard input (you can fix this by appending pathname /dev/null, but many people do not know to do that).
+错误。 如果任何路径名包含空格、换行符或制表符，则其名称将被拆分（文件“a b”将被错误地解析为“a”和“b”两个文件）。 如果路径名包含像 * 这样的通配符，shell 将尝试扩展它，这可能会产生其他问题。 此外，如果 find 命令不匹配任何文件，则该命令将不带参数运行； 在许多命令（如 cat）上，这将导致程序挂在标准输入的输入上（您可以通过附加路径名 /dev/null 来解决这个问题，但很多人不知道这样做）。
 
 ```shell
-( for file in $(find . -type f) ; do  # WRONG
+( for file in $(find . -type f) ; do  # 错误
     cat "$file"
   done ) > ../collection
 ```
 
->Wrong, for similar reasons. This breaks up pathnames that contain space, newline, or tab, and it incorrectly expands pathnames if the pathnames themselves contain characters like "*".
+错误，出于类似的原因。 这会分解包含空格、换行符或制表符的路径名，并且如果路径名本身包含诸如“*”之类的字符，则会错误地扩展路径名。
 
 ```shell
- ( find . -type f |   # WRONG
+ ( find . -type f |   # 错误
    while read file ; do cat "$file" ; done ) > ../collection
 ```
 
 > Wrong. This works if a pathname has spaces in the middle, but it won’t work correctly if the pathname begins or ends with whitespace (they will get chopped off). Also, if a pathname includes "\", it’ll get corrupted; in particular, if it ends in "\", it will be combined with the next pathname (trashing both). In general, using "read" in shell without the "-r" option is usually a mistake, and in many cases you should set IFS="" just before the read.
 
 ```shell
-( find . -type f | xargs cat ) > ../collection # WRONG
+( find . -type f | xargs cat ) > ../collection # 错误
 ```
 
 > Wrong. By default, xargs’ input is parsed, so space characters (as well as newlines) separate arguments, and the backslash, apostrophe, double-quote, and ampersand characters are used for quoting. According to the POSIX standard, you have to include the option -E "" or underscore may have a special meaning too. Note that many of the examples in the POSIX standard xargs section are wrong; pathnames with spaces, newlines, or many other characters will cause many of the examples to fail.
@@ -273,7 +273,7 @@ cat $(find . -type f) > ../collection  # WRONG
 ```shell
  ( find . -type f |
    while IFS="" read -r file ; do cat "$file" ; done ) \
-          > ../collection # WRONG
+          > ../collection # 错误
 ```
 
 > Wrong. Like many programs, this assumes that you can have list of pathnames, with one pathname per line. But since pathnames can internally include newline, all simple line-at-a-time processing of pathnames is wrong! This construct is fine if pathnames can’t include newline, but since many Unix-like systems permit, attackers are happy to use this false assumption as an attack.

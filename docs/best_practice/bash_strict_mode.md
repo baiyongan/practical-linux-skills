@@ -35,7 +35,7 @@ By default, bash does not do this. This default behavior is exactly what you wan
 Again, what you want when using bash as your command-line shell and using it in scripts are at odds here. Being intolerant of errors is a lot better in scripts, and that's what set -e gives you.
 
 #### set -u
-set -u affects variables. When set, a reference to any variable you haven't previously defined - with the exceptions of **$\*** and **$@ -** is an error, and causes the program to immediately exit. Languages like Python, C, Java and more all behave the same way, for all sorts of good reasons. One is so typos don't create new variables without you realizing it. For example:
+set -u affects variables. When set, a reference to any variable you haven't previously defined - with the exceptions of **`$\*`** and **`$@ -`** is an error, and causes the program to immediately exit. Languages like Python, C, Java and more all behave the same way, for all sorts of good reasons. One is so typos don't create new variables without you realizing it. For example:
 
 ```shell
 #!/bin/bash
