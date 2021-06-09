@@ -15,7 +15,7 @@
 
 因此，准确来说，"/usr/bin/sh" 是一个路径名，其中包含路径名组件(文件名)，它指向一个特定的文件。(注意：在Cygwin上，"\" 是 "/" 的同义词，因此它也分隔路径名组件。)实际上，许多人使用术语"文件名"来表示路径名组件(正式来说是文件名)和整个路径名。路径名组件和完整路径名都不能包含NUL字符(\0)，因为那是终止符，并且路径名组件也不能包含 "/"。
 
-# 1 正确地设置：快速总结
+# 1 正确操作：快速总结
 
 那么，如何在shell中正确处理路径名呢? 以下是简要说明。
 
@@ -90,7 +90,7 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
 
 以下是始终有效的形式（尽管有些需要非标准扩展或在 Cygwin 中失败），其次是具有严格限制的更简单的形式。
 
-### 1.3.1 始终有效的方式
+### 1.3.1 始终有效
 
 ```shell
  # Simple find -exec; unwieldy if COMMAND is large, and creates 1 process/file:
@@ -225,15 +225,15 @@ There’s no easy portable way to handle multiple arbitrary filenames in one var
  eval "$oldSetOptions" 2> /dev/null  # 恢复 shell 选项设置
 ```
 
-# 2 如何错误地设置
+# 2 错误操作
 
 但是为什么你需要遵守这些规则呢？ 找出问题的最简单方法是查看一些错误的示例，因为要真正了解如何修复问题，您需要知道哪里出了问题。这些示例假定默认设置（例如，没有“set -f”或“IFS=...”）：
 
 ```shell
-cat * > ../collection  # WRONG
+cat * > ../collection  # 错误
 ```
 
-> This is wrong. If a filename in the current directory begins with "-", it will be misinterpreted as an option instead of as a filename. For example, if there’s a file named "-n", it will suddenly enable cat’s "-n" option instead if it has one (GNU cat does, it numbers the lines). In general you should never have a glob that begins with "*" — it should be prefixed with "./". Also, if there are no (unhidden) files in the directory, the glob pattern will return the pattern instead ("*"); that means that the command (cat) will try to open a file with the improbable name "*".
+这种方式是错误的。如果当前目录中的文件名以“-”开头，则会被误解为选项而不是文件名。 例如，如果有一个名为“-n”的文件，它会立即启用 cat 的“-n”选项，而不是视作要被 cat 的一个文件（GNU cat 就是这样做，它会为行编号）。 一般来说，你不应该有一个以 `“*”` 开头的glob——它应该以 “./” 为前缀。 此外，如果目录中没有（未隐藏的）文件，则 glob 模式将改为返回模式（`“*”`）； 这意味着命令 (cat) 将尝试打开一个不可能的名为“*”的文件。
 
 ```shell
 for file in * ; do  # WRONG

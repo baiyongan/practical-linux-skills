@@ -13,5 +13,6 @@
   - [Further Reading](REFERENCE.md)
 
 - Record
-  - [Change Log](CHANGELOG.md)
   - [To-do List](TODOLIST.md)
+  - [Change Log](CHANGELOG.md)
+  - [Feature](FEATURE.md)

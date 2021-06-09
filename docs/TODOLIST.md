@@ -1,21 +1,33 @@
-# 待办清单
+# 待办列表
 
-<!-- ## 内容新增
+## 前置知识部分
 
-### Linux 性能优化实战笔记及拓展
 
-### Bash Pitfalls 翻译完结
-
-### github 仓库整理
-
-### 调整访问方式 -->
-
-## 内容规划
+## 脚本编程部分
 
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
-    title       整体更新进展规划
+    title       更新进展规划
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+
+    section Bash Pitfalls 翻译
+    目录整理                             : done,           tmp_1, 2021-03-01, 2d
+    Case 1~20                           :                 tmp_2, 2021-05-01, 6d
+    Case 21~40                          :                 tmp_3, after tmp_2, 7d
+    Case 41~60                          :                 tmp_4, after tmp_3, 10d
+```
+
+## 高效工具部分
+
+
+## 性能优化部分
+
+```mermaid
+gantt
+    dateFormat  YYYY-MM-DD
+    title       更新进展规划
     excludes    weekends
     %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
 
@@ -26,19 +38,16 @@ gantt
     磁盘 I/O 篇                          :                task_4, after task_3, 20d
     网络篇                               : crit,          task_5, after task_4, 20d
     综合篇                               : crit,          task_6, after task_5, 20d
+```
 
-    section Bash Pitfalls 翻译
-    目录整理                             : done,           tmp_1, 2021-03-01, 2d
-    Case 1~20                           :                 tmp_2, 2021-05-01, 6d
-    Case 21~40                          :                 tmp_3, after tmp_2, 7d
-    Case 41~60                          :                 tmp_4, after tmp_3, 10d
+## 最佳实践部分
 
-    section 高频必要工具
-    明确需求                             : done,         tmp_9, 2021-03-06, 6d
-    vim 基础&配置总结                     : crit,           tmp_10, after task_1, 8d
-    VS Code 基础整理                     : crit,           tmp_11, after task_2, 15d
-    sed 整理                             :                 tmp_11, after task_4, 10d
-    awk 整理                             :                 tmp_12, after tmp_11, 10d
+```mermaid
+gantt
+    dateFormat  YYYY-MM-DD
+    title       更新进展规划
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
 
     section 前置知识
     整理目录结构                          : active,         tmp_13, after tmp_12, 7d
@@ -49,117 +58,20 @@ gantt
     资源监控                              :               tmp_16, after tmp_15, 5d
 ```
 
+## 必备技能部分
 
-
-## 功能插件扩展
-
-### 提示窗美化 —— 已完成 2021-03-04
-
-> [!NOTE]
-> An alert of type 'note' using global style 'callout'.
-
-> [!TIP]
-> An alert of type 'tip' using global style 'callout'.
-
-> [!WARNING]
-> An alert of type 'warning' using global style 'callout'.
-
-> [!ATTENTION]
-> An alert of type 'attention' using global style 'callout'.
-
-### 阅读进度条 —— 已完成 2021-03-04
-
-### Valine 评论
-
-### 阅读时长 & 字数统计
-
-### google 统计
-
-### 运行时间统计
-
-### 访问量统计
-
-### 前后章节跳转 —— 已完成 2021-03-05
-
-### 回到顶部
-
-### 侧边栏目录折叠
-
-### TOC 目录 —— 已完成 2021-03-13
-
-### dark 模式 —— 未完成 2021-03-05
-待调试
-
-### 社交分享
-
-### 图片点击放大 —— 已完成 2021-03-05
-
-### mermaid 作图 —— 已完成 2021-03-05
-
-原参考链接文档错了。
 ```mermaid
-graph LR
-    A[Square Rect] -- Link text --> B((Circle))
-    A --> C(Round Rect)
-    B --> D{Rhombus}
-    C --> D
+gantt
+    dateFormat  YYYY-MM-DD
+    title       更新进展规划
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+
+    section 高频必要工具
+    明确需求                             : done,         tmp_9, 2021-03-06, 6d
+    vim 基础&配置总结                     : crit,           tmp_10, after task_1, 8d
+    VS Code 基础整理                     : crit,           tmp_11, after task_2, 15d
+    sed 整理                             :                 tmp_11, after task_4, 10d
+    awk 整理                             :                 tmp_12, after tmp_11, 10d
 ```
 
-### 中英文添加空格 —— 已完成 2021-03-05
-`测试：hello世界1234   哈哈  hehe`
-
-测试：hello世界1234   哈哈  hehe
-
-### font-awesome
-
-### 代码复制
-
-### 加载远端 markdown 文件
-
-### 文内 Tab
-
-### 文内 Slide
-
-### 内嵌 GIF
-
-### 内嵌 echarts
-
-### 内嵌视频
-
-### 内嵌 pdf  —— 已完成 2021-03-13
-
-### 支持 LaTex 数学公式 —— 已完成 2021-03-30
-
-$$
-\left[
-\begin{matrix}
- 1      & 2      & \cdots & 4      \\
- 7      & 6      & \cdots & 5      \\
- \vdots & \vdots & \ddots & \vdots \\
- 8      & 9      & \cdots & 0      \\
-\end{matrix}
-\right]
-$$
-
-### 预加载提示
-
-### Top banner 提示
-
-### 左上角优化
-
-### 右下角 live2d 展示
-
-### emoji
-
-### 文末打赏功能
-
-### ······
-
-
-## 参考
-
-[awesome-docsify: Plugins](https://github.com/docsifyjs/awesome-docsify#plugins)
-
-[mermaid manual](https://mermaid-js.github.io/mermaid/#/)
-
-[markdown-cheatsheet](https://github.com/tchapi/markdown-cheatsheet)
