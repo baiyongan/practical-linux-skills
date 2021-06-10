@@ -15,4 +15,4 @@
 - Record
   - [To-do List](TODOLIST.md)
   - [Change Log](CHANGELOG.md)
-  - [Feature](FEATURE.md)
+  - [Plugin](PLUGIN.md)

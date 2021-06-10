@@ -60,20 +60,26 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
      COMMAND ... "$file" ...
    fi
  done
+```
 
+```shell
  # 正确的便捷的 glob 使用，包括隐藏文件（以“.”开头）：
  for file in ./* ./.[!.]* ./..?* ; do        # 以 "./*" 为前缀
    if [ -e "$file" ] ; then  # 保证不是空匹配
      COMMAND ... "$file" ...
    fi
  done
+```
 
+```shell
  #正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob：
  shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
  for file in ./* ; do        # 使用“./*”，永远不要直接使用“*”
    COMMAND ... "$file" ...
  done
+```
 
+```shell
  # 正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob；
  # 如果您可以添加 /dev/null 作为输入，您可以在一行上做一些事情。
  shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
@@ -82,7 +88,7 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
 
 ## 1.3 模板：使用 find
 
-find 命令非常适合用于递归处理目录。 通常，您会指定要 find 的其他参数（例如，使用 “-type f” 仅选择普通文件）。 例如，以下是使用 find 遍历文件系统、跳过所有 “隐藏” 目录和文件（名称以“.”开头）并仅处理以 .c 或 .h 结尾的文件的示例：
+find 命令非常适合用于递归处理目录。 通常，您会指定要 find 的其他参数（例如，使用 “-type f” 仅选择普通文件）。 例如，以下是使用 find 遍历文件系统、跳过所有 “隐藏” 目录和文件（名称以“.”开头）并仅处理以 `.c` 或 `.h` 结尾的文件的示例：
 
 ```shell
   find . \( -path '*/.*' -prune -o ! -name '.*' \) -a -name '*.[ch]'
@@ -93,30 +99,40 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
 ### 1.3.1 始终有效
 
 ```shell
- # Simple find -exec; unwieldy if COMMAND is large, and creates 1 process/file:
- find . -exec COMMAND... {} \;
+ # 简单的 find -exec; 如果 COMMAND 很大，则会很笨拙，并为每个文件创建一个进程：
+find . -exec COMMAND... {} \;
+```
 
- # Simple find -exec with +, faster if multiple files are okay for COMMAND:
+```shell
+# 简单的 find -exec 带上 +，如果多个文件都可以用于 COMMAND，则执行更快：
  find . -exec COMMAND... {} \+
+```
 
- # Use find and xargs with \0 separators
- # (nonstandard common extensions -print0 and -0. Works on GNU, *BSDs, busybox)
+```shell
+# 使用带有 \0 分隔符的 find 和 xargs
+#（非标准通用扩展 -print0 和 -0。适用于 GNU、*BSD、busybox）
  find . -print0 | xargs -0 COMMAND
+```
 
- # Head-busting, but it works portably.  Use '\'' for single-quote in command.
- # Runs a subshell, so variable values are lost after each iteration:
+```shell
+# 令人头疼，但它可以移植。 在命令中使用 '\'' 作为单引号。
+  # 运行一个子shell，所以每次迭代后变量值都会丢失：
  find . -exec sh -c '
   for file do
      ...  # Use "$file" not $file
   done' sh {} +
+```
 
+```shell
  # find... while loop, requires find (-print0) and shell (read -d) extensions.
  # Fails on Cygwin; in while loops, filenames ending in \r \n and \n look =.
  # Variable values may be lost unset because loop may run in a subshell.
  find . -print0 | while IFS="" read -r -d "" file ; do ...
    COMMAND "$file" # Use quoted "$file", not $file, everywhere.
  done
+```
 
+```shell
  # while + find with process substitution.
  # Requires nonstandard read -d (bash ok) and find -print0.
  # Rquires nonstandard process redirection <(...); bash, zsh, and ksh 93
@@ -128,7 +144,9 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
  while IFS="" read -r -d "" file <&4 ; do
    COMMAND "$file" # Use quoted "$file", not $file, everywhere.
  done 4< <(find . -print0)
+```
 
+```shell
  # Named pipe version.
  # Requires nonstandard extensions to find (-print0) and read -d (bash ok);
  # underlying system must inc. named pipes (FIFOs).
@@ -140,7 +158,9 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
  while IFS="" read -r -d "" file <&4 ; do
    COMMAND "$file" # Use quoted "$file", not $file, everywhere.
  done 4< mypipe
+```
 
+```shell
  # Use the author's encodef program.
  # Variables *do* retain their value after the loop ends.
  # This version is POSIX portable, but you must have encodef. In practice
@@ -162,18 +182,24 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
  for file in $(find .) ; do
    COMMAND "$file" ...
  done
+```
 
+```shell
  # Okay if pathnames can't contain tabs or newlines; beware the assumption:
  IFS="$(printf '\n\t')"
  set -f # Needed for filenames with *, etc; see below on saving/restoring
  COMMAND $(find .) /dev/null
+```
 
+```shell
  # Okay if pathnames can't contain newlines; beware the assumption.
  # Also, this makes stdin inaccessible, and variables may not stay set.
  find . | while IFS="" read -r file ; do ...
    COMMAND "$file" # Use "$file" not $file everywhere.
  done
+```
 
+```shell
  # You can securely use the above approaches, even if directories have
  # evil filenames, if you can skip evil filenames.   For example, here's how to
  # skip pathnames with embedded control chars, including newline and tab:
@@ -183,13 +209,17 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
  for file in $(find . ! -name "$controlchars") ; do
    COMMAND "$file" ...
  done
+```
 
+```shell
  # Skip pathnames with embedded control chars, including newline and tab:
  IFS="$(printf '\n\t')"
  controlchars="$(printf '*[\001-\037\177]*')"
  set -f # Needed for filenames with *, etc; see below on saving/restoring
  COMMAND $(find . ! -name "$controlchars") /dev/null
+```
 
+```shell
  # Here's one way to quickly exit a program if a filename
  # contains a control character (including tabs, newlines, and ESC) or DEL.
  # My thanks to Michael Thayer for this suggestion.
@@ -198,20 +228,17 @@ find 命令非常适合用于递归处理目录。 通常，您会指定要 find
 
 ## 1.4 模板：设置一个变量
 
-There’s no easy portable way to handle multiple arbitrary filenames in one variable and then directly use them. Shell arrays work, but can be tricky to use in this case and are not portable. I suggest forbidding filenames with tabs and newlines; then you can easily use those characters as separators like this:
-
 没有简单的可移植方法来处理一个变量中的多个任意文件名，然后直接使用它们。Shell 数组可以工作，但在这种情况下使用起来可能很棘手，而且不可移植。我建议禁止带有制表符和换行符的文件名； 那么您可以轻松地将这些字符用作分隔符，如下所示：
 
 ```shell
- # If you build up options in a string, use tab|newline to separate filenames
+# 如果在字符串中建立选项，请使用制表符|换行符分隔文件名
  IFS="$(printf '\n\t')"
  tab="$(printf '\t')"
  command_options="-x${tab}-y"
- # If you want to put pathnames in built-up string, prevent tab|newline
- # in the pathname, use "set -f", and then you can use an unquoted variable.
- # E.g., presuming that $file doesn't contain tab|newline, -F $file is:
+# 如果你想把路径名放在内置字符串中，在路径名中防止出现 tab|newline，使用“set -f”，然后你可以使用一个不带引号的变量。
+# 例如，假设 $file 不包含 tab|newline，-F $file 是：
  command_options="${options}-F${tab}${file}"
- set -f # Needed for filenames with *, etc; see below on saving/restoring
+ set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文 1.5 章节
  mycommand $command_options "$another_pathname"
 ```
 
@@ -258,17 +285,17 @@ cat $(find . -type f) > ../collection  # 错误
 错误，出于类似的原因。 这会分解包含空格、换行符或制表符的路径名，并且如果路径名本身包含诸如“*”之类的字符，则会错误地扩展路径名。
 
 ```shell
- ( find . -type f |   # 错误
-   while read file ; do cat "$file" ; done ) > ../collection
+ ( find . -type f |    
+   while read file ; do cat "$file" ; done ) > ../collection # 错误
 ```
 
-> Wrong. This works if a pathname has spaces in the middle, but it won’t work correctly if the pathname begins or ends with whitespace (they will get chopped off). Also, if a pathname includes "\", it’ll get corrupted; in particular, if it ends in "\", it will be combined with the next pathname (trashing both). In general, using "read" in shell without the "-r" option is usually a mistake, and in many cases you should set IFS="" just before the read.
+错误。 如果路径名中间有空格，则此方法有效，但如果路径名以空格开头或结尾（它们会被截断），则此方法将无法正常工作。 此外，如果路径名包含`“\”`，它会被破坏； 特别是，如果它以`“\”`结尾，它将与下一个路径名组合（删除两者）。 通常，在 shell 中使用不带`“-r”`选项的“read”通常是错误的，在许多情况下，您应该在读取之前设置 IFS=""。
 
 ```shell
 ( find . -type f | xargs cat ) > ../collection # 错误
 ```
 
-> Wrong. By default, xargs’ input is parsed, so space characters (as well as newlines) separate arguments, and the backslash, apostrophe, double-quote, and ampersand characters are used for quoting. According to the POSIX standard, you have to include the option -E "" or underscore may have a special meaning too. Note that many of the examples in the POSIX standard xargs section are wrong; pathnames with spaces, newlines, or many other characters will cause many of the examples to fail.
+错误。 默认情况下，xargs 的输入被解析，因此空格字符（以及换行符）分隔参数，反斜杠、单引号、双引号和 & 字符用于引用。 根据 POSIX 标准，您必须考虑到选项 -E "" ，或下划线也可能具有特殊含义。 请注意，POSIX 标准 xargs 部分中的许多示例都是错误的； 带有空格、换行符或许多其他字符的路径名将导致许多示例失败。
 
 ```shell
  ( find . -type f |
@@ -276,18 +303,16 @@ cat $(find . -type f) > ../collection  # 错误
           > ../collection # 错误
 ```
 
-> Wrong. Like many programs, this assumes that you can have list of pathnames, with one pathname per line. But since pathnames can internally include newline, all simple line-at-a-time processing of pathnames is wrong! This construct is fine if pathnames can’t include newline, but since many Unix-like systems permit, attackers are happy to use this false assumption as an attack.
+错误。 像许多程序一样，这种写法，假设您可以拥有路径名列表，且每行一个路径名。 但是由于路径名可以在内部包含换行符，所以所有简单的对路径名一次一行处理的方式，都是错误的！ 如果路径名不能包含换行符，则这种构造还好，但由于许多类 Unix 系统允许，攻击者很乐意使用此错误假设作为攻击。
 
 ```shell
-cat $file
+cat $file # 错误
 ```
 
-> Wrong. If $file can contain whitespace, then it could broken up and interpreted as multiple file names, and if $file starts with dash, then the name will be interpreted as an option. Also, if $file contains metacharacters like "*" they will be expanded first, producing the wrong set of filenames.
+错误。 如果 `$file` 包含空格，那么它可以分解并解释为多个文件名，如果 `$file` 以破折号开头，则该名称将被解释为一个选项。 此外，如果 `$file` 包含像 “*” 这样的元字符，它将首先被扩展，产生错误的文件名集。
 
 
-# 3 基本规则的依据
-
-Here is the rationale for most of the basic rules.
+# 3 基本规则的基本原理
 
 ## 3.1 双引号参数(变量)引用和命令替换
 

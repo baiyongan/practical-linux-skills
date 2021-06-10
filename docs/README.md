@@ -1,9 +1,11 @@
-<img src="assets/logo.png" alt="Practical Linux logo" title="Practical Linux" width="250" align="right" />
+<img src="assets/image/logo.png" alt="Practical Linux logo" title="Practical Linux" width="250" align="right" />
 
 <!-- 标签生成网站 https://img.shields.io  -->
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Awesome](https://awesome.re/badge.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/practical-linux-skills)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/baiyongan/practical-linux-skills?color=orange)
 
 <!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) -->
 <!-- [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/amzn/style-dictionary/blob/master/CONTRIBUTING.md#submitting-pull-requests)
@@ -86,7 +88,12 @@
 
 [BYA's Blog](http://bya.cool) 
 
-[LSF_handbook](http://baiyongan.gitbook.io)
+[LSF Handbook](http://baiyongan.gitbook.io)
+
+[Practical Linux Skills](http://106.14.160.45/#/)
+
+<!-- [Advanced Python Techniques](http://106.14.160.45:8080)
+ -->
 
 ## 版权信息
 

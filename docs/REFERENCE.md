@@ -105,6 +105,8 @@
 
 [★★★★★ | 极客时间: Linux 性能优化实战](https://time.geekbang.org/column/intro/140)
 
+[★★★★ | Data Science at the Command Line](https://github.com/jeroenjanssens/data-science-at-the-command-line)
+
 [慕课网：玩转Vim 从放弃到爱不释手](https://www.imooc.com/learn/1129)
 
 [《Linux/UNIX系统编程手册》](https://book.douban.com/subject/25809330/)
