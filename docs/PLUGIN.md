@@ -93,13 +93,17 @@ graph LR
 
 <!-- tabs:start -->
 
-### **中文**
-
-嘿!
-
-### **English**
+<!-- tab:English -->
 
 Hello!
+
+<!-- tab:French -->
+
+Bonjour!
+
+<!-- tab:Italian -->
+
+Ciao!
 
 <!-- tabs:end -->
 
