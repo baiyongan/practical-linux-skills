@@ -583,30 +583,33 @@ As a side note, it’d be nice if the $'...' construct was standard, as it makes
 
 # 10 如果文件名受到限制，效果会更好么?
 
-Shell programming is remarkably easy in many cases; what’s sad is that this common case (file processing) is far complicated than it needs to be. This is not a problem limited to shell; while shell is especially tricky, it is difficult to correctly process POSIX pathnames in all languages.
+在许多情况下，Shell 编程非常简单。 可悲的是，这种常见情况（即文件处理）却远比设想下的 shell 编程情况要更复杂。 这不是仅限于 shell 的问题； 虽然 shell 特别棘手，但同样也很难在所有语言中正确处理 POSIX 路径名。
 
-Fundamentally, the rules on pathnames are too permissive. Extending POSIX would make it somewhat easier, and we should do that. However, It would be much simpler if systems imposed a few simple rules on pathnames, such as prohibiting control characters (bugid:251), prohibiting leading "-", and requiring pathnames to be UTF-8. Then you could always print pathnames safely, and these "normal" shell constructs would always work:
+从根本上说，是因为关于路径名的规则过于宽松。 扩展 POSIX 会使对其处理变得更容易一些，我们也应该这样做。 其实，如果系统对路径名强加一些简单的规则，例如禁止控制字符（bugid：251），禁止前导“-”以及要求路径名是 UTF-8 格式，那处理起来就简单多了。 如此一来，你总是可以安全地打印路径名，这些“正常”的 shell 结构也将始终有效：
+
 
 ```shell
- # This works if pathnames never begin with "-" and nullglob is enabled:
+ # 如果路径名从不以“-”开头并且启用了nullglob，则此方法有效:
  for file in *.pdf ; do ... done           # Use "$file" not $file
- # This works if pathnames have no control chars and IFS is tab and newline:
+ # 如果路径名没有控制字符并且 IFS 是制表符和换行符，则此方法有效:
  set -f
  for file in $(find .) ; do ... done        # Use "$file" not $file
 ```
 
-A good general principle in security is that you should whitelist input, and only accept patterns that pass the whitelist. However, currenly most kernels have no mechanism for whitelisting file creation; they just create whatever garbage comes to mind. Since they accept essentially anything, it becomes much harder to guard against the data later.
+安全方面的一个很好的一般原则是，您应该将输入列入白名单，并且只接受通过白名单的模式。 但是，目前大多数内核都没有将文件创建列入白名单的机制； 他们只会生成任何想得到的垃圾。 由于他们基本上接受任何东西，因此，导致后期要防范数据变得更加困难。
 
-I think that we should both extend the POSIX standard and limit the permitted pathnames. Not all systems will limit pathnames, so we need standard mechanism for them. But the new standard mechanisms simply can’t be as simple as restricting pathnames; restricting pathnames makes systems far easier to use correctly.
-Please see my paper on fixing Unix/Linux filenames for more about this.
+我认为我们应该扩展 POSIX 标准，并且限制允许的路径名。 并非所有系统都会限制路径名，因此我们需要为它们提供标准机制。 但是新的标准机制不能像限制路径名那样简单； 限制路径名使系统更容易正确使用。
 
-I’ve also done some work on how to encode/decode pathnames/filenames; see the encodef home page for more information.
+请参阅我关于修复 Unix/Linux 文件名的论文以了解更多信息。
 
-But for now, this is how to handle pathnames properly in shell programs.
+我还做了一些关于如何编码/解码路径名/文件名的工作； 有关更多信息，请参阅 encodef 主页。
 
+但就目前而言，以上就是如何在 shell 程序中正确处理路径名。
 
 ## 参考资料
+
 [Filenames and Pathnames in Shell: How to do it Correctly](https://dwheeler.com/essays/filenames-in-shell.html)
 
 ## 小白点评
 原文是作者 David A. Wheeler 在 2010-05-19 时写的，在 2020-02-22 进行了更新，本译文基于 2020-02-22 的版本进行了翻译。
+作者的专业领域应该是安全相关的。
