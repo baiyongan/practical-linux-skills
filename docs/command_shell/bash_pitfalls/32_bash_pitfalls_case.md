@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 32
-## printf "$foo"
+## printf "\$foo"

@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 05
-## cd $(dirname "$f")
+## cd \$(dirname "$f")
 
 This is yet another quoting error. As with a variable expansion, the result of a CommandSubstitution undergoes WordSplitting and pathname expansion. So you should quote it:
 这是另一个引用错误。 与变量扩展一样，CommandSubstitution 的结果，也会经历单词拆分和路径名扩展。 所以你应该用引号括住它：

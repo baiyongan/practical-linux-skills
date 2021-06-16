@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 01
-## for f in $(ls *.mp3)
+## for f in \$(ls *.mp3)
 
 [BASH][1] 程序员最常见的错误之一是编写如下循环：
 

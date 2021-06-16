@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 10
-## if [bar="$foo"]; then ...
+## if [bar="\$foo"]; then ...
 
 ```shell
 [bar="$foo"]     # Wrong!

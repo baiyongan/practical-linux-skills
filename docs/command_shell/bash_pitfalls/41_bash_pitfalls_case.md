@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 41
-## content=$(<file)
+## content=\$(<file)

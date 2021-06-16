@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 14
-## echo $foo
+## echo \$foo
 
 This relatively innocent-looking command causes massive confusion. Because the $foo isn't quoted, it will not only be subject to WordSplitting, but also file globbing. This misleads Bash programmers into thinking their variables contain the wrong values, when in fact the variables are OK -- it's just the word splitting or filename expansion that's messing up their view of what's happening.
 

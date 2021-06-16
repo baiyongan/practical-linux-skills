@@ -1,27 +1,30 @@
 # Bash Pitfalls Case 07
-## [[ $foo > 7 ]]
+## [[ \$foo > 7 ]]
 
-There are multiple issues here. First, the [[ command should not be used solely for evaluating arithmetic expressions. It should be used for test expressions involving one of the supported test operators. Though technically you can do math using some of [['s operators, it only makes sense to do so in conjunction with one of the non-math test operators somewhere in the expression. If you just want to do a numeric comparison (or any other shell arithmetic), it is much better to just use (( )) instead:
+这里有多个问题。 首先， `[[` 命令不应仅用于计算算术表达式。 它应该用于涉及受支持的测试运算符之一的测试表达式。 尽管从技术上讲，您可以使用某些 `[[` 运算符进行数学运算，但只有将其与表达式中某处的非数学测试运算符之一结合使用才有意义。 如果您只想进行数字比较（或任何其他 shell 算术），最好使用 `(())` 代替：
 
 ```shell
 # Bash / Ksh
-((foo > 7))     # Right!
-[[ foo -gt 7 ]] # Works, but is uncommon. Use ((...)) instead.
+((foo > 7))     # 正确!
+[[ foo -gt 7 ]] # 这样也行, 但并不常见。 使用 ((...)) 代替。
 ```
 
-If you use the > operator inside [[ ]], it's treated as a string comparison (test for collation order by locale), not an integer comparison. This may work sometimes, but it will fail when you least expect it. If you use > inside [ ], it's even worse: it's an output redirection. You'll get a file named 7 in your directory, and the test will succeed as long as $foo is not empty.
+如果在 `[[ ]]` 中使用 `>` 运算符，则会将其视为字符串比较（按语言环境测试整理顺序），而不是整数比较。 这有时可能会奏效，但在您最不期望的时候就会出错。 如果在 `[ ]` 中使用 `>`，则会 更糟糕：这是一个输出重定向。 你会在你的目录中得到一个名为 7 的文件，只要 `$foo` 不为空，测试就会成功。
 
-If strict POSIX-conformance is a requirement, and (( is not available, then the correct alternative using [ is
+如果需要严格的 POSIX 一致性，并且 `((` 不可用，则使用 `[` 的正确替代方法是:
 
 ```shell
 # POSIX
-[ "$foo" -gt 7 ]       # Also right!
-[ "$((foo > 7))" -ne 0 ] # POSIX-compatible equivalent to ((, for more general math operations.
+[ "$foo" -gt 7 ]       # 同样正确!
+[ "$((foo > 7))" -ne 0 ] # POSIX 兼容等效于 ((，用于更一般的数学运算。
 ```
 
-If the contents of $foo is not sanitised and its contents is not under your control (if for instance it's coming from an external source), then all but [ "$foo" -gt 7 ] constitute an arbitrary command injection vulnerability as the contents of $foo is interpreted as an arithmetic expression (and for instance, the a[$(reboot)] arithmetic expression would run the reboot command when evaluated). The [ builtin requires the operands be decimal integers, so it not affected. But it's critical that $foo be quoted, or you'd still get a command injection vulnerability (for instance with values such as -v a[$(reboot)] -o 8).
+如果 `$foo` 的内容没有被清理并且它的内容不在你的控制之下（例如它来自外部来源），那么除了 `[ "$foo" -gt 7 ]` 之外的所有内容，都构成任意命令注入漏洞，因为 $foo 的内容被解释为算术表达式（例如， `a[$(reboot)]` 算术表达式将在解析时运行 `reboot` 命令）。 内置函数 `[` 要求操作数为十进制整数，因此不受影响。 但是引用 `$foo` 很重要，否则您仍然会遇到命令注入漏洞（例如使用 `-v a[$(reboot)] -o 8` 之类的值）。
 
-If the input to any arithmetic context (including ((, let, array indices), or [[ ... ]] test expressions involving numeric comparisons can't be guaranteed then you must always validate your input before evaluating the expression.
+如果无法保证任何算术上下文（包括 `((`、`let`、数组索引）或 `[[ ... ]]` 涉及数字比较的测试表达式）的输入，那么您必须始终在解析表达式之前，验证您的输入。
+
+> [!TIP]
+> [How can I tell whether a variable contains a valid number?](http://mywiki.wooledge.org/BashFAQ/054)
 
 ```shell
 # POSIX
@@ -35,4 +38,8 @@ case $foo in
 esac
 ```
 
-Note that as [/test's arithmetic operator expect decimal integers, 010 for instance would be interpreted as the number 10, not 8 expressed in octal. In bash, [ 010 -gt 8 ] would return true, while [[ 010 -gt 8 ]] and (( 010 > 8 )) would return false.
+请注意，由于 `[`/`test` 的算术运算符需要*十进制*整数，例如 010 将被解释为数字 10，而不是以八进制表示的 8。 在 bash 中，`[ 010 -gt 8 ]` 将返回 true，而 `[[ 010 -gt 8 ]]` 和 `(( 010 > 8 ))` 将返回 false。
+
+## 参考资料
+
+[How can I tell whether a variable contains a valid number?](http://mywiki.wooledge.org/BashFAQ/054)

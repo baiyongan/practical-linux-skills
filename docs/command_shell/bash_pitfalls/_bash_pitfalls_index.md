@@ -444,12 +444,27 @@
 [阅读译文][60-3]
  
 
+### 61. [[ -v hash[\$key] ]]
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
+[阅读译文][61]
+
+
+### 62. (( hash[\$key]++ ))
+> [!NOTE]
+> **涉及知识点**:
+ </br></br><p align="right">
+[阅读译文][62]
+
 ## 参考资料
 [★★★★★ | Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
 
 
 ## 小白点评
-译文参考自上述参考资料中的 wiki 网站， 截止到 2021-01-20 的内容，共计 60 个例子。
+译文参考自上述参考资料中的 wiki 网站， 
+截止到 2021-01-20 的内容，共计 60 个例子。
+截止到 2021-06-16，共计 62 个例子。
 
 ---------------------
 
@@ -516,7 +531,8 @@
 [60-1]: command_shell/bash_pitfalls/60-1_bash_pitfalls_case.md
 [60-2]: command_shell/bash_pitfalls/60-2_bash_pitfalls_case.md
 [60-3]: command_shell/bash_pitfalls/60-3_bash_pitfalls_case.md
-
+[61]: command_shell/bash_pitfalls/61_bash_pitfalls_case.md
+[62]: command_shell/bash_pitfalls/62_bash_pitfalls_case.md
 
 <!-- 
 编号|示例|涉及知识点

@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 45
-## y=$(( array[$x] ))
+## y=\$(( array[\$x] ))

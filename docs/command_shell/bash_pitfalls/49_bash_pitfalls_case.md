@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 49
-## OIFS="$IFS"; ...; IFS="$OIFS"
+## OIFS="\$IFS"; ...; IFS="\$OIFS"

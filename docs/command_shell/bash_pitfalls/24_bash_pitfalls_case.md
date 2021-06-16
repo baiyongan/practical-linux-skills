@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 24
-## for arg in $*
+## for arg in \$*

@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 29
-## sed 's/$foo/good bye/'
+## sed 's/\$foo/good bye/'

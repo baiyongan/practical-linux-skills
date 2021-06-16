@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 20
-## [ bar == "$foo" ]
+## [ bar == "\$foo" ]
 
 The == operator is not valid for the POSIX [ command. Use = or the [[ keyword instead.
 

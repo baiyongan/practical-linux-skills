@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 12
-## read $foo
+## read \$foo
 
  在 read 命令中，不要在变量名前使用 $，如果要将数据放入名为 foo 的变量中，可以这样操作：
 

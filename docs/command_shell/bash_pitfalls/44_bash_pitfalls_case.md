@@ -1,2 +1,2 @@
 # Bash Pitfalls Case 44
-## cmd; (( ! $? )) || die
+## cmd; (( ! \$? )) || die

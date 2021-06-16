@@ -1,5 +1,5 @@
 # Bash Pitfalls Case 02
-## cp $file $target
+## cp \$file \$target
 
 上面显示的命令有什么问题？ 好吧，什么都没有，前提是如果您事先知道 $file 和$target 中没有空格（并且您没有修改$ IFS，同时可以保证在$IFS可能被修改的上下文中，不调用该代码）或[通配符][1]。 然而事实上，变量扩展的结果仍受[WordSplitting][2] 和 [pathname expansion][3] 的影响。 所以对于参数扩展，请始终使用双引号。
 
