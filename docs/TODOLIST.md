@@ -1,8 +1,5 @@
 # 待办列表
 
-## 前置知识部分
-
-
 ## 脚本编程部分
 
 ```mermaid
@@ -18,8 +15,6 @@ gantt
     Case 21~40                          :                 tmp_3, after tmp_2, 7d
     Case 41~60                          :                 tmp_4, after tmp_3, 10d
 ```
-
-## 高效工具部分
 
 ## 最佳实践部分
 
@@ -38,6 +33,8 @@ gantt
     计划清单                              : active,        tmp_15, after tmp_14, 5d
     资源监控                              :               tmp_16, after tmp_15, 5d
 ```
+
+## 高效工具部分
 
 ## 必备技能部分
 

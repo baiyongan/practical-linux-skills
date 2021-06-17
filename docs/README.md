@@ -39,25 +39,25 @@
 
 **总体偏向于 Linux 系统运维管理，脚本开发，及性能诊断，调优方向。** 以搜集整理网络资源，总结学习笔记为主，个人经验总结，内容点评为辅。暂定为以下几个部分:
 
-> **1. Minimum Necessary Knowledge**
+<!-- > **1. Minimum Necessary Knowledge**
 
-- 最少必要知识，一些应该形成肌肉记忆，条件反射的操作或概念。
+- 最少必要知识，一些应该形成肌肉记忆，条件反射的操作或概念。 -->
 
-> **2. Command & Shell**
+> **1. Command & Shell**
 
 - 一些需要重点掌握的命令，以及其组合
 - 一些提高编程效率的代码片段总结等
+
+> **2. Best Practice**
+
+- 一些操作上的好习惯，必要规范等
+- 一些经过实践检验，个人真正在践行的案例等
 
 > **3. Awesome Tricks & Tools**
 
 - 一些真正使用起来，便相见恨晚的高效技法、工具等
 
-> **4. Best Practice**
-
-- 一些操作上的好习惯，必要规范等
-- 一些经过实践检验，个人真正在践行的案例等
-
-> **5. Essential Tools Series**
+> **4. Essential Tools Series**
 
 - vim/VS Code
 - sed/awk/grep/regular expression
@@ -67,11 +67,11 @@
 - ansible
 - ...
 
-> **6. Performance Tuning**
+> **5. Performance Tuning**
 
 - 性能调优，尤见功力
 
-> **7. Linux Operating System**
+> **6. Linux Operating System**
 
 - 了解操作系统内核工作原理
 - 理解程序运行机制
