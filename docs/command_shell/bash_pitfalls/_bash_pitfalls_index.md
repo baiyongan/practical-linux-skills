@@ -444,14 +444,14 @@
 [阅读译文][60-3]
  
 
-### 61. [[ -v hash[\$key] ]]
+## 61. [[ -v hash[\$key] ]]
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">
 [阅读译文][61]
 
 
-### 62. (( hash[\$key]++ ))
+## 62. (( hash[\$key]++ ))
 > [!NOTE]
 > **涉及知识点**:
  </br></br><p align="right">

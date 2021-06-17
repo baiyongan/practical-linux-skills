@@ -8,6 +8,8 @@
   - [Best Practice](best_practice.md)
   - [Performance Tuning](performance_tuning.md)
   - [Essential Tools Series](essential_tools_series.md)
+  - [Linux Operating System](linux_operating_system.md)
+
 
 - Reference
   - [Further Reading](REFERENCE.md)
