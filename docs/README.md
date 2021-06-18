@@ -6,6 +6,8 @@
 ![Awesome](https://awesome.re/badge.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/practical-linux-skills)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/baiyongan/practical-linux-skills?color=orange)
+[![bya-hexo](https://img.shields.io/badge/blog-bya%40hexo-lightgrey)](http://bya.cool)
+[![bya-tiddlywiki](https://img.shields.io/badge/wiki-bya%40tiddly-9cf)](https://bya.tiddlyhost.com)
 
 <!-- [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) -->
 <!-- [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/amzn/style-dictionary/blob/master/CONTRIBUTING.md#submitting-pull-requests)
@@ -94,12 +96,14 @@
 
 [BYA's Blog](http://bya.cool) 
 
+[BYA's Wiki](http://bya.tiddlyhost.com)
+
 [LSF Handbook](http://baiyongan.gitbook.io)
 
 [Practical Linux Skills](http://106.14.160.45/#/)
 
-<!-- [Advanced Python Techniques](http://106.14.160.45:8080)
- -->
+[Advanced Python Techniques](http://106.14.160.45:8080)
+
 
 ## 版权信息
 

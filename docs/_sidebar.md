@@ -11,6 +11,7 @@
   - [Linux Operating System](linux_operating_system.md)
 
 - Reference
+  - [Quick Reference](quick_reference.md)
   - [Further Reading](REFERENCE.md)
 
 - Record

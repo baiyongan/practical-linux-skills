@@ -6,6 +6,7 @@
 
 
 <!-- [Minimum Necessary Knowledge](minimum_necessary_knowledge/overview.md) -->
+[Quick Reference](minimum_necessary_knowledge/overview.md)
 [Command & Shell](command_shell/overview.md)
 [Best Practice](best_practice/overview.md)
 
