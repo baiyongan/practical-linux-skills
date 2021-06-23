@@ -54,8 +54,8 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
 
 ```shell
  # 正确的便捷的 glob 使用： 使用 "for" 循环，前缀有 glob， 检查是否存在：
- # （请记住，globs 匹配通常不包含以“.”开头的文件）
- for file in ./* ; do        # 以“./*”为前缀，切勿仅仅以“*”开头
+ # （请记住，globs 匹配通常不包含以".”开头的文件）
+ for file in ./* ; do        # 以"./*”为前缀，切勿仅仅以"*”开头
    if [ -e "$file" ] ; then  # 确保它不是空匹配
      COMMAND ... "$file" ...
    fi
@@ -63,7 +63,7 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
 ```
 
 ```shell
- # 正确的便捷的 glob 使用，包括隐藏文件（以“.”开头）：
+ # 正确的便捷的 glob 使用，包括隐藏文件（以".”开头）：
  for file in ./* ./.[!.]* ./..?* ; do        # 以 "./*" 为前缀
    if [ -e "$file" ] ; then  # 保证不是空匹配
      COMMAND ... "$file" ...
@@ -74,21 +74,21 @@ printf '%s' "$file" | LC_ALL=POSIX tr -d '[:cntrl:]' | iconv -cs -f UTF-8 -t UTF
 ```shell
  #正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob：
  shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
- for file in ./* ; do        # 使用“./*”，永远不要直接使用“*”
+ for file in ./* ; do        # 使用"./*”，永远不要直接使用"*”
    COMMAND ... "$file" ...
  done
 ```
 
 ```shell
  # 正确的 glob 使用，更简单但需要非标准的 bash 扩展 nullglob；
- # 如果您可以添加 /dev/null 作为输入，您可以在一行上做一些事情。
+ # 如果你可以添加 /dev/null 作为输入，你可以在一行上做一些事情。
  shopt -s nullglob  # Bash 扩展，因此没有匹配项的 glob 返回空
  COMMAND ... ./* /dev/null
 ```
 
 ## 1.3 模板：使用 find
 
-find 命令非常适合用于递归处理目录。 通常，您会指定要 find 的其他参数（例如，使用 “-type f” 仅选择普通文件）。 例如，以下是使用 find 遍历文件系统、跳过所有 “隐藏” 目录和文件（名称以“.”开头）并仅处理以 `.c` 或 `.h` 结尾的文件的示例：
+find 命令非常适合用于递归处理目录。 通常，你会指定要 find 的其他参数（例如，使用 "-type f” 仅选择普通文件）。 例如，以下是使用 find 遍历文件系统、跳过所有 "隐藏” 目录和文件（名称以".”开头）并仅处理以 `.c` 或 `.h` 结尾的文件的示例：
 
 ```shell
   find . \( -path '*/.*' -prune -o ! -name '.*' \) -a -name '*.[ch]'
@@ -124,118 +124,116 @@ find . -exec COMMAND... {} \;
 ```
 
 ```shell
- # find... while loop, requires find (-print0) and shell (read -d) extensions.
- # Fails on Cygwin; in while loops, filenames ending in \r \n and \n look =.
- # Variable values may be lost unset because loop may run in a subshell.
+ # find... while 的循环，需要 find (-print0) 和 shell (read -d) 扩展。
+ # 会在 Cygwin 上失效; 在 while 循环体中, filenames ending in \r \n and \n look =.
+ # 变量值可能会丢失未设置，因为循环可能在子 shell 中运行。
  find . -print0 | while IFS="" read -r -d "" file ; do ...
-   COMMAND "$file" # Use quoted "$file", not $file, everywhere.
+   COMMAND "$file" # 在任何位置，都使用带引号的 "$file”，而不是 $file。
  done
 ```
 
 ```shell
- # while + find with process substitution.
- # Requires nonstandard read -d (bash ok) and find -print0.
- # Rquires nonstandard process redirection <(...); bash, zsh, and ksh 93
- # have process redirection, but dash and ksh 88 do not. Also,
- # the underlying system must have named pipes (FIFOs) or /dev/fd.
- # Fails on Cygwin; in while loops, filenames ending in \r \n and \n look =.
- # Variables *do* retain their value after the loop ends, and
- # you can read from stdin (change the 4s to another number if fd 4 is needed):
+ # while + find 带有进程替换。
+ # 需要非标准 read -d (bash ok) 和 find -print0。
+ # 要求非标准进程重定向 <(...); bash、zsh 和 ksh 93
+ # 有进程重定向，但 dash 和 ksh 88 没有。 
+ # 而且，底层系统必须有命名管道 (FIFO) 或 /dev/fd。
+ # 会在 Cygwin 上失效; 在 while 循环体中, filenames ending in \r \n and \n look =.
+ # 变量 *do* 在循环结束后保留其值，
+ # 并且，你可以从 stdin 读取（如果需要 fd 4，请将 4s 更改为另一个数字）：
  while IFS="" read -r -d "" file <&4 ; do
-   COMMAND "$file" # Use quoted "$file", not $file, everywhere.
+   COMMAND "$file" # 在任何位置，都使用带引号的 "$file”，而不是 $file。
  done 4< <(find . -print0)
 ```
 
 ```shell
- # Named pipe version.
- # Requires nonstandard extensions to find (-print0) and read -d (bash ok);
- # underlying system must inc. named pipes (FIFOs).
- # Fails on Cygwin; in while loops, filenames ending in \r \n and \n look =.
- # Variables *do* retain their value after the loop ends, and
- # you can read from stdin (change the 4s to something else if fd 4 needed).
+ # 命名管道版本。
+ # 需要非标准扩展来 find (-print0) 和 read -d (bash ok)；
+ # 底层系统必须 inc. 命名管道 (FIFO)。
+ # 会在 Cygwin 上失效; 在 while 循环体中, filenames ending in \r \n and \n look =.
+ # 变量 *do* 在循环结束后保留其值，并且
+ # 并且，你可以从 stdin 读取（如果需要 fd 4，请将 4s 更改为另一个数字）：
  mkfifo mypipe
  find . -print0 > mypipe &
  while IFS="" read -r -d "" file <&4 ; do
-   COMMAND "$file" # Use quoted "$file", not $file, everywhere.
+   COMMAND "$file" # 在任何位置，都使用带引号的 "$file”，而不是 $file。
  done 4< mypipe
 ```
 
 ```shell
- # Use the author's encodef program.
- # Variables *do* retain their value after the loop ends.
- # This version is POSIX portable, but you must have encodef. In practice
- # you can often use "-print0" instead of POSIX "-exec printf '%s\0' {} \;"
+ # 使用作者的 encodef 程序。
+ # 变量 *do* 在循环结束后保留其值。
+ # 这个版本是 POSIX 可移植的，但你必须有 encodef。 
+ # 在实际使用中，你可以经常使用"-print0”而不是POSIX"-exec printf '%s\0' {} \;”
  for encoded_pathname in $(find . -exec printf '%s\0' {} \; | encodef ) ; do
    file="$(encodef -dY -- "$encoded_pathname")" ; file="${file%Y}"
-   COMMAND "$file" # Use quoted "$file", not $file, everywhere.
+   COMMAND "$file" # 在任何位置，都使用带引号的 "$file”，而不是 $file。
  done
 ```
 
 ### 1.3.2 局限性
 
-有时不完全处理路径名会更容易，尤其是当您尝试编写可移植的 shell 代码时。但是，如果您使用该代码来检查扩展档案（例如 zip 或 tar 文件），或检查包含由其他人创建的文件的目录（例如，远程文件系统、由其他人或攻击者控制的虚拟机、另一个移动应用程序等），该代码很快就会成为安全漏洞）。以下是示例（及其限制）：
+有时不完全处理路径名会更容易，尤其是当你尝试编写可移植的 shell 代码时。但是，如果你使用该代码来检查扩展档案（例如 zip 或 tar 文件），或检查包含由其他人创建的文件的目录（例如，远程文件系统、由其他人或攻击者控制的虚拟机、另一个移动应用程序等），该代码很快就会成为安全漏洞）。以下是示例（及其限制）：
 
 ```shell
- # Okay if pathnames can't contain tabs or newlines; beware the assumption:
+ # 如果路径名不能包含制表符或换行符，则可以；要留意假设：
  IFS="$(printf '\n\t')"
- set -f # Needed for filenames with *, etc; see below on saving/restoring
+ set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文
  for file in $(find .) ; do
    COMMAND "$file" ...
  done
 ```
 
 ```shell
- # Okay if pathnames can't contain tabs or newlines; beware the assumption:
+ # 如果路径名不能包含制表符或换行符，则可以；要留意假设：
  IFS="$(printf '\n\t')"
- set -f # Needed for filenames with *, etc; see below on saving/restoring
+ set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文
  COMMAND $(find .) /dev/null
 ```
 
 ```shell
- # Okay if pathnames can't contain newlines; beware the assumption.
- # Also, this makes stdin inaccessible, and variables may not stay set.
+ # 如果路径名不能包含换行符，则可以；要留意假设：
+ # 此外，这会使 stdin 无法访问，并且变量可能不会保持设置。
  find . | while IFS="" read -r file ; do ...
-   COMMAND "$file" # Use "$file" not $file everywhere.
+   COMMAND "$file" # 在任何位置，都使用带引号的 "$file”，而不是 $file。
  done
 ```
 
 ```shell
- # You can securely use the above approaches, even if directories have
- # evil filenames, if you can skip evil filenames.   For example, here's how to
- # skip pathnames with embedded control chars, including newline and tab:
+ # 即使你避开了奇葩的文件名，而目录里还是有奇葩的文件名，你也可以安全地使用上述方法
+ # 比如说，如下就是如何跳过带有嵌入控制字符的路径名，包括换行符和制表符：
  IFS="$(printf '\n\t')"
  controlchars="$(printf '*[\001-\037\177]*')"
- set -f # Needed for filenames with *, etc; see below on saving/restoring
+ set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文
  for file in $(find . ! -name "$controlchars") ; do
    COMMAND "$file" ...
  done
 ```
 
 ```shell
- # Skip pathnames with embedded control chars, including newline and tab:
+ # 跳过带有嵌入控制字符的路径名，包括换行符和制表符：
  IFS="$(printf '\n\t')"
  controlchars="$(printf '*[\001-\037\177]*')"
- set -f # Needed for filenames with *, etc; see below on saving/restoring
+ set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文
  COMMAND $(find . ! -name "$controlchars") /dev/null
 ```
 
 ```shell
- # Here's one way to quickly exit a program if a filename
- # contains a control character (including tabs, newlines, and ESC) or DEL.
- # My thanks to Michael Thayer for this suggestion.
+ # 如果文件名包含控制字符（包括制表符、换行符和 ESC）或 DEL，则这是一种快速退出程序的方法
+ # 感谢 Michael Thayer 提出的这个建议。
  expr "$filename" : "`printf '.*[\01-\037\0177*?]'`" && exit 1
 ```
 
 ## 1.4 模板：设置一个变量
 
-没有简单的可移植方法来处理一个变量中的多个任意文件名，然后直接使用它们。Shell 数组可以工作，但在这种情况下使用起来可能很棘手，而且不可移植。我建议禁止带有制表符和换行符的文件名； 那么您可以轻松地将这些字符用作分隔符，如下所示：
+没有简单的可移植方法来处理一个变量中的多个任意文件名，然后直接使用它们。Shell 数组可以工作，但在这种情况下使用起来可能很棘手，而且不可移植。我建议禁止带有制表符和换行符的文件名； 那么你可以轻松地将这些字符用作分隔符，如下所示：
 
 ```shell
 # 如果在字符串中建立选项，请使用制表符|换行符分隔文件名
  IFS="$(printf '\n\t')"
  tab="$(printf '\t')"
  command_options="-x${tab}-y"
-# 如果你想把路径名放在内置字符串中，在路径名中防止出现 tab|newline，使用“set -f”，然后你可以使用一个不带引号的变量。
+# 如果你想把路径名放在内置字符串中，在路径名中防止出现 tab|newline，使用"set -f”，然后你可以使用一个不带引号的变量。
 # 例如，假设 $file 不包含 tab|newline，-F $file 是：
  command_options="${options}-F${tab}${file}"
  set -f # 需要带 * 等的文件名； 有关保存/恢复的信息，请参见下文 1.5 章节
@@ -244,7 +242,7 @@ find . -exec COMMAND... {} \;
 
 ## 1.5 模板：保存和还原 "set -f"
 
-有时您需要在 shell 中禁用 globbing，尤其是在从 find 接收信息时。POSIX 包括各种便捷的机制，来禁用和重新启用 shell 中的 globbing。“set -f”命令禁用文件通配。 您可以使用“set -f”禁用文件通配，并使用“set +f”重新启用它。 但是，如果您想使用“set -f”暂时禁用文件通配，然后恢复之前的所有内容，该怎么办？ 一种方法是将“set -f”及其所依赖的内容放在子shell中； 这样可行，但是一旦子shell完成，变量设置就会丢失。 您还可以通过执行以下操作来保存和恢复 shell 选项设置：
+有时你需要在 shell 中禁用 globbing，尤其是在从 find 接收信息时。POSIX 包括各种便捷的机制，来禁用和重新启用 shell 中的 globbing。"set -f”命令禁用文件通配。 你可以使用"set -f”禁用文件通配，并使用"set +f”重新启用它。 但是，如果你想使用"set -f”暂时禁用文件通配，然后恢复之前的所有内容，该怎么办？ 一种方法是将"set -f”及其所依赖的内容放在子shell中； 这样可行，但是一旦子shell完成，变量设置就会丢失。 你还可以通过执行以下操作来保存和恢复 shell 选项设置：
 
 ```shell
  oldSetOptions=$(set +o)             # 保存 shell 选项设置
@@ -254,13 +252,13 @@ find . -exec COMMAND... {} \;
 
 # 2 错误操作
 
-但是为什么你需要遵守这些规则呢？ 找出问题的最简单方法是查看一些错误的示例，因为要真正了解如何修复问题，您需要知道哪里出了问题。这些示例假定默认设置（例如，没有“set -f”或“IFS=...”）：
+但是为什么你需要遵守这些规则呢？ 找出问题的最简单方法是查看一些错误的示例，因为要真正了解如何修复问题，你需要知道哪里出了问题。这些示例假定默认设置（例如，没有"set -f”或"IFS=...”）：
 
 ```shell
 cat * > ../collection  # 错误
 ```
 
-这种方式是错误的。如果当前目录中的文件名以“-”开头，则会被误解为选项而不是文件名。 例如，如果有一个名为“-n”的文件，它会立即启用 cat 的“-n”选项，而不是视作要被 cat 的一个文件（GNU cat 就是这样做，它会为行编号）。 一般来说，你不应该有一个以 `“*”` 开头的glob——它应该以 “./” 为前缀。 此外，如果目录中没有（未隐藏的）文件，则 glob 模式将改为返回模式（`“*”`）； 这意味着命令 (cat) 将尝试打开一个不可能的名为“*”的文件。
+这种方式是错误的。如果当前目录中的文件名以"-”开头，则会被误解为选项而不是文件名。 例如，如果有一个名为"-n”的文件，它会立即启用 cat 的"-n”选项，而不是视作要被 cat 的一个文件（GNU cat 就是这样做，它会为行编号）。 一般来说，你不应该有一个以 `"*”` 开头的glob——它应该以 "./” 为前缀。 此外，如果目录中没有（未隐藏的）文件，则 glob 模式将改为返回模式（`"*”`）； 这意味着命令 (cat) 将尝试打开一个不可能的名为"*”的文件。
 
 ```shell
 for file in * ; do  # 错误
@@ -268,13 +266,13 @@ for file in * ; do  # 错误
 done
 ```
 
-也是错误的，出于同样的原因； 名为“-n”的文件会欺骗 cat 程序，如果模式不匹配，它将以模式本身作为值循环一次。
+也是错误的，出于同样的原因； 名为"-n”的文件会欺骗 cat 程序，如果模式不匹配，它将以模式本身作为值循环一次。
 
 ```shell
 cat $(find . -type f) > ../collection  # 错误
 ```
 
-错误。 如果任何路径名包含空格、换行符或制表符，则其名称将被拆分（文件“a b”将被错误地解析为“a”和“b”两个文件）。 如果路径名包含像 * 这样的通配符，shell 将尝试扩展它，这可能会产生其他问题。 此外，如果 find 命令不匹配任何文件，则该命令将不带参数运行； 在许多命令（如 cat）上，这将导致程序挂在标准输入的输入上（您可以通过附加路径名 /dev/null 来解决这个问题，但很多人不知道这样做）。
+错误。 如果任何路径名包含空格、换行符或制表符，则其名称将被拆分（文件"a b”将被错误地解析为"a”和"b”两个文件）。 如果路径名包含像 * 这样的通配符，shell 将尝试扩展它，这可能会产生其他问题。 此外，如果 find 命令不匹配任何文件，则该命令将不带参数运行； 在许多命令（如 cat）上，这将导致程序挂在标准输入的输入上（你可以通过附加路径名 /dev/null 来解决这个问题，但很多人不知道这样做）。
 
 ```shell
 ( for file in $(find . -type f) ; do  # 错误
@@ -282,20 +280,20 @@ cat $(find . -type f) > ../collection  # 错误
   done ) > ../collection
 ```
 
-错误，出于类似的原因。 这会分解包含空格、换行符或制表符的路径名，并且如果路径名本身包含诸如“*”之类的字符，则会错误地扩展路径名。
+错误，出于类似的原因。 这会分解包含空格、换行符或制表符的路径名，并且如果路径名本身包含诸如"*”之类的字符，则会错误地扩展路径名。
 
 ```shell
  ( find . -type f |    
    while read file ; do cat "$file" ; done ) > ../collection # 错误
 ```
 
-错误。 如果路径名中间有空格，则此方法有效，但如果路径名以空格开头或结尾（它们会被截断），则此方法将无法正常工作。 此外，如果路径名包含`“\”`，它会被破坏； 特别是，如果它以`“\”`结尾，它将与下一个路径名组合（删除两者）。 通常，在 shell 中使用不带`“-r”`选项的“read”通常是错误的，在许多情况下，您应该在读取之前设置 IFS=""。
+错误。 如果路径名中间有空格，则此方法有效，但如果路径名以空格开头或结尾（它们会被截断），则此方法将无法正常工作。 此外，如果路径名包含`"\”`，它会被破坏； 特别是，如果它以`"\”`结尾，它将与下一个路径名组合（删除两者）。 通常，在 shell 中使用不带`"-r”`选项的"read”通常是错误的，在许多情况下，你应该在读取之前设置 IFS=""。
 
 ```shell
 ( find . -type f | xargs cat ) > ../collection # 错误
 ```
 
-错误。 默认情况下，xargs 的输入被解析，因此空格字符（以及换行符）分隔参数，反斜杠、单引号、双引号和 & 字符用于引用。 根据 POSIX 标准，您必须考虑到选项 -E "" ，或下划线也可能具有特殊含义。 请注意，POSIX 标准 xargs 部分中的许多示例都是错误的； 带有空格、换行符或许多其他字符的路径名将导致许多示例失败。
+错误。 默认情况下，xargs 的输入被解析，因此空格字符（以及换行符）分隔参数，反斜杠、单引号、双引号和 & 字符用于引用。 根据 POSIX 标准，你必须考虑到选项 -E "" ，或下划线也可能具有特殊含义。 请注意，POSIX 标准 xargs 部分中的许多示例都是错误的； 带有空格、换行符或许多其他字符的路径名将导致许多示例失败。
 
 ```shell
  ( find . -type f |
@@ -303,13 +301,13 @@ cat $(find . -type f) > ../collection  # 错误
           > ../collection # 错误
 ```
 
-错误。 像许多程序一样，这种写法，假设您可以拥有路径名列表，且每行一个路径名。 但是由于路径名可以在内部包含换行符，所以所有简单的对路径名一次一行处理的方式，都是错误的！ 如果路径名不能包含换行符，则这种构造还好，但由于许多类 Unix 系统允许，攻击者很乐意使用此错误假设作为攻击。
+错误。 像许多程序一样，这种写法，假设你可以拥有路径名列表，且每行一个路径名。 但是由于路径名可以在内部包含换行符，所以所有简单的对路径名一次一行处理的方式，都是错误的！ 如果路径名不能包含换行符，则这种构造还好，但由于许多类 Unix 系统允许，攻击者很乐意使用此错误假设作为攻击。
 
 ```shell
 cat $file # 错误
 ```
 
-错误。 如果 `$file` 包含空格，那么它可以分解并解释为多个文件名，如果 `$file` 以破折号开头，则该名称将被解释为一个选项。 此外，如果 `$file` 包含像 “*” 这样的元字符，它将首先被扩展，产生错误的文件名集。
+错误。 如果 `$file` 包含空格，那么它可以分解并解释为多个文件名，如果 `$file` 以破折号开头，则该名称将被解释为一个选项。 此外，如果 `$file` 包含像 "*” 这样的元字符，它将首先被扩展，产生错误的文件名集。
 
 
 # 3 基本规则的基本原理
@@ -573,7 +571,7 @@ There also needs to be standard way to use find with arbitrary pathnames. The no
  find . -print0 | while read -0 file ; do ... done
 ```
 
-3. Extend the shell so that its for loop can handle a null-separated list. This one is harder; it’s not obvious how to do this. My current theory is that there be a new shell option ‘nullseparator"; when enabled, IFS is ignored, and instead \0 is the input seperator. Then, extend the shell’s for loop syntax so that if you say then in instead of in, this mode is temporarily enabled while the list is processed (the original setting is then restored). (I originally had null in, but using then in means that no new keywords are needed.) You could then do this:
+3. Extend the shell so that its for loop can handle a null-separated list. This one is harder; it’s not obvious how to do this. My current theory is that there be a new shell option 'nullseparator"; when enabled, IFS is ignored, and instead \0 is the input seperator. Then, extend the shell’s for loop syntax so that if you say then in instead of in, this mode is temporarily enabled while the list is processed (the original setting is then restored). (I originally had null in, but using then in means that no new keywords are needed.) You could then do this:
 
 ```shell
  for file then in $(find . -print0) do ... done
@@ -585,18 +583,18 @@ As a side note, it’d be nice if the $'...' construct was standard, as it makes
 
 在许多情况下，Shell 编程非常简单。 可悲的是，这种常见情况（即文件处理）却远比设想下的 shell 编程情况要更复杂。 这不是仅限于 shell 的问题； 虽然 shell 特别棘手，但同样也很难在所有语言中正确处理 POSIX 路径名。
 
-从根本上说，是因为关于路径名的规则过于宽松。 扩展 POSIX 会使对其处理变得更容易一些，我们也应该这样做。 其实，如果系统对路径名强加一些简单的规则，例如禁止控制字符（bugid：251），禁止前导“-”以及要求路径名是 UTF-8 格式，那处理起来就简单多了。 如此一来，你总是可以安全地打印路径名，这些“正常”的 shell 结构也将始终有效：
+从根本上说，是因为关于路径名的规则过于宽松。 扩展 POSIX 会使对其处理变得更容易一些，我们也应该这样做。 其实，如果系统对路径名强加一些简单的规则，例如禁止控制字符（bugid：251），禁止前导"-”以及要求路径名是 UTF-8 格式，那处理起来就简单多了。 如此一来，你总是可以安全地打印路径名，这些"正常”的 shell 结构也将始终有效：
 
 
 ```shell
- # 如果路径名从不以“-”开头并且启用了nullglob，则此方法有效:
+ # 如果路径名从不以"-”开头并且启用了nullglob，则此方法有效:
  for file in *.pdf ; do ... done           # Use "$file" not $file
  # 如果路径名没有控制字符并且 IFS 是制表符和换行符，则此方法有效:
  set -f
  for file in $(find .) ; do ... done        # Use "$file" not $file
 ```
 
-安全方面的一个很好的一般原则是，您应该将输入列入白名单，并且只接受通过白名单的模式。 但是，目前大多数内核都没有将文件创建列入白名单的机制； 他们只会生成任何想得到的垃圾。 由于他们基本上接受任何东西，因此，导致后期要防范数据变得更加困难。
+安全方面的一个很好的一般原则是，你应该将输入列入白名单，并且只接受通过白名单的模式。 但是，目前大多数内核都没有将文件创建列入白名单的机制； 他们只会生成任何想得到的垃圾。 由于他们基本上接受任何东西，因此，导致后期要防范数据变得更加困难。
 
 我认为我们应该扩展 POSIX 标准，并且限制允许的路径名。 并非所有系统都会限制路径名，因此我们需要为它们提供标准机制。 但是新的标准机制不能像限制路径名那样简单； 限制路径名使系统更容易正确使用。
 
