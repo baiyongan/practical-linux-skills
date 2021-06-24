@@ -1,11 +1,16 @@
 # 更新日志
 
 <!---------------------------------------------------------->
+### 0.2.21 (2021-06-24)
+#### Features
+- 添加 linux operating system 目录
+
+<!---------------------------------------------------------->
 ### 0.2.20 (2021-06-23)
 #### Features
 - 拆分 filename pathname article 为十部分
 
-#### Features
+#### Articles
 - 更新 filename pathname article section 2 & 校对文字
 - 删减 shell 十三问文章内容
 
