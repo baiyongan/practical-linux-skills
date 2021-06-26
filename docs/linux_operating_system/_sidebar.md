@@ -96,7 +96,7 @@
   - [58 | cgroup技术：内部创业公司应该独立核算成本](linux_operating_system/section10/article58.md)
   - [59 | 数据中心操作系统：上市敲钟](linux_operating_system/section10/article59.md)
 
-- 实战串讲篇 (9讲)
+- 十一 实战串讲篇 (9讲)
 
   - [60 | 搭建操作系统实验环境（上）：授人以鱼不如授人以渔](linux_operating_system/section11/article60.md)
   - [61 | 搭建操作系统实验环境（下）：授人以鱼不如授人以渔](linux_operating_system/section11/article61.md)
@@ -107,5 +107,3 @@
   - [66 | 知识串讲：用一个创业故事串起操作系统原理（五）](linux_operating_system/section11/article66.md)
   - [67 期末测试 | 这些操作系统问题，你真的掌握了吗？](linux_operating_system/section11/article67.md)
   - [68 结束语 | 永远别轻视任何技术，也永远别轻视自己](linux_operating_system/section11/article68.md)
-
-<!-- - 专栏加餐 (2讲) -->
