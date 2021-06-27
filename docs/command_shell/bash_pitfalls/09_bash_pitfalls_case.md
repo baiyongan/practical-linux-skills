@@ -1,9 +1,10 @@
 # Bash Pitfalls Case 09
 ## if [grep foo myfile]
 
-Many beginners have an incorrect intuition about if statements brought about by seeing the very common pattern of an if keyword followed immediately by a [ or [[. This convinces people that the [ is somehow part of the if statement's syntax, just like parentheses used in C's if statement.
+许多初学者对 `if` 语句的直觉是错误的，因为看到 `if` 关键字后紧跟 `[` 或 `[[` 的非常常见的模式。
+这使人们相信 `[` 不知何故，就该是 `if` 语句语法的一部分，就像 C 的 `if` 语句中使用的括号一样。
 
-This is not the case! if takes a command. [ is a command, not a syntax marker for the if statement. It's equivalent to the test command, except that the final argument must be a ]. For example:
+不是这种情况！ `if` 接受一个命令。 `[` 是一个命令，而不是 `if` 语句的语法标记。 它等同于 `test` 命令，当然，`[` 最后一个参数必须是一个 `]`。 例如：
 
 ```shell
 # POSIX
@@ -11,9 +12,9 @@ if [ false ]; then echo "HELP"; fi
 if test false; then echo "HELP"; fi
 ```
 
-are equivalent -- both checking that the argument "false" is non-empty. In both cases HELP will always be printed, to the surprise of programmers from other languages guessing about shell syntax.
+是等价的。——两者都检查参数“false”是否为非空。 在这两种情况下，总是会打印 HELP，这让其他语言的程序员对 shell 语法的猜测感到惊讶。
 
-The syntax of an if statement is:
+`if` 语句的语法是：
 
 ```shell
 if COMMANDS
@@ -24,15 +25,15 @@ else <COMMANDS> # optional
 fi # required
 ```
 
-Once again, [ is a command. It takes arguments like any other regular simple command. if is a compound command which contains other commands -- and there is no [ in its syntax!
+再一次，`[` 是一个命令。 它像任何其他常规简单命令一样接受参数。 `if` 是一个包含其他命令的复合命令——并且它的语法中没有 `[` ！
 
-While bash has a builtin command [ and thus knows about [ it has nothing special to do with ]. Bash only passes ] as argument to the [ command, which requires ] to be the last argument only to make scripts look better.
+虽然 bash 有一个内置命令 `[` ，但应该知道 `[` 与 `]` 没有什么特别关系。 Bash 只将 `]` 作为参数传递给 `[` 命令，这里要求 `]` 作为最后一个参数，只是为了让脚本看起来更好。
 
-There may be zero or more optional elif sections, and one optional else section.
+可能有零个或多个可选的 `elif` 部分和一个可选的 `else` 部分。
 
-The if compound command is made up of two or more sections containing lists of commands, each delimited by a then, elif, or else keyword, and is terminated by the fi keyword. The exit status of the final command of the first section and each subsequent elif section determines whether each corresponding then section is evaluated. Another elif is evaluated until one of the then sections is executed. If no then section is evaluated, then the else branch is taken, or if no else is given, the if block is complete and the overall if command returns 0 (true).
+`if` 复合命令由包含命令列表的两个或多个部分组成，每个部分由 `then`、`elif` 或 `else` 关键字分隔，并由 `fi` 关键字终止。第一部分和每个后续 `elif` 部分的最终命令的退出状态，则会决定是否继续每个相应的 `then` 部分。程序将对另一个 `elif` 做出评估，直到执行其中一个 `then` 部分。 如果没有执行 `then` 部分，则采用 `else` 分支，或者如果没有给出 `else`，则 `if` 块完成并且整个 `if` 命令返回 `0 (true)`。
 
-If you want to make a decision based on the output of a grep command, you do not want to enclose it in parentheses, brackets, backticks, or any other syntax! Just use grep as the COMMANDS after the if, like this:
+如果您想根据 `grep` 命令的输出做出决定，你不应将它括在括号、方括号、反引号或任何其他语法中！ 只需在 `if` 之后使用 `grep` 作为命令，如下所示：
 
 ```shell
 if grep -q fooregex myfile; then
@@ -40,9 +41,9 @@ if grep -q fooregex myfile; then
 fi
 ```
 
-If the grep matches a line from myfile, then the exit code will be 0 (true), and the then part will be executed. Otherwise, if there are no matches, grep will return non-zero and the overall if command will be zero.
+如果 `grep` 匹配 myfile 中的一行，则退出代码将为 0（真），然后将执行 `then` 部分。 否则，如果没有匹配项，`grep` 将返回非零值，并且整个 `if` 命令将为零。
 
-See also:
+其它参考:
 
 [BashGuide/TestsAndConditionals](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals)
 

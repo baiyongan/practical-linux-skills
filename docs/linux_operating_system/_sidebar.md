@@ -1,6 +1,6 @@
 <!-- - [Overview](linux_operating_system/overview.md) -->
 
-- 入门准备篇 (3讲)
+- 零 入门准备篇 (3讲)
 
   - [为什么要学习Linux操作系统？](linux_operating_system/section00/article00.md)
   - [01 | 入学测验：Linux操作系统了解程度？](linux_operating_system/section00/article01.md)
