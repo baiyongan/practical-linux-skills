@@ -11,7 +11,7 @@
   - [Use 'set -euxo pipefail' in scripting](best_practice/set_command_usage_in_script.md)
   - 脚本中文件&路径的正确命名
    <!--  - [Part01-10](best_practice/filenames_and_pathnames_in_shell.md)  -->
-    - [Part00-翻译说明](best_practice/filenames_and_pathnames_in_shell/part00.md)
+    - [Part00-翻译说明](best_practice/filenames_and_pathnames_in_shell/part0.md)
     - [Part01-正确操作](best_practice/filenames_and_pathnames_in_shell/part01.md)
     - [Part02-错误操作](best_practice/filenames_and_pathnames_in_shell/part02.md)
     - [Part03-基本规则的基本原理](best_practice/filenames_and_pathnames_in_shell/part03.md)
