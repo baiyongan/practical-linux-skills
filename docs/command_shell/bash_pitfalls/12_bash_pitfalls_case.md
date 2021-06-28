@@ -16,4 +16,5 @@ IFS= read -r foo
 read $foo 将读取一行输入，并将其放入名称在 $foo 中的变量中。如果你实际上，本打算将 foo 引用为其他变量，则这可能很有用； 但是在大多数情况下，这仅仅是一个错误。
 
 ## 拓展阅读
+
 [BashFAQ#006](http://mywiki.wooledge.org/BashFAQ/006)

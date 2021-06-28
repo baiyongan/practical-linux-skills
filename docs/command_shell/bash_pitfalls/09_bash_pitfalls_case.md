@@ -43,7 +43,7 @@ fi
 
 如果 `grep` 匹配 myfile 中的一行，则退出代码将为 0（真），然后将执行 `then` 部分。 否则，如果没有匹配项，`grep` 将返回非零值，并且整个 `if` 命令将为零。
 
-其它参考:
+## 拓展阅读
 
 [BashGuide/TestsAndConditionals](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals)
 

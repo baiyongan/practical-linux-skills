@@ -40,6 +40,6 @@ esac
 
 请注意，由于 `[`/`test` 的算术运算符需要*十进制*整数，例如 010 将被解释为数字 10，而不是以八进制表示的 8。 在 bash 中，`[ 010 -gt 8 ]` 将返回 true，而 `[[ 010 -gt 8 ]]` 和 `(( 010 > 8 ))` 将返回 false。
 
-## 参考资料
+## 拓展阅读
 
 [How can I tell whether a variable contains a valid number?](http://mywiki.wooledge.org/BashFAQ/054)
