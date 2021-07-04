@@ -1,42 +1,42 @@
 # Bash Pitfalls Case 13
 ## cat file | sed s/foo/bar/ > file
 
-You cannot read from a file and write to it in the same pipeline. Depending on what your pipeline does, the file may be clobbered (to 0 bytes, or possibly to a number of bytes equal to the size of your operating system's pipeline buffer), or it may grow until it fills the available disk space, or reaches your operating system's file size limitation, or your quota, etc.
+你无法在同一管道中读取文件并写入文件。 根据管道的作用，文件可能会被破坏（变成 0 字节，或者可能是等于操作系统管道缓冲区大小的字节数），或者它可能会增长，直到填满可用磁盘空间，又或达到你的操作系统的文件大小限制，或你的配额等。
 
-If you want to make a change to a file safely, other than appending to the end of it, use a text editor.
+如果你想安全地对文件进行更改，而不是追加到文件末尾，请使用文本编辑器。
 
 ```shell
  printf %s\\n ',s/foo/bar/g' w q | ed -s file
 ```
 
-If you are doing something that cannot be done with a text editor there must be a temporary file created at some point(*). For example, the following is completely portable:
+如果你正在做一些使用文本编辑器无法完成的事情，则必须在某个时候创建一个临时文件 (*)。 例如，以下是完全可移植的：
 
 ```shell
  sed 's/foo/bar/g' file > tmpfile && mv tmpfile file
 ```
 
-The following will only work on GNU sed 4.x:
+以下内容仅适用于 GNU sed 4.x：
 
 ```shell
  sed -i 's/foo/bar/g' file(s)
 ```
 
-Note that this also creates a temporary file, and does the same sort of renaming trickery -- it just handles it transparently.
+请注意，这也会创建一个临时文件，并执行相同的重命名技巧——它只是透明地处理它。
 
-And the following equivalent command requires perl 5.x:
+以下等效命令需要 perl 5.x：
 
 ```shell
  perl -pi -e 's/foo/bar/g' file(s)
 ```
 
-For more details on replacing contents of files, please see Bash FAQ #21.
+有关替换文件内容的更多详细信息，请参阅 [Bash FAQ #21](http://mywiki.wooledge.org/BashFAQ/021)。
 
-(*) sponge from moreutils uses this example in its manual:
+> moreutils 的 sponge 在其手册中使用了这个例子：
 
 ```shell
  sed '...' file | grep '...' | sponge file
 ```
 
-Rather than using a temporary file plus an atomic mv, this version "soaks up" (the actual description in the manual!) all the data, before opening and writing to the file. This version will cause data loss if the program or system crashes during the write operation, because there's no copy of the original file on disk at that point.
+这个版本没有使用临时文件和 `mv` 的方式，而是在打开和写入文件之前 “soaks up”（手册中的实际描述！）所有数据。如果在写入操作期间程序或系统崩溃，此版本将导致数据丢失，因为此时磁盘上没有原始文件的副本。
 
-Using a temporary file + mv still incurs a slight risk of data loss in case of a system crash / power loss; to be 100% certain that either the old or the new file will survive a power loss, you must use sync before the mv.
+在系统崩溃/断电的情况下，使用临时文件 + `mv` 的方式，仍然会存在轻微的数据丢失风险； 若要 100% 确定旧文件或新文件在断电后仍然存在，你必须在 `mv` 之前使用 `sync`。

@@ -1,28 +1,28 @@
 # Bash Pitfalls Case 14
 ## echo \$foo
 
-This relatively innocent-looking command causes massive confusion. Because the $foo isn't quoted, it will not only be subject to WordSplitting, but also file globbing. This misleads Bash programmers into thinking their variables contain the wrong values, when in fact the variables are OK -- it's just the word splitting or filename expansion that's messing up their view of what's happening.
+这个相对平常的命令易引起巨大的混乱。 因为 `$foo` 没有被引用，所以它不仅会受到 `WordSplitting` 的影响，还会受到 `file globbing` 的影响。 这会误导 Bash 程序员认为他们的变量包含错误的值，而实际上这些变量是可以的——只是 word splitting 或 filename expansion 弄乱了他们对正在发生的事情的看法。
 
 ```shell
  msg="Please enter a file name of the form *.zip"
  echo $msg
 ```
 
-This message is split into words and any globs are expanded, such as the *.zip. What will your users think when they see this message:
+这个 msg 会被拆分为单词，并且任何 glob 都被扩展，例如 *.zip。 你的用户看到这个 msg 时会怎么想：
 
 ```shell
  Please enter a file name of the form freenfss.zip lw35nfss.zip
 ```
 
-To demonstrate:
+展示以下:
 
 ```shell
- var="*.zip"   # var contains an asterisk, a period, and the word "zip"
- echo "$var"   # writes *.zip
- echo $var     # writes the list of files which end with .zip
+ var="*.zip"   # var 包含一个星号、一个句点和“zip”这个词
+ echo "$var"   # 打印出 *.zip
+ echo $var     # 打印出以 .zip 结尾的文件列表
 ```
 
-In fact, the echo command cannot be used with absolute safety here. If the variable contains -n for example, echo will consider that an option, rather than data to be printed. The only absolutely sure way to print the value of a variable is using printf:
+事实上，`echo` 命令在这里不能绝对安全地使用。 例如，如果变量包含 -n，`echo` 将认为这是一个选项，而不是要打印的数据。 打印变量值的唯一绝对可靠的方法是使用 `printf`：
 
 ```shell
  printf "%s\n" "$foo"
