@@ -69,15 +69,14 @@
 - ansible
 - ...
 
-> **5. Performance Tuning**
-
-- 性能调优，尤见功力
-
-> **6. Linux Operating System**
+> **5. Linux Operating System**
 
 - 了解操作系统内核工作原理
 - 理解程序运行机制
 
+> **6. Performance Tuning**
+
+- 性能调优，尤见功力
 
 ## 写作工具
 - docsify: 文档生成工具

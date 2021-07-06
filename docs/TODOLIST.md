@@ -53,6 +53,8 @@ gantt
     awk 整理                             :                 tmp_12, after tmp_11, 10d
 ```
 
+## 操作系统部分
+
 ## 性能优化部分
 
 ```mermaid
@@ -70,5 +72,3 @@ gantt
     网络篇                               : crit,          task_5, after task_4, 20d
     综合篇                               : crit,          task_6, after task_5, 20d
 ```
-
-## 操作系统部分

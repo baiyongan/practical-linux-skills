@@ -1,6 +1,14 @@
 # 更新日志
 
 <!---------------------------------------------------------->
+### 0.2.26 (2021-07-06)
+#### Features
+- 互换 linux operating system & performance tuning
+#### Articles
+- 更新 linux operating system article 02
+
+
+<!---------------------------------------------------------->
 ### 0.2.25 (2021-07-05)
 #### Features
 - 更新 linux operating system 目录
