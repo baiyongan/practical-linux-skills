@@ -1,9 +1,9 @@
 # Bash Pitfalls Case 16
 ## foo = bar
 
-No, you can't put spaces around the = when assigning to a variable. This isn't C. When you write foo = bar the shell splits it into three words. The first word, foo, is taken as the command name. The second and third become the arguments to that command.
+不，在分配给变量时，您不能在 `=` 周围放置空格。 Bash 不是 C。当你写 `foo = bar` 时，shell 把它分成三个词。 第一个单词 `foo` 被用作命令名称。 第二个和第三个成为该命令的参数。
 
-Likewise, the following are also wrong:
+同样，以下也是错误的：
 
 ```shell
  foo= bar    # WRONG!
