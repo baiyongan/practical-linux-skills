@@ -3,9 +3,12 @@
 
 The == operator is not valid for the POSIX [ command. Use = or the [[ keyword instead.
 
+`==` 运算符对 POSIX `[` 命令无效。 请改用 `=` 或 `[[` 关键字。
+
 ```shell
  [ bar = "$foo" ] && echo yes
  [[ bar == $foo ]] && echo yes
 ```
 
-In Bash, [ "$x" == y ] is accepted as an extension, which often leads Bash programmers to think it's the correct syntax. It's not; it's a Bashism. If you're going to use Bashisms, you might as well just use [[ instead.
+在 Bash 中， `[ "$x" == y ]` 被视为是扩展名，这通常会导致 Bash 程序员认为这是正确的语法。
+如果你打算 bashism 到底 ，不妨使用 `[[` 来代替。
