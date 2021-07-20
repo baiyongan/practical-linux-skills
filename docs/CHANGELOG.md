@@ -1,6 +1,13 @@
 # 更新日志
 
 <!---------------------------------------------------------->
+### 0.2.31 (2021-07-20)
+#### Features
+- 补全 bash pitfalls article till article 62
+#### Articles
+- 更新 bash pitfalls article 20
+
+<!---------------------------------------------------------->
 ### 0.2.30 (2021-07-18)
 #### Features
 - 补全 bash pitfalls article till article 30
