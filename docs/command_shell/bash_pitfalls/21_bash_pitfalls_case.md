@@ -3,19 +3,21 @@
 
 You cannot put a ; immediately after an &. Just remove the extraneous ; entirely.
 
+你不能放一个 `;` 紧跟在 `&` 之后。 只需完全删除无关的 `；`。
+
 ```shell
  for i in {1..10}; do ./something & done
 ```
 
-Or:
+或者:
 ```shell
  for i in {1..10}; do
    ./something &
  done
 ```
 
-& already functions as a command terminator, just like ; does. And you cannot mix the two.
+`&` 已经用作命令终止符，就像 `;` 一样。 所以不能将两者混合。
 
-In general, a ; can be replaced by a newline, but not all newlines can be replaced by ;.
+一般来说，一个 `;` 可以用换行符代替，但不是所有的换行符都可以用 `;` 代替。
 
 

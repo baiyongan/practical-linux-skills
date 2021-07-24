@@ -1,8 +1,6 @@
 # Bash Pitfalls Case 20
 ## [ bar == "\$foo" ]
 
-The == operator is not valid for the POSIX [ command. Use = or the [[ keyword instead.
-
 `==` 运算符对 POSIX `[` 命令无效。 请改用 `=` 或 `[[` 关键字。
 
 ```shell
