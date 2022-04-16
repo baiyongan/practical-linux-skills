@@ -1,4 +1,5 @@
-<img src="assets/image/logo.png" alt="Practical Linux logo" title="Practical Linux" width="250" align="right" />
+<!-- <img src="assets/image/logo.png" alt="Practical Linux logo" title="Practical Linux" width="250" align="right" /> -->
+<img src="https://s2.loli.net/2022/04/16/2q84cIWknSEfMAK.png" alt="Practical Linux logo" title="Practical Linux" width="250" align="right" />
 
 <!-- 标签生成网站 https://img.shields.io  -->
 
