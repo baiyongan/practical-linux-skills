@@ -12,9 +12,12 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/docsify/plugins/sidebar-collapse/sidebar.min.css" />
   <!-- docsify-toc -->
-  <link rel="stylesheet" href="assets/css/docsify/plugins/toc/toc.css">
-  <!-- docsify-latex -->
-  <link rel="stylesheet" href="assets/css/docsify/plugins/katex/katex.min.css"/>
+  <!-- <link rel="stylesheet" href="assets/css/docsify/plugins/toc/toc.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+  <!-- docsify-katex -->
+  <!-- <link rel="stylesheet" href="assets/css/docsify/plugins/katex/katex.min.css"/> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
 </head>
 <body>
   <div id="app">博观而约取<br/>厚积而薄发</div>
@@ -140,44 +143,82 @@
     }
   </script>
 
-  <script src="assets/js/docsify/lib/docsify.min.js"></script>
+  <!-- docsify default js -->
+  <!-- <script src="assets/js/docsify/lib/docsify.min.js"></script>
   <script src="assets/js/prismjs/components/prism-bash.min.js"></script>
   <script src="assets/js/prismjs/components/prism-scss.min.js"></script>
   <script src="assets/js/prismjs/components/prism-json.min.js"></script>
   <script src="assets/js/prismjs/components/prism-c.min.js"></script>
   <script src="assets/js/prismjs/components/prism-objectivec.min.js"></script>
   <script src="assets/js/prismjs/components/prism-json5.min.js"></script>
-  <script src="assets/js/prismjs/components/prism-swift.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-swift.min.js"></script> -->
+
+  <script src="//unpkg.com/docsify@4.12.1/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-objectivec.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json5.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-swift.min.js"></script>
+
   <!-- docsify-search -->
-  <script src="assets/js/docsify/plugins/search/search.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/search/search.min.js"></script> -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+
   <!-- docsify-plugin-flexible-alerts -->
-  <script src="assets/js/docsify/plugins/flexible-alerts/docsify-plugin-flexible-alerts.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/flexible-alerts/docsify-plugin-flexible-alerts.js"></script> -->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+
   <!-- docsify-progress -->
-  <script src="assets/js/docsify/plugins/progress/progress.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/progress/progress.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+
   <!-- docsify-mermaid -->
-  <script src="assets/js/mermaid/mermaid.js"></script>
-  <script src="assets/js/docsify/plugins/mermaid/docsify-mermaid.js"></script>
+  <!-- <script src="assets/js/mermaid/mermaid.js"></script> -->
+  <!-- <script src="assets/js/docsify/plugins/mermaid/docsify-mermaid.js"></script> -->
+  <!-- <script>mermaid.initialize({ startOnLoad: true });</script> -->
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
   <script>mermaid.initialize({ startOnLoad: true });</script>
+
   <!-- docsify-zoom-image -->
   <script src="assets/js/docsify/plugins/zoom-image/zoom-image.min.js"></script>
+
   <!-- docsify-pagination -->
-  <script src="assets/js/docsify/plugins/pagination/docsify-pagination.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/pagination/docsify-pagination.min.js"></script> -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
   <!-- docsify-pangu -->
-  <script src="assets/js/docsify/plugins/pandu/pangu.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/pandu/pangu.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+
   <!-- docsify-sidebar-collapse -->
-  <script src="assets/js/docsify/plugins/sidebar-collapse/docsify-sidebar-collapse.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/sidebar-collapse/docsify-sidebar-collapse.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
   <!-- docsify-toc -->
-  <script src="assets/js/docsify/plugins/toc/toc.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/toc/toc.js"></script> -->
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+
   <!-- docsify-pdf-embed -->
-  <script src="assets/js/pdfobject/pdfobject.min.js"></script> 
-  <script src="assets/js/docsify/plugins/pdf-embed/docsify-pdf-embed.js"></script>
-  <!-- docsify-latex -->
-  <script src="assets/js/docsify/plugins/katex/docsify-katex.js"></script>
+  <!-- <script src="assets/js/pdfobject/pdfobject.min.js"></script> -->
+  <!-- <script src="assets/js/docsify/plugins/pdf-embed/docsify-pdf-embed.js"></script> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+
+  <!-- docsify-katex -->
+  <!-- <script src="assets/js/docsify/plugins/katex/docsify-katex.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+
   <!-- docsify-count -->
-  <script src="assets/js/docsify/plugins/count/countable.min.js"></script>
+  <!-- <script src="assets/js/docsify/plugins/count/countable.min.js"></script> -->
+  <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+
   <!-- docsify-tabs -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script> -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script> -->
+  
   <!-- docsify-valine -->  
   <!--  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>  -->
   <!-- <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>  -->
