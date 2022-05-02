@@ -3,7 +3,8 @@
 
 <!-- 标签生成网站 https://img.shields.io  -->
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+<!-- ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) -->
+![GitHub license](https://img.shields.io/badge/license-CC%204.0-blue)
 ![Awesome](https://awesome.re/badge.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/practical-linux-skills)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/baiyongan/practical-linux-skills?color=orange)
@@ -96,7 +97,7 @@
 
 [BYA's Blog](http://bya.cool) 
 
-[BYA's Wiki](http://bya.tiddlyhost.com)
+[BYA's Wiki](http://106.14.160.45:8081)
 
 [LSF Handbook](http://baiyongan.gitbook.io)
 
