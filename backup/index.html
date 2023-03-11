@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practical Linux Skills</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="best practice in linux, command-line, bash templates, code snippets, and core fundmental linux concepts">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <!-- <link rel="stylesheet" href="assets/css/docsify/theme/vue.css"> -->
+  <link rel="stylesheet" href="//unpkg.com/docsify@4.8.0/lib/themes/vue.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500|Source+Sans+Pro:400,400i,600" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- <link rel="stylesheet" href="assets/css/docsify/plugins/sidebar-collapse/sidebar.min.css" /> -->
+  <!-- docsify-toc -->
+  <!-- <link rel="stylesheet" href="assets/css/docsify/plugins/toc/toc.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+  <!-- docsify-katex -->
+  <!-- <link rel="stylesheet" href="assets/css/docsify/plugins/katex/katex.min.css"/> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+</head>
+<body>
+  <div id="app">博观而约取<br/>厚积而薄发</div>
+  <img src="https://d15d9sd7a1ej2f.cloudfront.net/i" style="opacity: 0;" />
+  <script>
+    window.$docsify = {
+      name: '<img src="assets/images/logo.png" data-origin="assets/images/logo.png" alt="Practical Linux logo" class="sidebar-logo">Practical Linux Skills',
+      loadSidebar: true,
+      coverpage: true,
+      auto2top: true,
+      autoHeader: false,
+      subMaxLevel: 3,
+      sidebarDisplayLevel: 4, // set sidebar display level
+      maxLevel: 4,
+      repo: 'https://github.com/baiyongan/practical-linux-skills',
+      /* docsify-search */
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'No Results.',
+      },
+      /* docsify-flexible-alerts */
+      'flexible-alerts': {
+      style: 'flat'
+      },
+      /* docsify-progress */      
+      progress: {
+        position: "top",
+        color: "var(--theme-color,#42b983)",
+        height: "5px",
+      },
+      /* docsify-pagination */      
+      pagination: {
+    /*  previousText: '上一章节',
+        nextText: '下一章节', */
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      /* docsify-toc */      
+      toc: {
+        scope: '.markdown-section',
+        /* headings: 'h1, h2, h3, h4, h5, h6', */
+        headings: 'h1, h2, h3',
+        title: 'Table of Contents',
+      },
+      /* docsify-pdf-embed */ 
+      markdown: {
+        renderer: {
+          code: function(code, lang, base=null) {
+
+            /* if (lang === "dot") {
+              return (
+                      '<div class="viz">'+ Viz(code, "SVG")+'</div>'
+              );
+            } */
+            var pdf_renderer = function(code, lang, verify) {
+              function unique_id_generator(){
+                function rand_gen(){
+                  return Math.floor((Math.random()+1) * 65536).toString(16).substring(1);
+                }
+                return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+              }
+              if(lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})){
+                if(verify){
+                  return true;
+                }else{
+                  var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                  var container_list = new Array();
+                  if(localStorage.getItem('pdf_container_list')){
+                    container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                  }
+                  container_list.push({"pdf_location": code, "div_id": divId});
+                  localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                  return (
+                          '<div style="margin-top:'+ PDF_MARGIN_TOP +'; margin-bottom:'+ PDF_MARGIN_BOTTOM +';" id="'+ divId +'">'
+                          + '<a href="'+ code + '"> Link </a> to ' + code +
+                          '</div>'
+                  );
+                }
+              }
+              return false;
+            }
+            if(pdf_renderer(code, lang, true)){
+              return pdf_renderer(code, lang, false);
+            }
+            //return this.origin.code.apply(this, arguments);
+            return (base ? base : this.origin.code.apply(this, arguments));
+          }
+        }
+      },
+      /* docsify-count */ 
+      count:{
+        countable: true,
+        position: 'top',
+        margin: '10px',
+        float: 'right',
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'english',
+        localization: {
+          words: "",
+          minute: ""
+        },
+        isExpected: true
+      },
+      /* docsify-valine */ 
+/*       Valine: {
+        appId: 'h1bwIxo1BmTXkrqrWwHYMv83-gzGzoHsz',
+        appKey: 'Jj4JddHdhxM2VdFJcIAPXl3t',
+        placeholder: '欢迎大家评论留言~',
+        avatar: `robohash`,
+        recordIP: true,
+        requiredFields: ['nick','mail'],
+      }, */ 
+      /* docsify-tabs */ 
+  /*     tabs: {
+                // persist    : false,
+                // sync       : false,
+                // theme      : 'material',
+                tabComments: true,
+                // tabHeadings: false
+      }, */
+    }
+  </script>
+
+  <!-- docsify default js -->
+  <!-- <script src="assets/js/docsify/lib/docsify.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-bash.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-scss.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-json.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-c.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-objectivec.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-json5.min.js"></script>
+  <script src="assets/js/prismjs/components/prism-swift.min.js"></script> -->
+
+  <script src="//unpkg.com/docsify@4.12.1/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-objectivec.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json5.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-swift.min.js"></script>
+
+  <!-- docsify-search -->
+  <!-- <script src="assets/js/docsify/plugins/search/search.min.js"></script> -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+
+  <!-- docsify-plugin-flexible-alerts -->
+  <!-- <script src="assets/js/docsify/plugins/flexible-alerts/docsify-plugin-flexible-alerts.js"></script> -->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts@1.1.0/dist/docsify-plugin-flexible-alerts.min.js"></script>
+
+  <!-- docsify-progress -->
+  <!-- <script src="assets/js/docsify/plugins/progress/progress.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+
+  <!-- docsify-mermaid -->
+  <!-- <script src="assets/js/mermaid/mermaid.js"></script> -->
+  <!-- <script src="assets/js/docsify/plugins/mermaid/docsify-mermaid.js"></script> -->
+  <!-- <script>mermaid.initialize({ startOnLoad: true });</script> -->
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
+
+  <!-- docsify-zoom-image -->
+  <script src="assets/js/docsify/plugins/zoom-image/zoom-image.min.js"></script>
+
+  <!-- docsify-pagination -->
+  <!-- <script src="assets/js/docsify/plugins/pagination/docsify-pagination.min.js"></script> -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+  <!-- docsify-pangu -->
+  <!-- <script src="assets/js/docsify/plugins/pandu/pangu.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+
+  <!-- docsify-sidebar-collapse -->
+  <!-- <script src="assets/js/docsify/plugins/sidebar-collapse/docsify-sidebar-collapse.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+  <!-- docsify-toc -->
+  <!-- <script src="assets/js/docsify/plugins/toc/toc.js"></script> -->
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+
+  <!-- docsify-pdf-embed -->
+  <!-- <script src="assets/js/pdfobject/pdfobject.min.js"></script> -->
+  <!-- <script src="assets/js/docsify/plugins/pdf-embed/docsify-pdf-embed.js"></script> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+
+  <!-- docsify-katex -->
+  <!-- <script src="assets/js/docsify/plugins/katex/docsify-katex.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+
+  <!-- docsify-count -->
+  <!-- <script src="assets/js/docsify/plugins/count/countable.min.js"></script> -->
+  <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+
+  <!-- docsify-tabs -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script> -->
+  
+  <!-- docsify-valine -->  
+  <!--  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>  -->
+  <!-- <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>  -->
+</body>
+</html>

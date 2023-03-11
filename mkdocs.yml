@@ -1,0 +1,311 @@
+#================================ Site Information =======================================
+site_name: "Practical Linux Skills"
+site_url: "http://106.14.160.45"
+site_author: "baiyongan"
+site_description: "best practice in linux, command-line, bash templates, code snippets, and core fundmental linux concepts"
+
+#================================ Repository =============================================
+repo_name: "practical-linux-skills"
+repo_url: "https://github.com/baiyongan/practical-linux-skills"
+edit_uri: "https://github.com/baiyongan/practical-linux-skills/edit/main/docs"
+
+#================================ Copyright ==============================================
+copyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br> Copyright &copy; 2022 Bai Yongan 
+
+#================================ Theme Configuration ====================================
+docs_dir: "docs"
+theme:
+  name: "material"
+  # custom_dir: "overrides"
+  language: "en"
+  shortcuts:
+    help: 191 # ?
+    next: 78 # n
+    previous: 80 # p
+    search: 83 # s
+  palette:
+  - scheme: default
+    primary: red  
+    accent: lime
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
+  - scheme: slate
+    primary: red
+    accent: lime
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  features:
+    - search.suggest
+    - search.highlight
+    #- navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    # - navigation.expand
+    # - toc.integrate
+    #- content.code.annotate
+  icon:
+    repo: fontawesome/brands/github-alt
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  font:
+  text: 'Ubuntu'
+  code: 'Ubuntu Mono'
+  logo: assets/images/linux.svg
+  favicon: assets/images/favicon.png
+
+#================================ Customization ==========================================
+extra:
+  social:
+    # github personal page
+    - icon: fontawesome/brands/github
+      link: https://github.com/baiyongan
+    # python website
+    - icon: fontawesome/brands/python
+      link: http://106.14.160.45:8080
+    # tiddly wiki
+    - icon: fontawesome/brands/wordpress
+      link: http://106.14.160.45:8081
+    # linux website
+    - icon: fontawesome/brands/linux
+      link: http://106.14.160.45
+    # blog website
+    - icon: fontawesome/brands/bootstrap
+      link: https://baiyongan.github.io
+    # lsf website
+    - icon: fontawesome/brands/buromobelexperte
+      link: https://baiyongan.github.io/lsf-handbook
+    # ic design platform
+    # - icon: fontawesome/brands/buffer
+    #   link: http://106.14.160.45:8090
+
+extra_css:
+  - "assets/css/custom.css"
+  - assets/css/termynal.css
+
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
+  - assets/js/termynal.js
+
+#================================ Extensions =============================================
+markdown_extensions:
+  - toc:
+      # baselevel: 4
+      permalink: true
+      # separator: "_"
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown_include.include:
+      base_path: docs
+  - tables
+  - extra
+  - admonition
+  - codehilite
+  - footnotes
+  - attr_list
+  - md_in_html
+  - mdx_math:
+      enable_dollar_delimiter: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+#================================ Plugins ================================================
+plugins:
+  - markdownextradata:
+      data: data
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+
+#================================ Page tree ==============================================
+#========== Preface =============
+nav:
+- 首页: README.md
+
+#========== Part01 ==============
+- 命令工具:
+  - Overview: part01/contents.md
+  - 草稿: part01/draft.md
+
+#========== Part02 ==============
+- 脚本开发:
+  - Overview: part02/contents.md
+  - 草稿: part02/draft.md
+
+#========== Part03 ==============
+- 性能优化:
+  - Overview: part03/overview.md
+  - 目录: part03/contents.md
+
+  - Start:
+    - 01_如何学习Linux性能优化？: part03/performance_tuning/how_to/01_overview.md
+
+  - CPU 性能 13 讲:
+    - 02_平均负载: part03/performance_tuning/cpu/02_basic.md
+    - 03_上下文切换-上: part03/performance_tuning/cpu/03_basic.md
+    - 04_上下文切换-下: part03/performance_tuning/cpu/04_basic.md
+    - 05_CPU 使用率排查-上: part03/performance_tuning/cpu/05_basic.md
+    - 06_CPU 使用率排查-下: part03/performance_tuning/cpu/06_case.md
+    - 07_处理不可中断进程和僵尸进程-上: part03/performance_tuning/cpu/07_case.md
+    - 08_处理不可中断进程和僵尸进程-下: part03/performance_tuning/cpu/08_case.md
+    - 09_Linux软中断: part03/performance_tuning/cpu/09_basic.md
+    - 10_Linux软中断性能问题: part03/performance_tuning/cpu/10_case.md
+    - 11_如何迅速分析系统CPU的瓶颈: part03/performance_tuning/cpu/11_routine.md
+    - 12_CPU 性能优化的思路: part03/performance_tuning/cpu/12_routine.md
+    - 13_无法模拟出 RES 中断的问题，怎么办？: part03/performance_tuning/cpu/13_QA.md
+    - 14_如何用perf工具分析Java程序？: part03/performance_tuning/cpu/14_QA.md
+
+  - Memory 性能 8 讲:
+    - 15_Linux内存如何工作: part03/performance_tuning/memory/15_basic.md
+    - 16_理解内存中的Buffer和Cache: part03/performance_tuning/memory/16_basic.md
+    - 17_利用系统缓存优化程序的运行效率: part03/performance_tuning/memory/17_case.md
+    - 18_内存泄漏的定位和处理: part03/performance_tuning/memory/18_case.md
+    - 19_分析系统Swap变高原因-上: part03/performance_tuning/memory/19_case.md
+    - 20_分析系统Swap变高原因-下: part03/performance_tuning/memory/20_case.md
+    - 21_“快准狠”定位系统内存的问题: part03/performance_tuning/memory/21_routine.md
+    - 22_文件系统与磁盘的区别: part03/performance_tuning/memory/22_QA.md
+
+  - Disk I/O 性能 10 讲:
+    - 23_Linux文件系统如何工作: part03/performance_tuning/disk_io/23_basic.md
+    - 24_Linux磁盘I/O如何工作-上: part03/performance_tuning/disk_io/24_basic.md
+    - 25_Linux磁盘I/O如何工作-下: part03/performance_tuning/disk_io/25_basic.md
+    - 26_如何找出狂打日志的“内鬼”？: part03/performance_tuning/disk_io/26_case.md
+    - 27_为什么磁盘I/O延迟很高？: part03/performance_tuning/disk_io/27_case.md
+    - 28_分析优化SQL查询时间: part03/performance_tuning/disk_io/28_case.md
+    - 29_解决Redis响应严重延迟: part03/performance_tuning/disk_io/29_case.md
+    - 30_如何迅速分析出系统I/O的瓶颈: part03/performance_tuning/disk_io/30_routine.md
+    - 31_磁盘I/O性能优化的几个思路: part03/performance_tuning/disk_io/31_routine.md
+    - 32_阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系: part03/performance_tuning/disk_io/32_QA.md
+    - 33_书单推荐：性能优化和Linux 系统原理: part03/performance_tuning/disk_io/33_explore.md
+
+  - Network 性能 13 讲:
+    - 34_Linux网络必知-上: part03/performance_tuning/network/34_basic.md
+    - 35_Linux网络必知-下: part03/performance_tuning/network/35_basic.md
+    - 36_C10K 和 C1000K 回顾: part03/performance_tuning/network/36_basic.md
+    - 37_怎么评估系统的网络性能？: part03/performance_tuning/network/37_routine.md
+    - 38_解决DNS 解析时快时慢问题: part03/performance_tuning/network/38_case.md
+    - 39_用 tcpdump 和 Wireshark 分析网络流量: part03/performance_tuning/network/39_case.md
+    - 40_缓解 DDoS 攻击带来的性能下降问题: part03/performance_tuning/network/40_case.md
+    - 41_处理网络请求延迟变大: part03/performance_tuning/network/41_case.md
+    - 42_优化 NAT 性能-上: part03/performance_tuning/network/42_case.md
+    - 43_优化 NAT 性能-下: part03/performance_tuning/network/43_case.md
+    - 44_网络性能优化的几个思路-上: part03/performance_tuning/network/44_routine.md
+    - 45_网络性能优化的几个思路-下: part03/performance_tuning/network/45_routine.md
+    - 46_网络收发过程中的缓冲区位置: part03/performance_tuning/network/46_QA.md
+    - 47_书单推荐：网络原理和 Linux 内核实现: part03/performance_tuning/network/47_explore.md
+
+  - 综合实战 13 讲:  
+    - 48_为什么应用容器化后，启动慢了很多？: part03/performance_tuning/integrate/48_case.md
+    - 49_解决服务器总是时不时丢包的问题-上: part03/performance_tuning/integrate/49_case.md
+    - 50_解决服务器总是时不时丢包的问题-下: part03/performance_tuning/integrate/50_case.md
+    - 51_处理内核线程 CPU 利用率太高: part03/performance_tuning/integrate/51_case.md
+    - 52_如何使用动态追踪-上: part03/performance_tuning/integrate/52_case.md
+    - 53_如何使用动态追踪-下: part03/performance_tuning/integrate/53_case.md
+    - 54_分析处理服务吞吐量下降很厉害的问题: part03/performance_tuning/integrate/54_case.md
+    - 55_系统监控的综合思路: part03/performance_tuning/integrate/55_routine.md
+    - 56_应用监控的一般思路: part03/performance_tuning/integrate/56_routine.md
+    - 57_分析性能问题的一般步骤: part03/performance_tuning/integrate/57_routine.md
+    - 58_优化性能问题的一般方法: part03/performance_tuning/integrate/58_routine.md
+    - 59_Linux 性能工具速查: part03/performance_tuning/integrate/59_routine.md
+    - 60_容器冷启动的性能分析: part03/performance_tuning/integrate/60_QA.md
+
+  - Finish:
+    - 61_结束语 | 愿你攻克性能难关: part03/performance_tuning/how_to/61_end.md
+
+  - Explore:
+    - Linux 性能分析工具整理: part03/performance_tuning/explore/tool.md
+    - Linux 性能分析资源汇总: part03/performance_tuning/explore/resource.md
+
+
+#========== Part04 ==============
+- 操作系统:
+  - Overview: part04/contents.md
+  - 草稿: part04/draft.md
+
+#========== Part05 ==============
+- 系列教程:
+  - Overview: part05/contents.md
+  - 草稿: part05/draft.md
+
+#========== Part06 ==============
+- 实用配置:
+  - Overview: part06/contents.md
+  - 草稿: part06/draft.md
+
+#========== Part07 ==============
+- 实战案例:
+  - Overview: part07/contents.md
+  - 草稿: part07/draft.md
+
+#========== Part08 ==============
+- 参考资料:
+  - Overview: part08/contents.md
+  - 草稿: part08/draft.md
+
+# #========== Part09 ==============
+# - Part09:
+#   - Overview: part09/contents.md
+#   - 草稿: part09/draft.md
+
+# #========== Part10 ==============
+# - Part10:
+#   - Overview: part10/contents.md
+#   - 草稿: part10/draft.md
+
+# #========== Part11 ==============
+# - Part11:
+#   - Overview: part11/contents.md
+#   - 草稿: part11/draft.md
+
+# #========== Part12 ==============
+# - Part12:
+#   - Overview: part12/contents.md
+#   - 草稿: part12/draft.md
+
+# #========== Part13 ==============
+# - Part13:
+#   - Overview: part13/contents.md
+#   - 草稿: part13/draft.md
+
+# #========== Part14 ==============
+# - Part14:
+#   - Overview: part14/contents.md
+#   - 草稿: part14/draft.md
+
+# #========== Part15 ==============
+# - Part15:
+#   - Overview: part15/contents.md
+#   - 草稿: part15/draft.md
+
+#========== Afterword ===========
+- 后记: 
+  - 关于作者: AUTHOR.md
+  - License: LICENSE.md
+  - 变更日志: CHANGELOG.md
+  - 附录: APPENDIX.md
+  - 更新计划: SCHEDULE.md
+  - 格式参考: SETUP.md
+
