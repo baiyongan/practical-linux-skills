@@ -1,0 +1,51 @@
+# -----------------------------------------------------------------------------
+# Node, TypeScript, Python
+# -----------------------------------------------------------------------------
+
+# Dependencies
+/node_modules
+/__pycache__
+/venv
+/.venv
+
+# Build files
+/build
+/MANIFEST
+/site
+
+# Distribution files
+/dist
+/mkdocs_material.egg-info
+
+# Caches and logs
+*.cpuprofile
+*.log
+*.tsbuildinfo
+.cache
+.eslintcache
+__pycache__
+
+# -----------------------------------------------------------------------------
+# General
+# -----------------------------------------------------------------------------
+
+# Never ignore .gitkeep files
+!**/.gitkeep
+
+# Husky hooks
+.husky/.gitignore
+.husky/_
+
+# macOS internals
+.DS_Store
+
+# Temporary files
+TODO
+tmp
+
+# IDEs
+.idea
+
+# Custom
+backup/
+docs/draft/
