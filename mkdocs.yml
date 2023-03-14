@@ -26,13 +26,13 @@ theme:
   palette:
   - scheme: default
     primary: red  
-    accent: lime
+    accent: yellow
     toggle:
       icon: material/weather-sunny
       name: Switch to light mode
   - scheme: slate
     primary: red
-    accent: lime
+    accent: yellow
     toggle:
       icon: material/weather-night
       name: Switch to dark mode
@@ -147,12 +147,12 @@ nav:
 
 #========== Part01 ==============
 - 命令工具:
-  - Overview: part01/contents.md
+  # - Overview: part01/contents.md
   - 草稿: part01/draft.md
 
 #========== Part02 ==============
 - 脚本开发:
-  - Overview: part02/contents.md
+  # - Overview: part02/contents.md
   - 草稿: part02/draft.md
 
 #========== Part03 ==============
@@ -247,33 +247,33 @@ nav:
 
 #========== Part05 ==============
 - 系列教程:
-  - Overview: part05/contents.md
+  # - Overview: part05/contents.md
   - 草稿: part05/draft.md
 
 #========== Part06 ==============
 - 实用配置:
-  - Overview: part06/contents.md
+  # - Overview: part06/contents.md
   - 草稿: part06/draft.md
 
 #========== Part07 ==============
 - 实战案例:
-  - Overview: part07/contents.md
+  # - Overview: part07/contents.md
   - 草稿: part07/draft.md
 
 #========== Part08 ==============
-- 参考资料:
-  - Overview: part08/contents.md
+- 性能测试:
+  # - Overview: part08/contents.md
   - 草稿: part08/draft.md
 
-# #========== Part09 ==============
-# - Part09:
-#   - Overview: part09/contents.md
-#   - 草稿: part09/draft.md
+#========== Part09 ==============
+- 故障排查:
+  # - Overview: part09/contents.md
+  - 草稿: part09/draft.md
 
-# #========== Part10 ==============
-# - Part10:
-#   - Overview: part10/contents.md
-#   - 草稿: part10/draft.md
+#========== Part10 ==============
+- 拓展延伸:
+  # - Overview: part10/contents.md
+  - 草稿: part10/draft.md
 
 # #========== Part11 ==============
 # - Part11:
