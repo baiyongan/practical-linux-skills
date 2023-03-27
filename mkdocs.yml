@@ -387,16 +387,17 @@ nav:
   - 草稿: part11/draft.md
 
 #========== Part12 ==============
-- 拓展延伸:
+- 系列教程:
   # - 概述: part12/overview.md
   # - 目录: part12/contents.md
   - 草稿: part12/draft.md
 
-# #========== Part13 ==============
-# - Part13:
-#   - 概述: part13/overview.md
-#   - 目录: part13/contents.md
-#   - 草稿: part13/draft.md
+#========== Part13 ==============
+- 快捷参考:
+  - 概述: part13/overview.md
+  - 目录: part13/contents.md
+  - 命令行快捷键: part13/shortcut_key.md
+  
 
 # #========== Part14 ==============
 # - Part14:
