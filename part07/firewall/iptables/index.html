@@ -12,21 +12,21 @@
         <meta name="author" content="baiyongan">
       
       
-        <link rel="canonical" href="http://106.14.160.45/part07/draft/">
+        <link rel="canonical" href="http://106.14.160.45/part07/firewall/iptables/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
     
     
       
-        <title>Draft - Practical Linux Skills</title>
+        <title>Linux 防火墙基础 - Practical Linux Skills</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -84,11 +84,11 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../assets/css/termynal.css">
+      <link rel="stylesheet" href="../../../assets/css/termynal.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#draft" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -131,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Practical Linux Skills" class="md-header__button md-logo" aria-label="Practical Linux Skills" data-md-component="logo">
+    <a href="../../.." title="Practical Linux Skills" class="md-header__button md-logo" aria-label="Practical Linux Skills" data-md-component="logo">
       
-  <img src="../../assets/images/linux.svg" alt="logo">
+  <img src="../../../assets/images/linux.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Draft
+              Linux 防火墙基础
             
           </span>
         </div>
@@ -248,7 +248,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       首页
     </a>
   </li>
@@ -263,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part01/draft/" class="md-tabs__link">
+      <a href="../../../part01/draft/" class="md-tabs__link">
         基础概念
       </a>
     </li>
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part02/draft/" class="md-tabs__link">
+      <a href="../../../part02/draft/" class="md-tabs__link">
         命令工具
       </a>
     </li>
@@ -295,7 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part03/draft/" class="md-tabs__link">
+      <a href="../../../part03/draft/" class="md-tabs__link">
         脚本开发
       </a>
     </li>
@@ -311,7 +311,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part04/draft/" class="md-tabs__link">
+      <a href="../../../part04/draft/" class="md-tabs__link">
         数据处理
       </a>
     </li>
@@ -327,7 +327,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part05/overview/" class="md-tabs__link">
+      <a href="../../../part05/overview/" class="md-tabs__link">
         性能优化
       </a>
     </li>
@@ -343,7 +343,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part06/overview/" class="md-tabs__link">
+      <a href="../../../part06/overview/" class="md-tabs__link">
         操作系统
       </a>
     </li>
@@ -353,13 +353,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../overview/" class="md-tabs__link">
+      <a href="../../overview/" class="md-tabs__link md-tabs__link--active">
         系统安全
       </a>
     </li>
@@ -375,7 +377,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part08/draft/" class="md-tabs__link">
+      <a href="../../../part08/draft/" class="md-tabs__link">
         性能测试
       </a>
     </li>
@@ -391,7 +393,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part09/draft/" class="md-tabs__link">
+      <a href="../../../part09/draft/" class="md-tabs__link">
         故障排查
       </a>
     </li>
@@ -407,7 +409,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part10/draft/" class="md-tabs__link">
+      <a href="../../../part10/draft/" class="md-tabs__link">
         实用配置
       </a>
     </li>
@@ -423,7 +425,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part11/draft/" class="md-tabs__link">
+      <a href="../../../part11/draft/" class="md-tabs__link">
         企业实战
       </a>
     </li>
@@ -439,7 +441,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part12/draft/" class="md-tabs__link">
+      <a href="../../../part12/draft/" class="md-tabs__link">
         系列教程
       </a>
     </li>
@@ -455,7 +457,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../part13/overview/" class="md-tabs__link">
+      <a href="../../../part13/overview/" class="md-tabs__link">
         快捷参考
       </a>
     </li>
@@ -471,7 +473,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../AUTHOR/" class="md-tabs__link">
+      <a href="../../../AUTHOR/" class="md-tabs__link">
         后记
       </a>
     </li>
@@ -499,9 +501,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Practical Linux Skills" class="md-nav__button md-logo" aria-label="Practical Linux Skills" data-md-component="logo">
+    <a href="../../.." title="Practical Linux Skills" class="md-nav__button md-logo" aria-label="Practical Linux Skills" data-md-component="logo">
       
-  <img src="../../assets/images/linux.svg" alt="logo">
+  <img src="../../../assets/images/linux.svg" alt="logo">
 
     </a>
     Practical Linux Skills
@@ -529,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         首页
       </a>
     </li>
@@ -570,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part01/draft/" class="md-nav__link">
+      <a href="../../../part01/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -618,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part02/draft/" class="md-nav__link">
+      <a href="../../../part02/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -666,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part03/draft/" class="md-nav__link">
+      <a href="../../../part03/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -714,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part04/draft/" class="md-nav__link">
+      <a href="../../../part04/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -762,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/overview/" class="md-nav__link">
+      <a href="../../../part05/overview/" class="md-nav__link">
         概述
       </a>
     </li>
@@ -776,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/contents/" class="md-nav__link">
+      <a href="../../../part05/contents/" class="md-nav__link">
         目录
       </a>
     </li>
@@ -816,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/how_to/01_overview/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/how_to/01_overview/" class="md-nav__link">
         01_如何学习Linux性能优化？
       </a>
     </li>
@@ -863,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/02_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/02_basic/" class="md-nav__link">
         02_平均负载
       </a>
     </li>
@@ -877,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/03_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/03_basic/" class="md-nav__link">
         03_上下文切换-上
       </a>
     </li>
@@ -891,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/04_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/04_basic/" class="md-nav__link">
         04_上下文切换-下
       </a>
     </li>
@@ -905,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/05_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/05_basic/" class="md-nav__link">
         05_CPU 使用率排查-上
       </a>
     </li>
@@ -919,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/06_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/06_case/" class="md-nav__link">
         06_CPU 使用率排查-下
       </a>
     </li>
@@ -933,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/07_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/07_case/" class="md-nav__link">
         07_处理不可中断进程和僵尸进程-上
       </a>
     </li>
@@ -947,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/08_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/08_case/" class="md-nav__link">
         08_处理不可中断进程和僵尸进程-下
       </a>
     </li>
@@ -961,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/09_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/09_basic/" class="md-nav__link">
         09_Linux软中断
       </a>
     </li>
@@ -975,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/10_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/10_case/" class="md-nav__link">
         10_Linux软中断性能问题
       </a>
     </li>
@@ -989,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/11_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/11_routine/" class="md-nav__link">
         11_如何迅速分析系统CPU的瓶颈
       </a>
     </li>
@@ -1003,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/12_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/12_routine/" class="md-nav__link">
         12_CPU 性能优化的思路
       </a>
     </li>
@@ -1017,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/13_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/13_QA/" class="md-nav__link">
         13_无法模拟出 RES 中断的问题，怎么办？
       </a>
     </li>
@@ -1031,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/cpu/14_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/cpu/14_QA/" class="md-nav__link">
         14_如何用perf工具分析Java程序？
       </a>
     </li>
@@ -1078,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/15_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/15_basic/" class="md-nav__link">
         15_Linux内存如何工作
       </a>
     </li>
@@ -1092,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/16_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/16_basic/" class="md-nav__link">
         16_理解内存中的Buffer和Cache
       </a>
     </li>
@@ -1106,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/17_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/17_case/" class="md-nav__link">
         17_利用系统缓存优化程序的运行效率
       </a>
     </li>
@@ -1120,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/18_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/18_case/" class="md-nav__link">
         18_内存泄漏的定位和处理
       </a>
     </li>
@@ -1134,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/19_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/19_case/" class="md-nav__link">
         19_分析系统Swap变高原因-上
       </a>
     </li>
@@ -1148,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/20_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/20_case/" class="md-nav__link">
         20_分析系统Swap变高原因-下
       </a>
     </li>
@@ -1162,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/21_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/21_routine/" class="md-nav__link">
         21_“快准狠”定位系统内存的问题
       </a>
     </li>
@@ -1176,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/memory/22_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/memory/22_QA/" class="md-nav__link">
         22_文件系统与磁盘的区别
       </a>
     </li>
@@ -1223,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/23_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/23_basic/" class="md-nav__link">
         23_Linux文件系统如何工作
       </a>
     </li>
@@ -1237,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/24_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/24_basic/" class="md-nav__link">
         24_Linux磁盘I/O如何工作-上
       </a>
     </li>
@@ -1251,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/25_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/25_basic/" class="md-nav__link">
         25_Linux磁盘I/O如何工作-下
       </a>
     </li>
@@ -1265,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/26_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/26_case/" class="md-nav__link">
         26_如何找出狂打日志的“内鬼”？
       </a>
     </li>
@@ -1279,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/27_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/27_case/" class="md-nav__link">
         27_为什么磁盘I/O延迟很高？
       </a>
     </li>
@@ -1293,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/28_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/28_case/" class="md-nav__link">
         28_分析优化SQL查询时间
       </a>
     </li>
@@ -1307,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/29_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/29_case/" class="md-nav__link">
         29_解决Redis响应严重延迟
       </a>
     </li>
@@ -1321,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/30_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/30_routine/" class="md-nav__link">
         30_如何迅速分析出系统I/O的瓶颈
       </a>
     </li>
@@ -1335,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/31_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/31_routine/" class="md-nav__link">
         31_磁盘I/O性能优化的几个思路
       </a>
     </li>
@@ -1349,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/32_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/32_QA/" class="md-nav__link">
         32_阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系
       </a>
     </li>
@@ -1363,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/disk_io/33_explore/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/disk_io/33_explore/" class="md-nav__link">
         33_书单推荐：性能优化和Linux 系统原理
       </a>
     </li>
@@ -1410,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/34_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/34_basic/" class="md-nav__link">
         34_Linux网络必知-上
       </a>
     </li>
@@ -1424,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/35_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/35_basic/" class="md-nav__link">
         35_Linux网络必知-下
       </a>
     </li>
@@ -1438,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/36_basic/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/36_basic/" class="md-nav__link">
         36_C10K 和 C1000K 回顾
       </a>
     </li>
@@ -1452,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/37_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/37_routine/" class="md-nav__link">
         37_怎么评估系统的网络性能？
       </a>
     </li>
@@ -1466,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/38_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/38_case/" class="md-nav__link">
         38_解决DNS 解析时快时慢问题
       </a>
     </li>
@@ -1480,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/39_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/39_case/" class="md-nav__link">
         39_用 tcpdump 和 Wireshark 分析网络流量
       </a>
     </li>
@@ -1494,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/40_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/40_case/" class="md-nav__link">
         40_缓解 DDoS 攻击带来的性能下降问题
       </a>
     </li>
@@ -1508,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/41_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/41_case/" class="md-nav__link">
         41_处理网络请求延迟变大
       </a>
     </li>
@@ -1522,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/42_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/42_case/" class="md-nav__link">
         42_优化 NAT 性能-上
       </a>
     </li>
@@ -1536,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/43_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/43_case/" class="md-nav__link">
         43_优化 NAT 性能-下
       </a>
     </li>
@@ -1550,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/44_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/44_routine/" class="md-nav__link">
         44_网络性能优化的几个思路-上
       </a>
     </li>
@@ -1564,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/45_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/45_routine/" class="md-nav__link">
         45_网络性能优化的几个思路-下
       </a>
     </li>
@@ -1578,7 +1580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/46_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/46_QA/" class="md-nav__link">
         46_网络收发过程中的缓冲区位置
       </a>
     </li>
@@ -1592,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/network/47_explore/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/network/47_explore/" class="md-nav__link">
         47_书单推荐：网络原理和 Linux 内核实现
       </a>
     </li>
@@ -1639,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/48_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/48_case/" class="md-nav__link">
         48_为什么应用容器化后，启动慢了很多？
       </a>
     </li>
@@ -1653,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/49_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/49_case/" class="md-nav__link">
         49_解决服务器总是时不时丢包的问题-上
       </a>
     </li>
@@ -1667,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/50_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/50_case/" class="md-nav__link">
         50_解决服务器总是时不时丢包的问题-下
       </a>
     </li>
@@ -1681,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/51_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/51_case/" class="md-nav__link">
         51_处理内核线程 CPU 利用率太高
       </a>
     </li>
@@ -1695,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/52_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/52_case/" class="md-nav__link">
         52_如何使用动态追踪-上
       </a>
     </li>
@@ -1709,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/53_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/53_case/" class="md-nav__link">
         53_如何使用动态追踪-下
       </a>
     </li>
@@ -1723,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/54_case/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/54_case/" class="md-nav__link">
         54_分析处理服务吞吐量下降很厉害的问题
       </a>
     </li>
@@ -1737,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/55_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/55_routine/" class="md-nav__link">
         55_系统监控的综合思路
       </a>
     </li>
@@ -1751,7 +1753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/56_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/56_routine/" class="md-nav__link">
         56_应用监控的一般思路
       </a>
     </li>
@@ -1765,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/57_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/57_routine/" class="md-nav__link">
         57_分析性能问题的一般步骤
       </a>
     </li>
@@ -1779,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/58_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/58_routine/" class="md-nav__link">
         58_优化性能问题的一般方法
       </a>
     </li>
@@ -1793,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/59_routine/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/59_routine/" class="md-nav__link">
         59_Linux 性能工具速查
       </a>
     </li>
@@ -1807,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/integrate/60_QA/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/integrate/60_QA/" class="md-nav__link">
         60_容器冷启动的性能分析
       </a>
     </li>
@@ -1854,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/how_to/61_end/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/how_to/61_end/" class="md-nav__link">
         61_结束语 | 愿你攻克性能难关
       </a>
     </li>
@@ -1901,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/explore/tool/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/explore/tool/" class="md-nav__link">
         Linux 性能分析工具整理
       </a>
     </li>
@@ -1915,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part05/performance_tuning/explore/resource/" class="md-nav__link">
+      <a href="../../../part05/performance_tuning/explore/resource/" class="md-nav__link">
         Linux 性能分析资源汇总
       </a>
     </li>
@@ -1970,7 +1972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/overview/" class="md-nav__link">
+      <a href="../../../part06/overview/" class="md-nav__link">
         概述
       </a>
     </li>
@@ -1984,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/contents/" class="md-nav__link">
+      <a href="../../../part06/contents/" class="md-nav__link">
         目录
       </a>
     </li>
@@ -2024,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section00/article00/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section00/article00/" class="md-nav__link">
         为什么要学习Linux操作系统？
       </a>
     </li>
@@ -2038,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section00/article01/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section00/article01/" class="md-nav__link">
         01 | 入学测验：Linux操作系统了解程度？
       </a>
     </li>
@@ -2052,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section00/article02/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section00/article02/" class="md-nav__link">
         02 | 学习路径：Linux 学习的六个阶段
       </a>
     </li>
@@ -2099,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section01/article03/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section01/article03/" class="md-nav__link">
         03 | 把Linux内核当成一家软件外包公司的老板
       </a>
     </li>
@@ -2113,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section01/article04/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section01/article04/" class="md-nav__link">
         04 | 几个Linux命令：每家公司都有自己的黑话
       </a>
     </li>
@@ -2127,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section01/article05/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section01/article05/" class="md-nav__link">
         05 | 几个系统调用：公司能接哪些类型的项目？
       </a>
     </li>
@@ -2174,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section02/article06/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section02/article06/" class="md-nav__link">
         06 | x86架构：有了开放的架构，才能打造开放的营商环境
       </a>
     </li>
@@ -2188,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section02/article07/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section02/article07/" class="md-nav__link">
         07 | 从BIOS到bootloader：创业伊始，有活儿老板自己上
       </a>
     </li>
@@ -2202,7 +2204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section02/article08/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section02/article08/" class="md-nav__link">
         08 | 内核初始化：生意做大了就得成立公司
       </a>
     </li>
@@ -2216,7 +2218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section02/article09/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section02/article09/" class="md-nav__link">
         09 | 系统调用：公司成立好了就要开始接项目
       </a>
     </li>
@@ -2263,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article10/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article10/" class="md-nav__link">
         10 | 进程：公司接这么多项目，如何管？
       </a>
     </li>
@@ -2277,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article11/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article11/" class="md-nav__link">
         11 | 线程：如何让复杂的项目并行执行？
       </a>
     </li>
@@ -2291,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article12/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article12/" class="md-nav__link">
         12 | 进程数据结构（上）：项目多了就需要项目管理系统
       </a>
     </li>
@@ -2305,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article13/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article13/" class="md-nav__link">
         13 | 进程数据结构（中）：项目多了就需要项目管理系统
       </a>
     </li>
@@ -2319,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article14/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article14/" class="md-nav__link">
         14 | 进程数据结构（下）：项目多了就需要项目管理系统
       </a>
     </li>
@@ -2333,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article15/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article15/" class="md-nav__link">
         15 | 调度（上）：如何制定项目管理流程？
       </a>
     </li>
@@ -2347,7 +2349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article16/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article16/" class="md-nav__link">
         16 | 调度（中）：主动调度是如何发生的？
       </a>
     </li>
@@ -2361,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article17/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article17/" class="md-nav__link">
         17 | 调度（下）：抢占式调度是如何发生的？
       </a>
     </li>
@@ -2375,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article18/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article18/" class="md-nav__link">
         18 | 进程的创建：如何发起一个新项目？
       </a>
     </li>
@@ -2389,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section03/article19/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section03/article19/" class="md-nav__link">
         19 | 线程的创建：如何执行一个新子项目？
       </a>
     </li>
@@ -2436,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article20/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article20/" class="md-nav__link">
         20 | 内存管理（上）：为客户保密，规划进程内存空间布局
       </a>
     </li>
@@ -2450,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article21/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article21/" class="md-nav__link">
         21 | 内存管理（下）：为客户保密，项目组独享会议室封闭开发
       </a>
     </li>
@@ -2464,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article22/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article22/" class="md-nav__link">
         22 | 进程空间管理：项目组还可以自行布置会议室
       </a>
     </li>
@@ -2478,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article23/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article23/" class="md-nav__link">
         23 | 物理内存管理（上）：会议室管理员如何分配会议室？
       </a>
     </li>
@@ -2492,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article24/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article24/" class="md-nav__link">
         24 | 物理内存管理（下）：会议室管理员如何分配会议室？
       </a>
     </li>
@@ -2506,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article25/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article25/" class="md-nav__link">
         25 | 用户态内存映射：如何找到正确的会议室？
       </a>
     </li>
@@ -2520,7 +2522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section04/article26/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section04/article26/" class="md-nav__link">
         26 | 内核态内存映射：如何找到正确的会议室？
       </a>
     </li>
@@ -2567,7 +2569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section05/article27/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section05/article27/" class="md-nav__link">
         27 | 文件系统：项目成果要归档，我们就需要档案库
       </a>
     </li>
@@ -2581,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section05/article28/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section05/article28/" class="md-nav__link">
         28 | 硬盘文件系统：如何最合理地组织档案库的文档？
       </a>
     </li>
@@ -2595,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section05/article29/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section05/article29/" class="md-nav__link">
         29 | 虚拟文件系统：文件多了就需要档案管理系统
       </a>
     </li>
@@ -2609,7 +2611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section05/article30/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section05/article30/" class="md-nav__link">
         30 | 文件缓存：常用文档应该放在触手可得的地方
       </a>
     </li>
@@ -2656,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section06/article31/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section06/article31/" class="md-nav__link">
         31 | 输入与输出：如何建立售前售后生态体系？
       </a>
     </li>
@@ -2670,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section06/article32/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section06/article32/" class="md-nav__link">
         32 | 字符设备（上）：如何建立直销模式？
       </a>
     </li>
@@ -2684,7 +2686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section06/article33/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section06/article33/" class="md-nav__link">
         33 | 字符设备（下）：如何建立直销模式？
       </a>
     </li>
@@ -2698,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section06/article34/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section06/article34/" class="md-nav__link">
         34 | 块设备（上）：如何建立代理商销售模式？
       </a>
     </li>
@@ -2712,7 +2714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section06/article35/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section06/article35/" class="md-nav__link">
         35 | 块设备（下）：如何建立代理商销售模式？
       </a>
     </li>
@@ -2759,7 +2761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article36/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article36/" class="md-nav__link">
         36 | 进程间通信：遇到大项目需要项目组之间的合作才行
       </a>
     </li>
@@ -2773,7 +2775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article37/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article37/" class="md-nav__link">
         37 | 信号（上）：项目组A完成了，如何及时通知项目组B？
       </a>
     </li>
@@ -2787,7 +2789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article38/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article38/" class="md-nav__link">
         38 | 信号（下）：项目组A完成了，如何及时通知项目组B？
       </a>
     </li>
@@ -2801,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article39/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article39/" class="md-nav__link">
         39 | 管道：项目组A完成了，如何交接给项目组B？
       </a>
     </li>
@@ -2815,7 +2817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article40/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article40/" class="md-nav__link">
         40 | IPC（上）：不同项目组之间抢资源，如何协调？
       </a>
     </li>
@@ -2829,7 +2831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article41/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article41/" class="md-nav__link">
         41 | IPC（中）：不同项目组之间抢资源，如何协调？
       </a>
     </li>
@@ -2843,7 +2845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section07/article42/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section07/article42/" class="md-nav__link">
         42 | IPC（下）：不同项目组之间抢资源，如何协调？
       </a>
     </li>
@@ -2890,7 +2892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article43/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article43/" class="md-nav__link">
         43 | Socket通信：遇上特大项目，要学会和其他公司合作
       </a>
     </li>
@@ -2904,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article44/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article44/" class="md-nav__link">
         44 | Socket内核数据结构：如何成立特大项目合作部？
       </a>
     </li>
@@ -2918,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article45/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article45/" class="md-nav__link">
         45 | 发送网络包（上）：如何表达我们想让合作伙伴做什么？
       </a>
     </li>
@@ -2932,7 +2934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article46/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article46/" class="md-nav__link">
         46 | 发送网络包（下）：如何表达我们想让合作伙伴做什么？
       </a>
     </li>
@@ -2946,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article47/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article47/" class="md-nav__link">
         47 | 接收网络包（上）：如何搞明白合作伙伴让我们做什么？
       </a>
     </li>
@@ -2960,7 +2962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section08/article48/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section08/article48/" class="md-nav__link">
         48 | 接收网络包（下）：如何搞明白合作伙伴让我们做什么？
       </a>
     </li>
@@ -3007,7 +3009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article49/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article49/" class="md-nav__link">
         49 | 虚拟机：如何成立子公司，让公司变集团？
       </a>
     </li>
@@ -3021,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article50/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article50/" class="md-nav__link">
         50 | 计算虚拟化之CPU（上）：如何复用集团的人力资源？
       </a>
     </li>
@@ -3035,7 +3037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article51/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article51/" class="md-nav__link">
         51 | 计算虚拟化之CPU（下）：如何复用集团的人力资源？
       </a>
     </li>
@@ -3049,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article52/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article52/" class="md-nav__link">
         52 | 计算虚拟化之内存：如何建立独立的办公室？
       </a>
     </li>
@@ -3063,7 +3065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article53/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article53/" class="md-nav__link">
         53 | 存储虚拟化（上）：如何建立自己保管的单独档案库？
       </a>
     </li>
@@ -3077,7 +3079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article54/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article54/" class="md-nav__link">
         54 | 存储虚拟化（下）：如何建立自己保管的单独档案库？
       </a>
     </li>
@@ -3091,7 +3093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section09/article55/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section09/article55/" class="md-nav__link">
         55 | 网络虚拟化：如何成立独立的合作部？
       </a>
     </li>
@@ -3138,7 +3140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section10/article56/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section10/article56/" class="md-nav__link">
         56 | 容器：大公司为保持创新，鼓励内部创业
       </a>
     </li>
@@ -3152,7 +3154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section10/article57/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section10/article57/" class="md-nav__link">
         57 | Namespace技术：内部创业公司应该独立运营
       </a>
     </li>
@@ -3166,7 +3168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section10/article58/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section10/article58/" class="md-nav__link">
         58 | cgroup技术：内部创业公司应该独立核算成本
       </a>
     </li>
@@ -3180,7 +3182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section10/article59/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section10/article59/" class="md-nav__link">
         59 | 数据中心操作系统：上市敲钟
       </a>
     </li>
@@ -3227,7 +3229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article60/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article60/" class="md-nav__link">
         60 | 搭建操作系统实验环境（上）：授人以鱼不如授人以渔
       </a>
     </li>
@@ -3241,7 +3243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article61/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article61/" class="md-nav__link">
         61 | 搭建操作系统实验环境（下）：授人以鱼不如授人以渔
       </a>
     </li>
@@ -3255,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article62/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article62/" class="md-nav__link">
         62 | 知识串讲：用一个创业故事串起操作系统原理（一）
       </a>
     </li>
@@ -3269,7 +3271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article63/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article63/" class="md-nav__link">
         63 | 知识串讲：用一个创业故事串起操作系统原理（二）
       </a>
     </li>
@@ -3283,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article64/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article64/" class="md-nav__link">
         64 | 知识串讲：用一个创业故事串起操作系统原理（三）
       </a>
     </li>
@@ -3297,7 +3299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article65/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article65/" class="md-nav__link">
         65 | 知识串讲：用一个创业故事串起操作系统原理（四）
       </a>
     </li>
@@ -3311,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article66/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article66/" class="md-nav__link">
         66 | 知识串讲：用一个创业故事串起操作系统原理（五）
       </a>
     </li>
@@ -3325,7 +3327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article67/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article67/" class="md-nav__link">
         67 期末测试 | 这些操作系统问题，你真的掌握了吗？
       </a>
     </li>
@@ -3339,7 +3341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part06/linux_operating_system/section11/article68/" class="md-nav__link">
+      <a href="../../../part06/linux_operating_system/section11/article68/" class="md-nav__link">
         68 结束语 | 永远别轻视任何技术，也永远别轻视自己
       </a>
     </li>
@@ -3366,12 +3368,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -3394,7 +3398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         概述
       </a>
     </li>
@@ -3408,7 +3412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contents/" class="md-nav__link">
+      <a href="../../contents/" class="md-nav__link">
         目录
       </a>
     </li>
@@ -3420,9 +3424,94 @@
               
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          网络安全
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="网络安全" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          网络安全
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Linux 防火墙基础
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_4">
+          权限控制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="权限控制" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          权限控制
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../permission_control/sudo/" class="md-nav__link">
+      <a href="../../permission_control/sudo/" class="md-nav__link">
         sudo 配置文件 /etc/sudoers
       </a>
     </li>
@@ -3436,7 +3525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permission_control/case/" class="md-nav__link">
+      <a href="../../permission_control/case/" class="md-nav__link">
         企业环境中用户权限集中管理项目案例
       </a>
     </li>
@@ -3450,7 +3539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permission_control/sudo_log/" class="md-nav__link">
+      <a href="../../permission_control/sudo_log/" class="md-nav__link">
         记录所有用户执行 sudo 命令的操作日志
       </a>
     </li>
@@ -3464,9 +3553,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../permission_control/reference/" class="md-nav__link">
+      <a href="../../permission_control/reference/" class="md-nav__link">
         用户权限授权规划表格参考
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3512,7 +3608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part08/draft/" class="md-nav__link">
+      <a href="../../../part08/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -3560,7 +3656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part09/draft/" class="md-nav__link">
+      <a href="../../../part09/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -3608,7 +3704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part10/draft/" class="md-nav__link">
+      <a href="../../../part10/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -3656,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part11/draft/" class="md-nav__link">
+      <a href="../../../part11/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -3704,7 +3800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part12/draft/" class="md-nav__link">
+      <a href="../../../part12/draft/" class="md-nav__link">
         草稿
       </a>
     </li>
@@ -3752,7 +3848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part13/overview/" class="md-nav__link">
+      <a href="../../../part13/overview/" class="md-nav__link">
         概述
       </a>
     </li>
@@ -3766,7 +3862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part13/contents/" class="md-nav__link">
+      <a href="../../../part13/contents/" class="md-nav__link">
         目录
       </a>
     </li>
@@ -3780,7 +3876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../part13/shortcut_key/" class="md-nav__link">
+      <a href="../../../part13/shortcut_key/" class="md-nav__link">
         命令行快捷键
       </a>
     </li>
@@ -3828,7 +3924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AUTHOR/" class="md-nav__link">
+      <a href="../../../AUTHOR/" class="md-nav__link">
         关于作者
       </a>
     </li>
@@ -3842,7 +3938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LICENSE/" class="md-nav__link">
+      <a href="../../../LICENSE/" class="md-nav__link">
         License
       </a>
     </li>
@@ -3856,7 +3952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CHANGELOG/" class="md-nav__link">
+      <a href="../../../CHANGELOG/" class="md-nav__link">
         变更日志
       </a>
     </li>
@@ -3870,7 +3966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../APPENDIX/" class="md-nav__link">
+      <a href="../../../APPENDIX/" class="md-nav__link">
         附录
       </a>
     </li>
@@ -3884,7 +3980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SCHEDULE/" class="md-nav__link">
+      <a href="../../../SCHEDULE/" class="md-nav__link">
         更新计划
       </a>
     </li>
@@ -3898,7 +3994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SETUP/" class="md-nav__link">
+      <a href="../../../SETUP/" class="md-nav__link">
         格式参考
       </a>
     </li>
@@ -3944,13 +4040,13 @@
                 
                   
 
-  <a href="https://github.com/baiyongan/practical-linux-skills/edit/main/docs/part07/draft.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/baiyongan/practical-linux-skills/edit/main/docs/part07/firewall/iptables.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="draft">Draft<a class="headerlink" href="#draft" title="Permanent link">&para;</a></h1>
+<h1 id="_1">防火墙<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 
 
 
@@ -3971,6 +4067,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../contents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 目录" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              目录
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../permission_control/sudo/" class="md-footer__link md-footer__link--next" aria-label="Next: sudo 配置文件 /etc/sudoers" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              sudo 配置文件 /etc/sudoers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4055,14 +4187,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../assets/js/termynal.js"></script>
+        <script src="../../../assets/js/termynal.js"></script>
       
     
   </body>
