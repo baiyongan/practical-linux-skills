@@ -2,28 +2,28 @@
 
 ## Start
 
-- [ ] [01_如何学习Linux性能优化？](performance_tuning/how_to/01_overview.md)
+- [x] [01_如何学习Linux性能优化？](performance_tuning/how_to/01_overview.md)
 
 ## CPU 性能 13讲
 
-- [ ] [02_平均负载](performance_tuning/cpu/02_basic.md)
-- [ ] [03_上下文切换-上](performance_tuning/cpu/03_basic.md)
-- [ ] [04_上下文切换-下](performance_tuning/cpu/04_basic.md)
-- [ ] [05_CPU 使用率排查-上](performance_tuning/cpu/05_basic.md)
+- [x] [02_平均负载](performance_tuning/cpu/02_basic.md)
+- [x] [03_上下文切换-上](performance_tuning/cpu/03_basic.md)
+- [x] [04_上下文切换-下](performance_tuning/cpu/04_basic.md)
+- [x] [05_CPU 使用率排查-上](performance_tuning/cpu/05_basic.md)
 - [ ] [06_CPU 使用率排查-下](performance_tuning/cpu/06_case.md)
 - [ ] [07_处理不可中断进程和僵尸进程-上](performance_tuning/cpu/07_case.md)
 - [ ] [08_处理不可中断进程和僵尸进程-下](performance_tuning/cpu/08_case.md)
 - [ ] [09_Linux软中断](performance_tuning/cpu/09_basic.md)
 - [ ] [10_Linux软中断性能问题](performance_tuning/cpu/10_case.md)
-- [ ] [11_如何迅速分析系统CPU的瓶颈](performance_tuning/cpu/11_routine.md)
-- [ ] [12_CPU 性能优化的思路](performance_tuning/cpu/12_routine.md)
+- [x] [11_如何迅速分析系统 CPU 的瓶颈](performance_tuning/cpu/11_routine.md)
+- [x] [12_CPU 性能优化的思路](performance_tuning/cpu/12_routine.md)
 - [ ] [13_无法模拟出 RES 中断的问题，怎么办？](performance_tuning/cpu/13_QA.md)
-- [ ] [14_如何用perf工具分析Java程序？](performance_tuning/cpu/14_QA.md)
+- [ ] [14_如何用 perf 工具分析 Java 程序？](performance_tuning/cpu/14_QA.md)
 
 ## Memory 性能 8讲
 
-- [ ] [15_Linux内存如何工作](performance_tuning/memory/15_basic.md)
-- [ ] [16_理解内存中的Buffer和Cache](performance_tuning/memory/16_basic.md)
+- [x] [15_Linux内存如何工作](performance_tuning/memory/15_basic.md)
+- [x] [16_理解内存中的Buffer和Cache](performance_tuning/memory/16_basic.md)
 - [ ] [17_利用系统缓存优化程序的运行效率](performance_tuning/memory/17_case.md)
 - [ ] [18_内存泄漏的定位和处理](performance_tuning/memory/18_case.md)
 - [ ] [19_分析系统Swap变高原因-上](performance_tuning/memory/19_case.md)
@@ -75,7 +75,7 @@
 - [ ] [56_应用监控的一般思路](performance_tuning/integrate/56_routine.md)
 - [ ] [57_分析性能问题的一般步骤](performance_tuning/integrate/57_routine.md)
 - [ ] [58_优化性能问题的一般方法](performance_tuning/integrate/58_routine.md)
-- [ ] [59_Linux 性能工具速查](performance_tuning/integrate/59_routine.md)
+- [x] [59_Linux 性能工具速查](performance_tuning/integrate/59_routine.md)
 - [ ] [60_容器冷启动的性能分析](performance_tuning/integrate/60_QA.md)
 
 ## Finish

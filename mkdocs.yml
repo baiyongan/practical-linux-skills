@@ -357,10 +357,13 @@ nav:
 - 系统安全:
   - 概述: part07/overview.md
   - 目录: part07/contents.md
-  - sudo 配置文件 /etc/sudoers: part07/permission_control/sudo.md
-  - 企业环境中用户权限集中管理项目案例: part07/permission_control/case.md
-  - 记录所有用户执行 sudo 命令的操作日志: part07/permission_control/sudo_log.md
-  - 用户权限授权规划表格参考: part07/permission_control/reference.md
+  - 网络安全:
+    - Linux 防火墙基础: part07/firewall/iptables.md
+  - 权限控制:
+    - sudo 配置文件 /etc/sudoers: part07/permission_control/sudo.md
+    - 企业环境中用户权限集中管理项目案例: part07/permission_control/case.md
+    - 记录所有用户执行 sudo 命令的操作日志: part07/permission_control/sudo_log.md
+    - 用户权限授权规划表格参考: part07/permission_control/reference.md
 
 #========== Part08 ==============
 - 性能测试:
@@ -397,7 +400,7 @@ nav:
   - 概述: part13/overview.md
   - 目录: part13/contents.md
   - 命令行快捷键: part13/shortcut_key.md
-  
+
 
 # #========== Part14 ==============
 # - Part14:
