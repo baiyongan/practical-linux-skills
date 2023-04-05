@@ -1752,9 +1752,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          55_系统监控的综合思路
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         55_系统监控的综合思路
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    USE 法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4028,6 +4059,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use" class="md-nav__link">
+    USE 法
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4047,6 +4093,23 @@
 
 
 <h1 id="_1">套路篇：系统监控的综合思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>在实际的性能分析中，性能问题总是时不时地发生，但同时却很难找出发生规律，也很难重现。</p>
+</div>
+<p>很多时候，都是等用户抱怨响应慢了，或者系统崩溃了以后，才发现系统或者应用程序的性能出现了问题，这种严重影响用户体验的方式，是不可取的。</p>
+<p>而解决这个问题，就需要搭建监控系统，把系统和应用程序的运行状况监控起来，并定义一系列的策略，在发生问题时第一时间告警通知。</p>
+<p>要做好监控，最核心的就是全面的、可量化的指标，这包括系统和应用两个方面。</p>
+<p>系统层面：需要涵盖系统的整体资源使用情况，如 CPU、内存、磁盘、文件系统和网络等各种系统资源。</p>
+<p>应用程序层面：要涵盖应用程序内部的运行状态，既包括进程的 CPU、磁盘 I/O 等整体运行状况，更需要包括诸如接口调用耗时、执行过程中的错误、内部对象的内存使用等应用程序内部的运行状况。</p>
+<h2 id="use">USE 法<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USE （Utilization Saturation &amp; Errors）法是一种专门用于性能监控的方法，它把系统资源的性能指标，简化成了三个类别，即使用率、饱和度、错误数。</p>
+</div>
+<ul>
+<li>使用率</li>
+</ul>
 
 
 
