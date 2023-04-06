@@ -31,7 +31,7 @@
 - [ ] [21_“快准狠”定位系统内存的问题](performance_tuning/memory/21_routine.md)
 - [ ] [22_文件系统与磁盘的区别](performance_tuning/memory/22_QA.md)
 
-## Disk I/O 性能 10讲 
+## Disk I/O 性能 10讲
 
 - [ ] [23_Linux文件系统如何工作](performance_tuning/disk_io/23_basic.md)
 - [ ] [24_Linux磁盘I/O如何工作-上](performance_tuning/disk_io/24_basic.md)
@@ -62,7 +62,7 @@
 - [ ] [46_网络收发过程中的缓冲区位置](performance_tuning/network/46_QA.md)
 - [ ] [47_书单推荐：网络原理和 Linux 内核实现](performance_tuning/network/47_explore.md)
 
-## 综合实战 13讲 
+## 综合实战 13讲
 
 - [ ] [48_为什么应用容器化后，启动慢了很多？](performance_tuning/integrate/48_case.md)
 - [ ] [49_解决服务器总是时不时丢包的问题-上](performance_tuning/integrate/49_case.md)
@@ -71,20 +71,18 @@
 - [ ] [52_如何使用动态追踪-上](performance_tuning/integrate/52_case.md)
 - [ ] [53_如何使用动态追踪-下](performance_tuning/integrate/53_case.md)
 - [ ] [54_分析处理服务吞吐量下降很厉害的问题](performance_tuning/integrate/54_case.md)
-- [ ] [55_系统监控的综合思路](performance_tuning/integrate/55_routine.md)
-- [ ] [56_应用监控的一般思路](performance_tuning/integrate/56_routine.md)
-- [ ] [57_分析性能问题的一般步骤](performance_tuning/integrate/57_routine.md)
-- [ ] [58_优化性能问题的一般方法](performance_tuning/integrate/58_routine.md)
+- [x] [55_系统监控的综合思路](performance_tuning/integrate/55_routine.md)
+- [x] [56_应用监控的一般思路](performance_tuning/integrate/56_routine.md)
+- [x] [57_分析性能问题的一般步骤](performance_tuning/integrate/57_routine.md)
+- [x] [58_优化性能问题的一般方法](performance_tuning/integrate/58_routine.md)
 - [x] [59_Linux 性能工具速查](performance_tuning/integrate/59_routine.md)
 - [ ] [60_容器冷启动的性能分析](performance_tuning/integrate/60_QA.md)
 
 ## Finish
 
-- [ ] [61_结束语 | 愿你攻克性能难关](performance_tuning/how_to/61_end.md)
+- [x] [61_结束语 | 愿你攻克性能难关](performance_tuning/how_to/61_end.md)
 
 ## Explore
 
 - [ ] [Linux 性能分析工具整理](performance_tuning/explore/tool.md)
 - [ ] [Linux 性能分析资源汇总](performance_tuning/explore/resource.md)
-
-
