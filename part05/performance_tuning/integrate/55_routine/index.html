@@ -1781,6 +1781,33 @@
     USE 法
   </a>
   
+    <nav class="md-nav" aria-label="USE 法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use_1" class="md-nav__link">
+    常见指标分类（USE 法）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    监控系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    小结
+  </a>
+  
 </li>
       
     </ul>
@@ -4070,6 +4097,33 @@
     USE 法
   </a>
   
+    <nav class="md-nav" aria-label="USE 法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use_1" class="md-nav__link">
+    常见指标分类（USE 法）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    监控系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    小结
+  </a>
+  
 </li>
       
     </ul>
@@ -4106,10 +4160,128 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>USE （Utilization Saturation &amp; Errors）法是一种专门用于性能监控的方法，它把系统资源的性能指标，简化成了三个类别，即使用率、饱和度、错误数。</p>
+<p>这三类指标，涵盖了系统资源的常见性能瓶颈，常被用来快速定位系统资源的性能瓶颈。</p>
 </div>
 <ul>
-<li>使用率</li>
+<li>
+<p><strong>使用率</strong>：表示资源用于服务的时间或容量百分比。100% 的使用率，表示容量已经用尽或者全部时间都用于服务。</p>
+</li>
+<li>
+<p><strong>饱和度</strong>：表示资源的繁忙程度，通常与等待队列的长度相关。100% 的饱和度，表示资源无法接受更多的请求。</p>
+</li>
+<li>
+<p><strong>错误数</strong>：表示发生错误的事件个数。错误数越多，表明系统的问题越严重。</p>
+</li>
 </ul>
+<h3 id="use_1">常见指标分类（USE 法）<a class="headerlink" href="#use_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>类型</th>
+<th>性能指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>使用率</td>
+<td>CPU 使用率</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>饱和度</td>
+<td>运行队列长度或平均负载</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>错误数</td>
+<td>硬件 CPU 错误数</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>使用率</td>
+<td>已用内存百分比或 SWAP 用量百分比</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>饱和度</td>
+<td>内存换页量</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>错误数</td>
+<td>内存分配失败或 OOM</td>
+</tr>
+<tr>
+<td>存储设备 I/O</td>
+<td>使用率</td>
+<td>设备 I/O 时间百分比</td>
+</tr>
+<tr>
+<td>存储设备 I/O</td>
+<td>饱和度</td>
+<td>等待队列长度或延迟</td>
+</tr>
+<tr>
+<td>存储设备 I/O</td>
+<td>错误数</td>
+<td>I/O 错误数</td>
+</tr>
+<tr>
+<td>文件系统</td>
+<td>使用率</td>
+<td>已用容量百分比</td>
+</tr>
+<tr>
+<td>文件系统</td>
+<td>饱和度</td>
+<td>已用容量百分比</td>
+</tr>
+<tr>
+<td>文件系统</td>
+<td>错误数</td>
+<td>文件读写错误数</td>
+</tr>
+<tr>
+<td>网格</td>
+<td>使用率</td>
+<td>带宽使用率</td>
+</tr>
+<tr>
+<td>网格</td>
+<td>饱和度</td>
+<td>重传报文数</td>
+</tr>
+<tr>
+<td>网格</td>
+<td>错误数</td>
+<td>网卡收发错误数、丢包数</td>
+</tr>
+<tr>
+<td>文件描述符</td>
+<td>使用率</td>
+<td>已用文件描述符数百分比</td>
+</tr>
+<tr>
+<td>连接跟踪</td>
+<td>使用率</td>
+<td>已用连接跟踪数百分比</td>
+</tr>
+<tr>
+<td>连接数</td>
+<td>饱和度</td>
+<td>TIMEWAIT 状态连接数</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>USE 方法只关注能体现系统资源性能瓶颈的核心指标，但并不是说，其他指标不重要。</p>
+<p>诸如系统日志、进程资源使用量、缓存使用量等其他各类指标，也都需要我们监控起来，只不过是通常用作辅助性能分析。</p>
+</div>
+<h2 id="_2">监控系统<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">小结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 
 
 
