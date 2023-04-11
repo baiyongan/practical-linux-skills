@@ -175,79 +175,79 @@ nav:
   - 目录: part05/contents.md
 
   - Start:
-    - 01_如何学习Linux性能优化？: part05/performance_tuning/how_to/01_overview.md
+    - 01 | 如何学习Linux性能优化？: part05/performance_tuning/how_to/01_overview.md
 
   - CPU 性能 13 讲:
-    - 02_平均负载: part05/performance_tuning/cpu/02_basic.md
-    - 03_上下文切换-上: part05/performance_tuning/cpu/03_basic.md
-    - 04_上下文切换-下: part05/performance_tuning/cpu/04_basic.md
-    - 05_CPU 使用率排查-上: part05/performance_tuning/cpu/05_basic.md
-    - 06_CPU 使用率排查-下: part05/performance_tuning/cpu/06_case.md
-    - 07_处理不可中断进程和僵尸进程-上: part05/performance_tuning/cpu/07_case.md
-    - 08_处理不可中断进程和僵尸进程-下: part05/performance_tuning/cpu/08_case.md
-    - 09_Linux软中断: part05/performance_tuning/cpu/09_basic.md
-    - 10_Linux软中断性能问题: part05/performance_tuning/cpu/10_case.md
-    - 11_如何迅速分析系统CPU的瓶颈: part05/performance_tuning/cpu/11_routine.md
-    - 12_CPU 性能优化的思路: part05/performance_tuning/cpu/12_routine.md
-    - 13_无法模拟出 RES 中断的问题，怎么办？: part05/performance_tuning/cpu/13_QA.md
-    - 14_如何用perf工具分析Java程序？: part05/performance_tuning/cpu/14_QA.md
+    - 02 | 平均负载: part05/performance_tuning/cpu/02_basic.md
+    - 03 | 上下文切换-上: part05/performance_tuning/cpu/03_basic.md
+    - 04 | 上下文切换-下: part05/performance_tuning/cpu/04_basic.md
+    - 05 | CPU 使用率排查-上: part05/performance_tuning/cpu/05_basic.md
+    - 06 | CPU 使用率排查-下: part05/performance_tuning/cpu/06_case.md
+    - 07 | 处理不可中断进程和僵尸进程-上: part05/performance_tuning/cpu/07_case.md
+    - 08 | 处理不可中断进程和僵尸进程-下: part05/performance_tuning/cpu/08_case.md
+    - 09 | Linux 软中断: part05/performance_tuning/cpu/09_basic.md
+    - 10 | Linux 软中断性能问题: part05/performance_tuning/cpu/10_case.md
+    - 11 | 如何迅速分析系统 CPU 的瓶颈: part05/performance_tuning/cpu/11_routine.md
+    - 12 | CPU 性能优化的思路: part05/performance_tuning/cpu/12_routine.md
+    - 13 | 无法模拟出 RES 中断的问题，怎么办？: part05/performance_tuning/cpu/13_QA.md
+    - 14 | 如何用 perf 工具分析 Java 程序？: part05/performance_tuning/cpu/14_QA.md
 
   - Memory 性能 8 讲:
-    - 15_Linux内存如何工作: part05/performance_tuning/memory/15_basic.md
-    - 16_理解内存中的Buffer和Cache: part05/performance_tuning/memory/16_basic.md
-    - 17_利用系统缓存优化程序的运行效率: part05/performance_tuning/memory/17_case.md
-    - 18_内存泄漏的定位和处理: part05/performance_tuning/memory/18_case.md
-    - 19_分析系统Swap变高原因-上: part05/performance_tuning/memory/19_case.md
-    - 20_分析系统Swap变高原因-下: part05/performance_tuning/memory/20_case.md
-    - 21_“快准狠”定位系统内存的问题: part05/performance_tuning/memory/21_routine.md
-    - 22_文件系统与磁盘的区别: part05/performance_tuning/memory/22_QA.md
+    - 15 | Linux 内存如何工作: part05/performance_tuning/memory/15_basic.md
+    - 16 | 理解内存中的 Buffer 和 Cache: part05/performance_tuning/memory/16_basic.md
+    - 17 | 利用系统缓存优化程序的运行效率: part05/performance_tuning/memory/17_case.md
+    - 18 | 内存泄漏的定位和处理: part05/performance_tuning/memory/18_case.md
+    - 19 | 分析系统 Swap 变高原因-上: part05/performance_tuning/memory/19_case.md
+    - 20 | 分析系统 Swap 变高原因-下: part05/performance_tuning/memory/20_case.md
+    - 21 | “快准狠”定位系统内存的问题: part05/performance_tuning/memory/21_routine.md
+    - 22 | 文件系统与磁盘的区别: part05/performance_tuning/memory/22_QA.md
 
   - Disk I/O 性能 10 讲:
-    - 23_Linux文件系统如何工作: part05/performance_tuning/disk_io/23_basic.md
-    - 24_Linux磁盘I/O如何工作-上: part05/performance_tuning/disk_io/24_basic.md
-    - 25_Linux磁盘I/O如何工作-下: part05/performance_tuning/disk_io/25_basic.md
-    - 26_如何找出狂打日志的“内鬼”？: part05/performance_tuning/disk_io/26_case.md
-    - 27_为什么磁盘I/O延迟很高？: part05/performance_tuning/disk_io/27_case.md
-    - 28_分析优化SQL查询时间: part05/performance_tuning/disk_io/28_case.md
-    - 29_解决Redis响应严重延迟: part05/performance_tuning/disk_io/29_case.md
-    - 30_如何迅速分析出系统I/O的瓶颈: part05/performance_tuning/disk_io/30_routine.md
-    - 31_磁盘I/O性能优化的几个思路: part05/performance_tuning/disk_io/31_routine.md
-    - 32_阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系: part05/performance_tuning/disk_io/32_QA.md
-    - 33_书单推荐：性能优化和Linux 系统原理: part05/performance_tuning/disk_io/33_explore.md
+    - 23 | Linux 文件系统如何工作: part05/performance_tuning/disk_io/23_basic.md
+    - 24 | Linux 磁盘 I/O 如何工作-上: part05/performance_tuning/disk_io/24_basic.md
+    - 25 | Linux 磁盘 I/O 如何工作-下: part05/performance_tuning/disk_io/25_basic.md
+    - 26 | 如何找出狂打日志的“内鬼”？: part05/performance_tuning/disk_io/26_case.md
+    - 27 | 为什么磁盘 I/O 延迟很高？: part05/performance_tuning/disk_io/27_case.md
+    - 28 | 分析优化 SQL 查询时间: part05/performance_tuning/disk_io/28_case.md
+    - 29 | 解决 Redis 响应严重延迟: part05/performance_tuning/disk_io/29_case.md
+    - 30 | 如何迅速分析出系统 I/O 的瓶颈: part05/performance_tuning/disk_io/30_routine.md
+    - 31 | 磁盘 I/O 性能优化的几个思路: part05/performance_tuning/disk_io/31_routine.md
+    - 32 | 阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系: part05/performance_tuning/disk_io/32_QA.md
+    - 33 | 书单推荐：性能优化和Linux 系统原理: part05/performance_tuning/disk_io/33_explore.md
 
   - Network 性能 13 讲:
-    - 34_Linux网络必知-上: part05/performance_tuning/network/34_basic.md
-    - 35_Linux网络必知-下: part05/performance_tuning/network/35_basic.md
-    - 36_C10K 和 C1000K 回顾: part05/performance_tuning/network/36_basic.md
-    - 37_怎么评估系统的网络性能？: part05/performance_tuning/network/37_routine.md
-    - 38_解决DNS 解析时快时慢问题: part05/performance_tuning/network/38_case.md
-    - 39_用 tcpdump 和 Wireshark 分析网络流量: part05/performance_tuning/network/39_case.md
-    - 40_缓解 DDoS 攻击带来的性能下降问题: part05/performance_tuning/network/40_case.md
-    - 41_处理网络请求延迟变大: part05/performance_tuning/network/41_case.md
-    - 42_优化 NAT 性能-上: part05/performance_tuning/network/42_case.md
-    - 43_优化 NAT 性能-下: part05/performance_tuning/network/43_case.md
-    - 44_网络性能优化的几个思路-上: part05/performance_tuning/network/44_routine.md
-    - 45_网络性能优化的几个思路-下: part05/performance_tuning/network/45_routine.md
-    - 46_网络收发过程中的缓冲区位置: part05/performance_tuning/network/46_QA.md
-    - 47_书单推荐：网络原理和 Linux 内核实现: part05/performance_tuning/network/47_explore.md
+    - 34 | Linux 网络必知-上: part05/performance_tuning/network/34_basic.md
+    - 35 | Linux 网络必知-下: part05/performance_tuning/network/35_basic.md
+    - 36 | C10K 和 C1000K 回顾: part05/performance_tuning/network/36_basic.md
+    - 37 | 怎么评估系统的网络性能？: part05/performance_tuning/network/37_routine.md
+    - 38 | 解决 DNS 解析时快时慢问题: part05/performance_tuning/network/38_case.md
+    - 39 | 用 tcpdump 和 Wireshark 分析网络流量: part05/performance_tuning/network/39_case.md
+    - 40 | 缓解 DDoS 攻击带来的性能下降问题: part05/performance_tuning/network/40_case.md
+    - 41 | 处理网络请求延迟变大: part05/performance_tuning/network/41_case.md
+    - 42 | 优化 NAT 性能-上: part05/performance_tuning/network/42_case.md
+    - 43 | 优化 NAT 性能-下: part05/performance_tuning/network/43_case.md
+    - 44 | 网络性能优化的几个思路-上: part05/performance_tuning/network/44_routine.md
+    - 45 | 网络性能优化的几个思路-下: part05/performance_tuning/network/45_routine.md
+    - 46 | 网络收发过程中的缓冲区位置: part05/performance_tuning/network/46_QA.md
+    - 47 | 书单推荐：网络原理和 Linux 内核实现: part05/performance_tuning/network/47_explore.md
 
   - 综合实战 13 讲:  
-    - 48_为什么应用容器化后，启动慢了很多？: part05/performance_tuning/integrate/48_case.md
-    - 49_解决服务器总是时不时丢包的问题-上: part05/performance_tuning/integrate/49_case.md
-    - 50_解决服务器总是时不时丢包的问题-下: part05/performance_tuning/integrate/50_case.md
-    - 51_处理内核线程 CPU 利用率太高: part05/performance_tuning/integrate/51_case.md
-    - 52_如何使用动态追踪-上: part05/performance_tuning/integrate/52_case.md
-    - 53_如何使用动态追踪-下: part05/performance_tuning/integrate/53_case.md
-    - 54_分析处理服务吞吐量下降很厉害的问题: part05/performance_tuning/integrate/54_case.md
-    - 55_系统监控的综合思路: part05/performance_tuning/integrate/55_routine.md
-    - 56_应用监控的一般思路: part05/performance_tuning/integrate/56_routine.md
-    - 57_分析性能问题的一般步骤: part05/performance_tuning/integrate/57_routine.md
-    - 58_优化性能问题的一般方法: part05/performance_tuning/integrate/58_routine.md
-    - 59_Linux 性能工具速查: part05/performance_tuning/integrate/59_routine.md
-    - 60_容器冷启动的性能分析: part05/performance_tuning/integrate/60_QA.md
+    - 48 | 为什么应用容器化后，启动慢了很多？: part05/performance_tuning/integrate/48_case.md
+    - 49 | 解决服务器总是时不时丢包的问题-上: part05/performance_tuning/integrate/49_case.md
+    - 50 | 解决服务器总是时不时丢包的问题-下: part05/performance_tuning/integrate/50_case.md
+    - 51 | 处理内核线程 CPU 利用率太高: part05/performance_tuning/integrate/51_case.md
+    - 52 | 如何使用动态追踪-上: part05/performance_tuning/integrate/52_case.md
+    - 53 | 如何使用动态追踪-下: part05/performance_tuning/integrate/53_case.md
+    - 54 | 分析处理服务吞吐量下降很厉害的问题: part05/performance_tuning/integrate/54_case.md
+    - 55 | 系统监控的综合思路: part05/performance_tuning/integrate/55_routine.md
+    - 56 | 应用监控的一般思路: part05/performance_tuning/integrate/56_routine.md
+    - 57 | 分析性能问题的一般步骤: part05/performance_tuning/integrate/57_routine.md
+    - 58 | 优化性能问题的一般方法: part05/performance_tuning/integrate/58_routine.md
+    - 59 | Linux 性能工具速查: part05/performance_tuning/integrate/59_routine.md
+    - 60 | 容器冷启动的性能分析: part05/performance_tuning/integrate/60_QA.md
 
   - Finish:
-    - 61_结束语 | 愿你攻克性能难关: part05/performance_tuning/how_to/61_end.md
+    - 61 | 结束语 | 愿你攻克性能难关: part05/performance_tuning/how_to/61_end.md
 
   - Explore:
     - Linux 性能分析工具整理: part05/performance_tuning/explore/tool.md
@@ -259,19 +259,19 @@ nav:
   - 目录: part06/contents.md
 
   - 零 入门准备篇 (3讲):
-    - 为什么要学习Linux操作系统？: part06/linux_operating_system/section00/article00.md
-    - 01 | 入学测验：Linux操作系统了解程度？: part06/linux_operating_system/section00/article01.md
+    - 为什么要学习 Linux 操作系统？: part06/linux_operating_system/section00/article00.md
+    - 01 | 入学测验：Linux 操作系统了解程度？: part06/linux_operating_system/section00/article01.md
     - 02 | 学习路径：Linux 学习的六个阶段: part06/linux_operating_system/section00/article02.md
 
   - 一 Linux操作系统综述 (3讲):
-    - 03 | 把Linux内核当成一家软件外包公司的老板: part06/linux_operating_system/section01/article03.md
-    - 04 | 几个Linux命令：每家公司都有自己的黑话: part06/linux_operating_system/section01/article04.md
+    - 03 | 把 Linux 内核当成一家软件外包公司的老板: part06/linux_operating_system/section01/article03.md
+    - 04 | 几个 Linux 命令：每家公司都有自己的黑话: part06/linux_operating_system/section01/article04.md
     - 05 | 几个系统调用：公司能接哪些类型的项目？: part06/linux_operating_system/section01/article05.md
 
 
   - 二 系统初始化 (4讲):
-    - 06 | x86架构：有了开放的架构，才能打造开放的营商环境: part06/linux_operating_system/section02/article06.md
-    - 07 | 从BIOS到bootloader：创业伊始，有活儿老板自己上: part06/linux_operating_system/section02/article07.md
+    - 06 | x86 架构：有了开放的架构，才能打造开放的营商环境: part06/linux_operating_system/section02/article06.md
+    - 07 | 从 BIOS 到 bootloader：创业伊始，有活儿老板自己上: part06/linux_operating_system/section02/article07.md
     - 08 | 内核初始化：生意做大了就得成立公司: part06/linux_operating_system/section02/article08.md
     - 09 | 系统调用：公司成立好了就要开始接项目: part06/linux_operating_system/section02/article09.md
 
@@ -311,17 +311,17 @@ nav:
 
   - 七 进程间通信 (7讲):
     - 36 | 进程间通信：遇到大项目需要项目组之间的合作才行: part06/linux_operating_system/section07/article36.md
-    - 37 | 信号（上）：项目组A完成了，如何及时通知项目组B？: part06/linux_operating_system/section07/article37.md
-    - 38 | 信号（下）：项目组A完成了，如何及时通知项目组B？: part06/linux_operating_system/section07/article38.md
-    - 39 | 管道：项目组A完成了，如何交接给项目组B？: part06/linux_operating_system/section07/article39.md
-    - 40 | IPC（上）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article40.md
-    - 41 | IPC（中）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article41.md
-    - 42 | IPC（下）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article42.md
+    - 37 | 信号（上）：项目组 A 完成了，如何及时通知项目组 B？: part06/linux_operating_system/section07/article37.md
+    - 38 | 信号（下）：项目组 A 完成了，如何及时通知项目组 B？: part06/linux_operating_system/section07/article38.md
+    - 39 | 管道：项目组 A 完成了，如何交接给项目组 B？: part06/linux_operating_system/section07/article39.md
+    - 40 | IPC （上）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article40.md
+    - 41 | IPC （中）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article41.md
+    - 42 | IPC （下）：不同项目组之间抢资源，如何协调？: part06/linux_operating_system/section07/article42.md
 
   - 八 网络系统 (7讲):
     # <!-- - [43 预习 | Socket通信之网络协议基本原理: part06/linux_operating_system/section08/article43.md -->
-    - 43 | Socket通信：遇上特大项目，要学会和其他公司合作: part06/linux_operating_system/section08/article43.md
-    - 44 | Socket内核数据结构：如何成立特大项目合作部？: part06/linux_operating_system/section08/article44.md
+    - 43 | Socket 通信：遇上特大项目，要学会和其他公司合作: part06/linux_operating_system/section08/article43.md
+    - 44 | Socket 内核数据结构：如何成立特大项目合作部？: part06/linux_operating_system/section08/article44.md
     - 45 | 发送网络包（上）：如何表达我们想让合作伙伴做什么？: part06/linux_operating_system/section08/article45.md
     - 46 | 发送网络包（下）：如何表达我们想让合作伙伴做什么？: part06/linux_operating_system/section08/article46.md
     - 47 | 接收网络包（上）：如何搞明白合作伙伴让我们做什么？: part06/linux_operating_system/section08/article47.md
@@ -329,8 +329,8 @@ nav:
 
   - 九 虚拟化 (7讲):
     - 49 | 虚拟机：如何成立子公司，让公司变集团？: part06/linux_operating_system/section09/article49.md
-    - 50 | 计算虚拟化之CPU（上）：如何复用集团的人力资源？: part06/linux_operating_system/section09/article50.md
-    - 51 | 计算虚拟化之CPU（下）：如何复用集团的人力资源？: part06/linux_operating_system/section09/article51.md
+    - 50 | 计算虚拟化之 CPU （上）：如何复用集团的人力资源？: part06/linux_operating_system/section09/article50.md
+    - 51 | 计算虚拟化之 CPU （下）：如何复用集团的人力资源？: part06/linux_operating_system/section09/article51.md
     - 52 | 计算虚拟化之内存：如何建立独立的办公室？: part06/linux_operating_system/section09/article52.md
     - 53 | 存储虚拟化（上）：如何建立自己保管的单独档案库？: part06/linux_operating_system/section09/article53.md
     - 54 | 存储虚拟化（下）：如何建立自己保管的单独档案库？: part06/linux_operating_system/section09/article54.md
@@ -338,8 +338,8 @@ nav:
 
   - 十 容器化 (4讲):
     - 56 | 容器：大公司为保持创新，鼓励内部创业: part06/linux_operating_system/section10/article56.md
-    - 57 | Namespace技术：内部创业公司应该独立运营: part06/linux_operating_system/section10/article57.md
-    - 58 | cgroup技术：内部创业公司应该独立核算成本: part06/linux_operating_system/section10/article58.md
+    - 57 | Namespace 技术：内部创业公司应该独立运营: part06/linux_operating_system/section10/article57.md
+    - 58 | cgroup 技术：内部创业公司应该独立核算成本: part06/linux_operating_system/section10/article58.md
     - 59 | 数据中心操作系统：上市敲钟: part06/linux_operating_system/section10/article59.md
 
   - 十一 实战串讲篇 (9讲):

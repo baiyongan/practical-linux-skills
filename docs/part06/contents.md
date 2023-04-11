@@ -2,22 +2,22 @@
 
 ## 零 入门准备篇 (3讲)
 
-- [ ] [为什么要学习Linux操作系统？](linux_operating_system/section00/article00.md)
-- [ ] [01 | 入学测验：Linux操作系统了解程度？](linux_operating_system/section00/article01.md)
+- [ ] [为什么要学习 Linux 操作系统？](linux_operating_system/section00/article00.md)
+- [ ] [01 | 入学测验：Linux 操作系统了解程度？](linux_operating_system/section00/article01.md)
 - [ ] [02 | 学习路径：Linux 学习的六个阶段](linux_operating_system/section00/article02.md)
 
 <!-- - 核心原理篇： -->
 ## 一 Linux操作系统综述 (3讲)
 
-- [ ] [03 | 把Linux内核当成一家软件外包公司的老板](linux_operating_system/section01/article03.md)
-- [ ] [04 | 几个Linux命令：每家公司都有自己的黑话](linux_operating_system/section01/article04.md)
+- [ ] [03 | 把 Linux 内核当成一家软件外包公司的老板](linux_operating_system/section01/article03.md)
+- [ ] [04 | 几个 Linux 命令：每家公司都有自己的黑话](linux_operating_system/section01/article04.md)
 - [ ] [05 | 几个系统调用：公司能接哪些类型的项目？](linux_operating_system/section01/article05.md)
 
 
 ## 二 系统初始化 (4讲)
 
-- [ ] [06 | x86架构：有了开放的架构，才能打造开放的营商环境](linux_operating_system/section02/article06.md)
-- [ ] [07 | 从BIOS到bootloader：创业伊始，有活儿老板自己上](linux_operating_system/section02/article07.md)
+- [ ] [06 | x86 架构：有了开放的架构，才能打造开放的营商环境](linux_operating_system/section02/article06.md)
+- [ ] [07 | 从 BIOS 到 bootloader：创业伊始，有活儿老板自己上](linux_operating_system/section02/article07.md)
 - [ ] [08 | 内核初始化：生意做大了就得成立公司](linux_operating_system/section02/article08.md)
 - [ ] [09 | 系统调用：公司成立好了就要开始接项目](linux_operating_system/section02/article09.md)
 
@@ -62,18 +62,18 @@
 ## 七 进程间通信 (7讲)
 
 - [ ] [36 | 进程间通信：遇到大项目需要项目组之间的合作才行](linux_operating_system/section07/article36.md)
-- [ ] [37 | 信号（上）：项目组A完成了，如何及时通知项目组B？](linux_operating_system/section07/article37.md)
-- [ ] [38 | 信号（下）：项目组A完成了，如何及时通知项目组B？](linux_operating_system/section07/article38.md)
-- [ ] [39 | 管道：项目组A完成了，如何交接给项目组B？](linux_operating_system/section07/article39.md)
-- [ ] [40 | IPC（上）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article40.md)
-- [ ] [41 | IPC（中）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article41.md)
-- [ ] [42 | IPC（下）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article42.md)
+- [ ] [37 | 信号（上）：项目组 A 完成了，如何及时通知项目组 B？](linux_operating_system/section07/article37.md)
+- [ ] [38 | 信号（下）：项目组 A 完成了，如何及时通知项目组 B？](linux_operating_system/section07/article38.md)
+- [ ] [39 | 管道：项目组 A 完成了，如何交接给项目组 B？](linux_operating_system/section07/article39.md)
+- [ ] [40 | IPC （上）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article40.md)
+- [ ] [41 | IPC （中）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article41.md)
+- [ ] [42 | IPC （下）：不同项目组之间抢资源，如何协调？](linux_operating_system/section07/article42.md)
 
 ## 八 网络系统 (7讲)
 
   <!-- - [43 预习 | Socket通信之网络协议基本原理](linux_operating_system/section08/article43.md) -->
-- [ ] [43 | Socket通信：遇上特大项目，要学会和其他公司合作](linux_operating_system/section08/article43.md)
-- [ ] [44 | Socket内核数据结构：如何成立特大项目合作部？](linux_operating_system/section08/article44.md)
+- [ ] [43 | Socket 通信：遇上特大项目，要学会和其他公司合作](linux_operating_system/section08/article43.md)
+- [ ] [44 | Socket 内核数据结构：如何成立特大项目合作部？](linux_operating_system/section08/article44.md)
 - [ ] [45 | 发送网络包（上）：如何表达我们想让合作伙伴做什么？](linux_operating_system/section08/article45.md)
 - [ ] [46 | 发送网络包（下）：如何表达我们想让合作伙伴做什么？](linux_operating_system/section08/article46.md)
 - [ ] [47 | 接收网络包（上）：如何搞明白合作伙伴让我们做什么？](linux_operating_system/section08/article47.md)
@@ -82,8 +82,8 @@
 ## 九 虚拟化 (7讲)
 
 - [ ] [49 | 虚拟机：如何成立子公司，让公司变集团？](linux_operating_system/section09/article49.md)
-- [ ] [50 | 计算虚拟化之CPU（上）：如何复用集团的人力资源？](linux_operating_system/section09/article50.md)
-- [ ] [51 | 计算虚拟化之CPU（下）：如何复用集团的人力资源？](linux_operating_system/section09/article51.md)
+- [ ] [50 | 计算虚拟化之 CPU （上）：如何复用集团的人力资源？](linux_operating_system/section09/article50.md)
+- [ ] [51 | 计算虚拟化之 CPU （下）：如何复用集团的人力资源？](linux_operating_system/section09/article51.md)
 - [ ] [52 | 计算虚拟化之内存：如何建立独立的办公室？](linux_operating_system/section09/article52.md)
 - [ ] [53 | 存储虚拟化（上）：如何建立自己保管的单独档案库？](linux_operating_system/section09/article53.md)
 - [ ] [54 | 存储虚拟化（下）：如何建立自己保管的单独档案库？](linux_operating_system/section09/article54.md)
@@ -92,8 +92,8 @@
 ## 十 容器化 (4讲)
 
 - [ ] [56 | 容器：大公司为保持创新，鼓励内部创业](linux_operating_system/section10/article56.md)
-- [ ] [57 | Namespace技术：内部创业公司应该独立运营](linux_operating_system/section10/article57.md)
-- [ ] [58 | cgroup技术：内部创业公司应该独立核算成本](linux_operating_system/section10/article58.md)
+- [ ] [57 | Namespace 技术：内部创业公司应该独立运营](linux_operating_system/section10/article57.md)
+- [ ] [58 | cgroup 技术：内部创业公司应该独立核算成本](linux_operating_system/section10/article58.md)
 - [ ] [59 | 数据中心操作系统：上市敲钟](linux_operating_system/section10/article59.md)
 
 ## 十一 实战串讲篇 (9讲)

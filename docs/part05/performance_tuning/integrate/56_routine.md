@@ -38,7 +38,7 @@
 
 日志监控的经典技术栈 —— ELK，即 Elasticsearch、Logstash、Kibana。
 
-- Logstash 负责对哥哥日志元采集，然后预处理，发送给 Elasticsearch 进行索引；
+- Logstash 负责对各个日志源采集，然后预处理，发送给 Elasticsearch 进行索引；
 - Elasticsearch 负责对日志进行索引，并提供了一个完整的全文搜索引擎；
 - Kibana 负责对日志可视化分析。
 
