@@ -1794,9 +1794,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          58 | 优化性能问题的一般方法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         58 | 优化性能问题的一般方法
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    系统优化
+  </a>
+  
+    <nav class="md-nav" aria-label="系统优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU 优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内存优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    磁盘和文件系统 I/O 优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    网络优化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    应用程序优化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4028,6 +4107,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    系统优化
+  </a>
+  
+    <nav class="md-nav" aria-label="系统优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU 优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内存优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    磁盘和文件系统 I/O 优化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    网络优化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    应用程序优化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4047,6 +4189,30 @@
 
 
 <h1 id="_1">套路篇：优化性能问题的一般方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>同性能分析一样，也可以从系统和应用程序，这两个不同角度来进行性能优化。</p>
+<h2 id="_2">系统优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>USE 法可以用来分析系统软硬件资源的瓶颈，相应的优化方法，也是从这些资源瓶颈入手。</p>
+<p>可以大致分为四个方面：CPU 性能、内存性能、磁盘和文件系统 I/O 性能，以及网络性能。</p>
+<h3 id="cpu">CPU 优化<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<h3 id="_3">内存优化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="io">磁盘和文件系统 I/O 优化<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
+<h3 id="_4">网络优化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">应用程序优化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">小结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>从系统角度而言，CPU、内存、磁盘和文件系统 I/O、网络以及内核数据结构等各类软硬件资源，为应用程序提供了运行的环境，也是我们性能优化的重点对象。</p>
+</li>
+<li>
+<p>从应用程序而言，单机优化方法可以通过降低 CPU 使用，减少数据访问和网络 I/O，使用缓存、异步处理，使用多进程、多线程等；也可以通过调整应用程序架构，利用水平扩展，将任务调度到多台服务器中并行处理等。以上都是常用的性化思路、方法。</p>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>一定要避免过早优化。性能优化往往会提高复杂性，这样既降低了可维护性，也为适应复杂多变的新需求带来了障碍。</p>
+<p>性能优化最好是逐步完善，动态进行。</p>
+<p>首先保证能满足当前的性能要求。当发现性能不满足要求或者出现性能瓶颈后，再根据性能分析的结果，选择最重要的性能问题进行优化。</p>
+</div>
 
 
 
