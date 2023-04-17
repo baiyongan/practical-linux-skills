@@ -1808,9 +1808,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          59 | Linux 性能工具速查
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         59 | Linux 性能工具速查
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    性能工具速查
+  </a>
+  
+    <nav class="md-nav" aria-label="性能工具速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU 性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内存性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    磁盘 I/O 性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    网络性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基准测试工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4028,6 +4107,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    性能工具速查
+  </a>
+  
+    <nav class="md-nav" aria-label="性能工具速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu" class="md-nav__link">
+    CPU 性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内存性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    磁盘 I/O 性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    网络性能工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基准测试工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4047,6 +4189,22 @@
 
 
 <h1 id="linux">套路篇：Linux 性能工具速查<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="_1">性能工具速查<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="cpu">CPU 性能工具<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<h3 id="_2">内存性能工具<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="io">磁盘 I/O 性能工具<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
+<h3 id="_3">网络性能工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">基准测试工具<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">小结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>当分析性能问题时，主要有两个步骤：</p>
+<p>第一步，从性能瓶颈触发，根据系统和应用程序的运行原理，确认待分析的性能指标。</p>
+<p>第二步，根据上述图表，选出最合适的性能工具，然后了解并使用工具，从而更快观测到需要的性能数据。</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>不要把性能工具当成性能分析和优化的全部。</p>
+<p>性能分析和优化的核心，是对系统和应用程序运行原理的掌握，而性能工具只是辅助更快完成这个过程的帮手。</p>
+<p>完善的监控体系，可以提供绝大部分性能分析所需的基准数据。从中很可能大致定位出性能瓶颈，也就不用再去手动执行各类工具了。</p>
+</div>
 
 
 
