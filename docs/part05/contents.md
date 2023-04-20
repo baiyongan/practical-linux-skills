@@ -85,4 +85,4 @@
 ## Explore
 
 - [ ] [Linux 性能分析工具整理](performance_tuning/explore/tool.md)
-- [ ] [Linux 性能分析资源汇总](performance_tuning/explore/resource.md)
+- [x] [Linux 性能分析资源汇总](performance_tuning/explore/resource.md)
