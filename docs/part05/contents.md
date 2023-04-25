@@ -84,7 +84,7 @@
 
 ## 探索延伸
 
-- [ ] [书单推荐：性能优化和Linux 系统原理](performance_tuning/disk_io/33_explore.md)
-- [ ] [书单推荐：网络原理和 Linux 内核实现](performance_tuning/network/47_explore.md)
+- [x] [书单推荐：性能优化和Linux 系统原理](performance_tuning/disk_io/33_explore.md)
+- [x] [书单推荐：网络原理和 Linux 内核实现](performance_tuning/network/47_explore.md)
 - [ ] [Linux 性能分析工具整理](performance_tuning/explore/tool.md)
 - [x] [Linux 性能分析资源汇总](performance_tuning/explore/resource.md)
