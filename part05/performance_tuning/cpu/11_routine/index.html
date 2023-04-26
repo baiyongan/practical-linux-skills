@@ -4369,16 +4369,28 @@
 <h1 id="cpu">套路篇：如何迅速分析出系统CPU的瓶颈在哪里？<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
 <h2 id="cpu_1">CPU 性能指标<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h2>
 <h3 id="cpu_2">CPU 使用率<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!NOTE]
-最容易想到的应该是 CPU 使用率，它也是实际环境中最常见的一个性能指标。</p>
-</blockquote>
-<p><strong>CPU 使用率描述了非空闲时间占总 CPU 时间的百分比</strong>，根据 CPU 上运行任务的不同，又被分为用户CPU、系统CPU、等待I/O CPU、软中断和硬中断等。
-- 用户 CPU 使用率，包括用户态 CPU 使用率（user）和低优先级用户态 CPU 使用率（nice），表示 CPU 在用户态运行的时间百分比。用户 CPU 使用率高，通常说明有应用程序比较繁忙。
-- 系统 CPU 使用率，表示 CPU 在内核态运行的时间百分比（不包括中断）。系统 CPU 使用率高，说明内核比较繁忙。
-- 等待 I/O 的CPU使用率，通常也称为iowait，表示等待 I/O 的时间百分比。iowait 高，通常说明系统与硬件设备的 I/O 交互时间比较长。
-- 软中断和硬中断的 CPU 使用率，分别表示内核调用软中断处理程序、硬中断处理程序的时间百分比。它们的使用率高，通常说明系统发生了大量的中断。
-- 除了上面这些，还有在虚拟化环境中会用到的窃取 CPU 使用率（steal）和客户 CPU 使用率（guest），分别表示被其他虚拟机占用的 CPU 时间百分比，和运行客户虚拟机的 CPU 时间百分比。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>最容易想到的应该是 CPU 使用率，它也是实际环境中最常见的一个性能指标。</p>
+</div>
+<p><strong>CPU 使用率描述了非空闲时间占总 CPU 时间的百分比</strong>，根据 CPU 上运行任务的不同，又被分为用户CPU、系统CPU、等待I/O CPU、软中断和硬中断等。</p>
+<ul>
+<li>
+<p>用户 CPU 使用率，包括用户态 CPU 使用率（user）和低优先级用户态 CPU 使用率（nice），表示 CPU 在用户态运行的时间百分比。用户 CPU 使用率高，通常说明有应用程序比较繁忙。</p>
+</li>
+<li>
+<p>系统 CPU 使用率，表示 CPU 在内核态运行的时间百分比（不包括中断）。系统 CPU 使用率高，说明内核比较繁忙。</p>
+</li>
+<li>
+<p>等待 I/O 的CPU使用率，通常也称为iowait，表示等待 I/O 的时间百分比。iowait 高，通常说明系统与硬件设备的 I/O 交互时间比较长。</p>
+</li>
+<li>
+<p>软中断和硬中断的 CPU 使用率，分别表示内核调用软中断处理程序、硬中断处理程序的时间百分比。它们的使用率高，通常说明系统发生了大量的中断。</p>
+</li>
+<li>
+<p>除了上面这些，还有在虚拟化环境中会用到的窃取 CPU 使用率（steal）和客户 CPU 使用率（guest），分别表示被其他虚拟机占用的 CPU 时间百分比，和运行客户虚拟机的 CPU 时间百分比。</p>
+</li>
+</ul>
 <h3 id="_1">平均负载<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>平均负载（Load Average），也就是系统的平均活跃进程数。</strong>它反应了系统的整体负载情况，主要包括三个数值，分别指过去1分钟、过去5分钟和过去15分钟的平均负载。</p>
 <p>理想情况下，平均负载等于逻辑 CPU 个数，这表示每个 CPU 都恰好被充分利用。如果平均负载大于逻辑CPU个数，就表示负载比较重了。</p>
@@ -4389,10 +4401,10 @@
 </ul>
 <p>上下文切换，本身是保证 Linux 正常运行的一项核心功能。但过多的上下文切换，会将原本运行进程的 CPU 时间，消耗在寄存器、内核栈以及虚拟内存等数据的保存和恢复上，缩短进程真正运行的时间，成为性能瓶颈。</p>
 <h3 id="cpu_3">CPU 缓存的命中率<a class="headerlink" href="#cpu_3" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!TIP]
-由于CPU发展的速度远快于内存的发展，CPU的处理速度就比内存的访问速度快得多。这样，CPU在访问内存的时候，免不了要等待内存的响应。为了协调这两者巨大的性能差距，CPU缓存（通常是多级缓存）就出现了。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>由于CPU发展的速度远快于内存的发展，CPU的处理速度就比内存的访问速度快得多。这样，CPU在访问内存的时候，免不了要等待内存的响应。为了协调这两者巨大的性能差距，CPU缓存（通常是多级缓存）就出现了。</p>
+</div>
 <p><img alt="11_01_cpu_cache.png" src="https://i.loli.net/2021/03/16/m61AIlvCOdfk2Rq.png" /></p>
 <p>CPU缓存的速度介于 CPU 和内存之间，缓存的是热点的内存数据。根据不断增长的热点数据，这些缓存按照大小不同分为 L1、L2、L3 等三级缓存，其中 L1 和 L2 常用在单核中， L3 则用在多核中。
 从 L1 到 L3，三级缓存的大小依次增大，相应的，性能依次降低（当然比内存还是好得多）。而<strong>它们的命中率，衡量的是CPU缓存的复用情况，命中率越高，则表示性能越好。</strong></p>
@@ -4401,10 +4413,10 @@
 <h2 id="cpu_5">CPU 性能工具<a class="headerlink" href="#cpu_5" title="Permanent link">&para;</a></h2>
 <p>略</p>
 <h2 id="cpu_6">CPU 性能分析思路<a class="headerlink" href="#cpu_6" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!TIP]
-<strong>要会活学活用，把性能指标和性能工具联系起来</strong></p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p><strong>要会活学活用，把性能指标和性能工具联系起来</strong></p>
+</div>
 <h3 id="_3">根据指标找工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><strong>第一个维度，从 CPU 的性能指标出发。也就是说，当你要查看某个性能指标时，要清楚知道哪些工具可以做到。</strong>
 根据不同的性能指标，对提供指标的性能工具进行分类和理解。这样，在实际排查性能问题时，你就可以清楚知道，什么工具可以提供你想要的指标，而不是毫无根据地挨个尝试，撞运气。</p>
@@ -4412,10 +4424,10 @@
 <h3 id="_4">根据工具查指标<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><strong>第二个维度，从工具出发。也就是当你已经安装了某个工具后，要知道这个工具能提供哪些指标。</strong>
 这在实际环境，特别是生产环境中也是非常重要的，因为很多情况下，你并没有权限安装新的工具包，只能最大化地利用好系统中已经安装好的工具，这就需要你对它们有足够的了解。</p>
-<blockquote>
-<p>[!TIP]
-具体到每个工具的使用方法，一般都支持丰富的配置选项。只要知道有哪些工具、以及这些工具的基本功能是什么就够了。真正要用到的时候， 通过man 命令，查它们的使用手册就可以。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>具体到每个工具的使用方法，一般都支持丰富的配置选项。只要知道有哪些工具、以及这些工具的基本功能是什么就够了。真正要用到的时候， 通过man 命令，查它们的使用手册就可以。</p>
+</div>
 <p><img alt="11_04_tool_towards_indicator.png" src="https://i.loli.net/2021/03/16/uhcBQ3DI9VHgZny.png" /></p>
 <h3 id="cpu_7">迅速分析 CPU 性能瓶颈的经验<a class="headerlink" href="#cpu_7" title="Permanent link">&para;</a></h3>
 <p>在实际生产环境中，我们通常都希望尽可能准地定位系统的瓶颈，然后尽可能快地优化性能，也就是要又快又准地解决性能问题。</p>
@@ -4424,18 +4436,34 @@
 <h3 id="topvmstat-pidstat">top、vmstat 和 pidstat<a class="headerlink" href="#topvmstat-pidstat" title="Permanent link">&para;</a></h3>
 <p>为了缩小排查范围，通常建议先运行几个支持指标较多的工具，如 top、vmstat 和 pidstat。</p>
 <p><img alt="11_05_top_vmstat_pidstat.png" src="https://i.loli.net/2021/03/16/KQBxMfHawnRNz2P.png" /></p>
-<p>通过这张图你可以发现，这三个命令，几乎包含了所有重要的 CPU 性能指标，比如：
-- 从 top 的输出可以得到各种 CPU 使用率以及僵尸进程和平均负载等信息。
-- 从 vmstat 的输出可以得到上下文切换次数、中断次数、运行状态和不可中断状态的进程数。
-- 从 pidstat 的输出可以得到进程的用户 CPU 使用率、系统 CPU 使用率、以及自愿上下文切换和非自愿上下文切换情况。
-- 另外，这三个工具输出的很多指标是相互关联的，虚线表示了它们的关联关系。</p>
+<p>通过这张图你可以发现，这三个命令，几乎包含了所有重要的 CPU 性能指标，比如：</p>
+<ul>
+<li>
+<p>从 top 的输出可以得到各种 CPU 使用率以及僵尸进程和平均负载等信息。</p>
+</li>
+<li>
+<p>从 vmstat 的输出可以得到上下文切换次数、中断次数、运行状态和不可中断状态的进程数。</p>
+</li>
+<li>
+<p>从 pidstat 的输出可以得到进程的用户 CPU 使用率、系统 CPU 使用率、以及自愿上下文切换和非自愿上下文切换情况。</p>
+</li>
+<li>
+<p>另外，这三个工具输出的很多指标是相互关联的，虚线表示了它们的关联关系。</p>
+</li>
+</ul>
 <h4 id="1">实际例子1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
 <p>pidstat 输出的进程用户 CPU 使用率升高，会导致 top 输出的用户 CPU 使用率升高。所以，当发现 top 输出的用户 CPU 使用率有问题时，可以跟 pidstat 的输出做对比，观察是否是某个进程导致的问题。</p>
 <p>而找出导致性能问题的进程后，就要用进程分析工具来分析进程的行为，比如使用 strace 分析系统调用情况，以及使用 perf 分析调用链中各级函数的执行情况。</p>
 <h4 id="2">实际例子2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<p>top 输出的平均负载升高，可以跟 vmstat 输出的运行状态和不可中断状态的进程数做对比，观察是哪种进程导致的负载升高。
-- 如果是不可中断进程数增多了，那么就需要做 I/O 的分析，也就是用 dstat 或 sar 等工具，进一步分析 I/O 的情况。
-- 如果是运行状态进程数增多了，那就需要回到 top 和 pidstat，找出这些处于运行状态的到底是什么进程，然后再用进程分析工具，做进一步分析。</p>
+<p>top 输出的平均负载升高，可以跟 vmstat 输出的运行状态和不可中断状态的进程数做对比，观察是哪种进程导致的负载升高。</p>
+<ul>
+<li>
+<p>如果是不可中断进程数增多了，那么就需要做 I/O 的分析，也就是用 dstat 或 sar 等工具，进一步分析 I/O 的情况。</p>
+</li>
+<li>
+<p>如果是运行状态进程数增多了，那就需要回到 top 和 pidstat，找出这些处于运行状态的到底是什么进程，然后再用进程分析工具，做进一步分析。</p>
+</li>
+</ul>
 <h4 id="3">实际例子3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <p>当发现 top 输出的软中断 CPU 使用率升高时，可以查看 /proc/softirqs 文件中各种类型软中断的变化情况，确定到底是哪种软中断出的问题。</p>
 <p>比如，发现是网络接收中断导致的问题，那就可以继续用网络分析工具 sar 和 tcpdump 来分析。</p>

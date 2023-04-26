@@ -4365,10 +4365,10 @@
 
 
 <h1 id="cpu">基础篇：经常说的 CPU 上下文切换是什么意思？（上）<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!ATTENTION]
-从上一章可知，多进程在竞争 CPU 的时候，并没有真正运行，为什么还会导致系统的负载升高呢？其实，CPU 上下文切换，就是这个罪魁祸首。</p>
-</blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>从上一章可知，多进程在竞争 CPU 的时候，并没有真正运行，为什么还会导致系统的负载升高呢？其实，CPU 上下文切换，就是这个罪魁祸首。</p>
+</div>
 <h2 id="cpu_1">CPU 上下文概念<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h2>
 <p>Linux 是一个多任务操作系统，它支持远大于 CPU 数量的任务同时运行。当然，这些任务实际上不是真的在同时运行，而是因为系统在很短的时间内，将 CPU 轮流分配给它们，造成多任务同时运行的错觉。</p>
 <h3 id="cpu_2">CPU 寄存器与程序计数器<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
@@ -4433,11 +4433,11 @@
 <li>当有优先级更高的进程运行时，为了保证高优先级进程的运行，当前进程会被挂起，由高优先级进程来运行。</li>
 <li>发生硬件中断时，CPU上的进程会被中断挂起，转而执行内核中的中断服务程序。</li>
 </ol>
-<blockquote>
-<p>[!TIP]
-了解这几个场景是非常有必要的，因为一旦出现上下文切换的性能问题，它们就是幕后凶手。
-简要而言，几种情形即是：进程自然结束，公平调度轮询；资源不足被挂起；sleep主动挂起；高优先级抢占；硬件中断。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>了解这几个场景是非常有必要的，因为一旦出现上下文切换的性能问题，它们就是幕后凶手。</p>
+</div>
+<p>简要而言，几种情形即是：进程自然结束，公平调度轮询；资源不足被挂起；sleep主动挂起；高优先级抢占；硬件中断。</p>
 <h3 id="_6">线程上下文切换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <h4 id="_7">线程与进程区别<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>线程与进程最大的区别在于，<strong>线程是调度的基本单位，而进程则是资源拥有的基本单位</strong>。所谓内核中的任务调度，实际上的调度对象是线程；而进程只是给线程提供了虚拟内存、全局变量等资源。</p>
@@ -4451,10 +4451,10 @@
 <li>第一种， 前后两个线程属于不同进程。此时，因为资源不共享，所以切换过程就跟进程上下文切换是一样。</li>
 <li>第二种，前后两个线程属于同一个进程。此时，因为虚拟内存是共享的，所以在切换时，虚拟内存这些资源就保持不动，只需要切换线程的私有数据、寄存器等不共享的数据。</li>
 </ul>
-<blockquote>
-<p>[!TIP]
-虽然同为上下文切换，但同进程内的线程切换，要比多进程间的切换消耗更少的资源，而这，也正是多线程代替多进程的一个优势。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>虽然同为上下文切换，但同进程内的线程切换，要比多进程间的切换消耗更少的资源，而这，也正是多线程代替多进程的一个优势。</p>
+</div>
 <h3 id="_9">中断上下文切换<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>除了前面两种上下文切换，还有一个场景也会切换 CPU 上下文，那就是中断。</p>
 <p>为了快速响应硬件的事件，<strong>中断处理会打断进程的正常调度和执行</strong>，转而调用中断处理程序，响应设备事件。而在打断其他进程时，就需要将进程当前的状态保存下来，这样在中断结束后，进程仍然可以从原来的状态恢复运行。</p>
