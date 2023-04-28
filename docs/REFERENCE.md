@@ -3,15 +3,18 @@
 ## 选用标准
 
 #### 资源整理类
+
 - Keywords: awesome, cheatsheet, cookbook, best practice, linux, shell, command, command-line, cli, bash, script, template, snippet et al
 - Mostly awesome-like github repos with an enviable number of stars and forks
 
 #### 知识归纳类
+
 - 相关领域知识的技术水平不错，且总结成体系，较全面，影响力较大的
 - 我最终选读并实践，并且从中有所收获的
 - 印象深刻，受益较多，后期若有需要，会第一时间返回去浏览参阅的
 
 #### 行业规范类
+
 - 认真贯彻一个权威的行业标准即可 
 > do one thing, and do it well
 
