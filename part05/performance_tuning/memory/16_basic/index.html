@@ -88,6 +88,8 @@
     
       <link rel="stylesheet" href="../../../../assets/css/termynal.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1943,7 +1945,7 @@
   
     <li class="md-nav__item">
       <a href="../../how_to/61_end/" class="md-nav__link">
-        61 | 结束语 | 愿你攻克性能难关
+        61 | 结束语：| 愿你攻克性能难关
       </a>
     </li>
   
@@ -4080,20 +4082,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../SCHEDULE/" class="md-nav__link">
-        更新计划
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../SETUP/" class="md-nav__link">
         格式参考
       </a>
@@ -4203,10 +4191,11 @@
 
 
 <h1 id="buffercache">基础篇：怎么理解内存中的Buffer和Cache？<a class="headerlink" href="#buffercache" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!NOTE]
-内存和 CPU 的关系非常紧密，而内存管理本身也是很复杂的机制，所以感觉知识很硬核、很难啃，都是正常的。但还是那句话，初学时不用非得理解所有内容，继续往后学，多理解相关的概念并配合一定的实践之后，再回头复习往往会容易不少。当然，基本功不容放弃。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>内存和 CPU 的关系非常紧密，而内存管理本身也是很复杂的机制，所以感觉知识很硬核、很难啃，都是正常的。</p>
+<p>初学时不用非得理解所有内容，继续往后学，多理解相关的概念并配合一定的实践之后，再回头复习往往会容易不少。当然，基本功不容放弃。</p>
+</div>
 <h2 id="free">free 数据的来源<a class="headerlink" href="#free" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 注意不同版本的free输出可能会有所不同</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$ free
@@ -4214,13 +4203,13 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Mem:        <span class="m">8169348</span>      <span class="m">263524</span>     <span class="m">6875352</span>         <span class="m">668</span>     <span class="m">1030472</span>     <span class="m">7611064</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Swap:             <span class="m">0</span>           <span class="m">0</span>           <span class="m">0</span>
 </code></pre></div>
-<p>这个界面包含了物理内存Mem和交换分区Swap的具体使用情况，比如总内存、已用内存、缓存、可用内存等。其中缓存是 Buffer和Cache两部分的总和 。
-这里的大部分指标都比较容易理解，但 Buffer和 Cache可能不太好区分。从字面上来说，Buffer是缓冲区，而Cache是缓存，两者都是数据在内存中的临时存储。那么，这两种“临时存储”有什么区别吗？</p>
-<blockquote>
-<p>[!TIP]
-碰到看不明白的指标时该怎么办?
-不懂就去查手册。用 man 命令查询 free 的文档，就可以找到对应指标的详细说明。</p>
-</blockquote>
+<p>这个界面包含了物理内存Mem和交换分区Swap的具体使用情况，比如总内存、已用内存、缓存、可用内存等。其中缓存是 Buffer和Cache两部分的总和。</p>
+<p>这里的大部分指标都比较容易理解，但 Buffer和 Cache可能不太好区分。从字面上来说，Buffer是缓冲区，而Cache是缓存，两者都是数据在内存中的临时存储。那么，这两种“临时存储”有什么区别吗？</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>碰到看不明白的指标时该怎么办?</p>
+<p>不懂就去查手册。用 man 命令查询 free 的文档，就可以找到对应指标的详细说明。</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>buffers
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>              Memory used by kernel buffers <span class="o">(</span>Buffers <span class="k">in</span> /proc/meminfo<span class="o">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -4230,14 +4219,18 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>              Sum of buffers and cache
 </code></pre></div>
 <ul>
-<li>Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。</li>
-<li>Cache 是内核页缓存和Slab用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。</li>
+<li>
+<p>Buffers 是内核缓冲区用到的内存，对应的是 /proc/meminfo 中的 Buffers 值。</p>
+</li>
+<li>
+<p>Cache 是内核页缓存和Slab用到的内存，对应的是 /proc/meminfo 中的 Cached 与 SReclaimable 之和。</p>
+</li>
 </ul>
 <p>这里的说明告诉我们，这些数值都来自 /proc/meminfo，但更具体的 Buffers、Cached和SReclaimable 的含义，还是没有说清楚。</p>
-<blockquote>
-<p>[!WARNING]
-估计你第一反应就是去百度或者 Google一下。要注意，网上的结论可能是对的，但是很可能跟你的环境并不匹配。最简单来说，同一个指标的具体含义，就可能因为内核版本、性能工具版本的不同而有挺大差别。这也是为什么，专栏中强调通用思路和方法，而不是死记结论。对于案例实践来说，机器环境就是我们的最大限制。</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>估计你第一反应就是去百度或者 Google一下。要注意，网上的结论可能是对的，但是很可能跟你的环境并不匹配。最简单来说，同一个指标的具体含义，就可能因为内核版本、性能工具版本的不同而有挺大差别。这也是为什么，专栏中强调通用思路和方法，而不是死记结论。对于案例实践来说，机器环境就是我们的最大限制。</p>
+</div>
 <h2 id="proc">proc 文件系统<a class="headerlink" href="#proc" title="Permanent link">&para;</a></h2>
 <p>/proc 是 Linux 内核提供的一种特殊文件系统，是用户跟内核交互的接口。比方说，用户可以从 /proc 中查询内核的运行状态和配置选项，查询进程的运行状态、统计数据等，当然，你也可以通过 /proc 来修改内核的配置。proc 文件系统同时也是很多性能工具的最终数据来源。比如我们刚才看到的 free ，就是通过读取 /proc/meminfo ，得到内存的使用情况。</p>
 <p>执行 man proc ，就可以得到 proc 文件系统的详细文档。</p>
@@ -4254,9 +4247,15 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    Part of Slab, that cannot be reclaimed on memory pressure.
 </code></pre></div>
 <ul>
-<li>Buffers 是对原始磁盘块的临时存储，也就是<strong>用来缓存磁盘的数据</strong>，通常不会特别大（20MB左右）。这样，内核就可以把分散的写集中起来，统一优化磁盘的写入，比如可以把多次小的写合并成单次大的写等等。</li>
-<li>Cached 是从磁盘读取文件的页缓存，也就是<strong>用来缓存从文件读取的数据</strong>。这样，下次访问这些文件数据时，就可以直接从内存中快速获取，而不需要再次访问缓慢的磁盘。</li>
-<li>SReclaimable 是 Slab 的一部分。Slab包括两部分，其中的可回收部分，用 SReclaimable 记录；而不可回收部分，用 SUnreclaim 记录。</li>
+<li>
+<p>Buffers 是对原始磁盘块的临时存储，也就是<strong>用来缓存磁盘的数据</strong>，通常不会特别大（20MB左右）。这样，内核就可以把分散的写集中起来，统一优化磁盘的写入，比如可以把多次小的写合并成单次大的写等等。</p>
+</li>
+<li>
+<p>Cached 是从磁盘读取文件的页缓存，也就是<strong>用来缓存从文件读取的数据</strong>。这样，下次访问这些文件数据时，就可以直接从内存中快速获取，而不需要再次访问缓慢的磁盘。</p>
+</li>
+<li>
+<p>SReclaimable 是 Slab 的一部分。Slab包括两部分，其中的可回收部分，用 SReclaimable 记录；而不可回收部分，用 SUnreclaim 记录。</p>
+</li>
 </ul>
 <h2 id="_1">测试案例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">场景一：磁盘和文件写案例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -4410,6 +4409,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../../assets/js/termynal.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.js"></script>
       
     
   </body>

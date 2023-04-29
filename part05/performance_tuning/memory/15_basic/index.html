@@ -88,6 +88,8 @@
     
       <link rel="stylesheet" href="../../../../assets/css/termynal.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1970,7 +1972,7 @@
   
     <li class="md-nav__item">
       <a href="../../how_to/61_end/" class="md-nav__link">
-        61 | 结束语 | 愿你攻克性能难关
+        61 | 结束语：| 愿你攻克性能难关
       </a>
     </li>
   
@@ -4107,20 +4109,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../SCHEDULE/" class="md-nav__link">
-        更新计划
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../SETUP/" class="md-nav__link">
         格式参考
       </a>
@@ -4258,9 +4246,9 @@
 
 <h1 id="linux">基础篇：Linux内存是怎么工作的？<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
 <h2 id="_1">内存映射<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>通常所说的内存容量，其实指的是物理内存。物理内存也称为主存，大多数计算机用的主存都是动态随机访问内存（DRAM）。只有内核才可以直接访问物理内存。那么，进程要访问内存时，该怎么办呢？
-Linux 内核给每个进程都提供了一个独立的虚拟地址空间，并且这个地址空间是连续的。这样，进程就可以很方便地访问内存，更确切地说是访问虚拟内存。
-虚拟地址空间的内部又被分为<strong>内核空间和用户空间</strong>两部分，不同字长（也就是单个CPU指令可以处理数据的最大长度）的处理器，地址空间的范围也不同。</p>
+<p>通常所说的内存容量，其实指的是物理内存。物理内存也称为主存，大多数计算机用的主存都是动态随机访问内存（DRAM）。只有内核才可以直接访问物理内存。那么，进程要访问内存时，该怎么办呢？</p>
+<p>Linux 内核给每个进程都提供了一个独立的虚拟地址空间，并且这个地址空间是连续的。这样，进程就可以很方便地访问内存，更确切地说是访问虚拟内存。</p>
+<p>虚拟地址空间的内部又被分为<strong>内核空间和用户空间</strong>两部分，不同字长（也就是单个CPU指令可以处理数据的最大长度）的处理器，地址空间的范围也不同。</p>
 <p>如下图，32位系统的内核空间占用 1G，位于最高处，剩下的3G是用户空间。而 64 位系统的内核空间和用户空间都是 128T，分别占据整个内存空间的最高和最低处，剩下的中间部分是未定义的。</p>
 <p>进程在用户态时，只能访问用户空间内存；只有进入内核态后，才可以访问内核空间内存。虽然每个进程的地址空间都包含了内核空间，但这些内核空间，其实关联的都是相同的物理内存。这样，进程切换到内核态后，就可以很方便地访问内核空间内存。</p>
 <p>既然每个进程都有一个这么大的地址空间，那么所有进程的虚拟内存加起来，自然要比实际的物理内存大得多。所以，并不是所有的虚拟内存都会分配物理内存，只有那些实际使用的虚拟内存才分配物理内存，并且分配后的物理内存，是通过<strong>内存映射</strong>来管理的。</p>
@@ -4318,10 +4306,10 @@ Linux 内核给每个进程都提供了一个独立的虚拟地址空间，并�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span> -16 &gt; /proc/<span class="k">$(</span>pidof sshd<span class="k">)</span>/oom_adj
 </code></pre></div>
 <h2 id="_5">如何查看内存使用情况<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!NOTE]
-这里只讲了最主要的原理。掌握了这些，你可以对内存的运作有一条主线认识，不至于脑海里只有术语名词的堆砌。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这里只讲了最主要的原理。掌握了这些，你可以对内存的运作有一条主线认识，不至于脑海里只有术语名词的堆砌。</p>
+</div>
 <h3 id="free">free 查看整个系统的内存使用情况<a class="headerlink" href="#free" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 注意不同版本的free输出可能会有所不同</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ free
@@ -4350,10 +4338,10 @@ Linux 内核给每个进程都提供了一个独立的虚拟地址空间，并�
 <p>最后一列，available 是新进程可用内存的大小。</p>
 </li>
 </ul>
-<blockquote>
-<p>[!ATTENTION]
-最后一列的可用内存 available。available不仅包含未使用内存，还包括了可回收的缓存，所以一般会比未使用内存更大。不过，并不是所有缓存都可以回收，因为有些缓存可能正在使用中。</p>
-</blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>最后一列的可用内存 available。available不仅包含未使用内存，还包括了可回收的缓存，所以一般会比未使用内存更大。不过，并不是所有缓存都可以回收，因为有些缓存可能正在使用中。</p>
+</div>
 <h3 id="top-ps">top 或 ps 查看进程的内存使用情况<a class="headerlink" href="#top-ps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 按下M切换到内存排序</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ top
@@ -4542,6 +4530,8 @@ Linux 内核给每个进程都提供了一个独立的虚拟地址空间，并�
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../../assets/js/termynal.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.js"></script>
       
     
   </body>

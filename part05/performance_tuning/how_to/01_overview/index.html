@@ -88,6 +88,8 @@
     
       <link rel="stylesheet" href="../../../../assets/css/termynal.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -857,27 +859,26 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    笔记总结
-  </a>
-  
-    <nav class="md-nav" aria-label="笔记总结">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     性能问题为什么难？
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     性能指标是什么？
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    性能分析的步骤有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     学习重点是什么？
   </a>
@@ -896,11 +897,6 @@
   <a href="#_5" class="md-nav__link">
     性能优化思维导图
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1963,7 +1959,7 @@
   
     <li class="md-nav__item">
       <a href="../61_end/" class="md-nav__link">
-        61 | 结束语 | 愿你攻克性能难关
+        61 | 结束语：| 愿你攻克性能难关
       </a>
     </li>
   
@@ -4100,20 +4096,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../SCHEDULE/" class="md-nav__link">
-        更新计划
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../SETUP/" class="md-nav__link">
         格式参考
       </a>
@@ -4156,27 +4138,26 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    笔记总结
-  </a>
-  
-    <nav class="md-nav" aria-label="笔记总结">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     性能问题为什么难？
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     性能指标是什么？
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    性能分析的步骤有哪些？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     学习重点是什么？
   </a>
@@ -4195,11 +4176,6 @@
   <a href="#_5" class="md-nav__link">
     性能优化思维导图
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -4243,21 +4219,24 @@
 
 
 <h1 id="linux">如何学习Linux性能优化？<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
-<h2 id="_1">笔记总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">性能问题为什么难？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>原因可能有两个：
-1. 没有找到有效的方法学原理，一听到 “系统”、“底层”这些词就发怵，觉得太难，无法深入学习去，进而无法建立起性能的全局观。
-2. 性能问题更远太复杂，既不懂怎么分析，也不能抽丝剥茧找到瓶颈，常常临时上网查别人的解决方案，囫囵吞枣地尝试，懒得深究。</p>
-<p>最终，<strong>相同地错误重复在犯，相同地状况也是重复出现。</strong>
-其实，性能问题并没有想象的那么难，<strong>只要理解了应用程序和系统的少数几个基本原理，再进行大量的实战练习，建立起整体性能的全局观</strong>，大多数性能问题的优化就会水到渠成。</p>
+<h2 id="_1">性能问题为什么难？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>原因可能有两个：</p>
+<ol>
+<li>没有找到有效的方法学原理，一听到 “系统”、“底层”这些词就发怵，觉得太难，无法深入学习去，进而无法建立起性能的全局观。</li>
+<li>性能问题的根源太复杂，既不懂怎么分析，也不能抽丝剥茧找到瓶颈，常常临时上网查别人的解决方案，囫囵吞枣地尝试去解决，懒得深究这些方法为什么有效。</li>
+</ol>
+<p>最终，<strong>相同地错误重复在犯，相同地状况也是重复出现。</strong></p>
+<p>其实，性能问题并没有想象的那么难，<strong>只要理解了应用程序和系统的少数几个基本原理，再进行大量的实战练习，建立起整体性能的全局观</strong>，大多数性能问题的优化就会水到渠成。</p>
 <p>事实上，<strong>你不需要了解每个组件的所有实现细节</strong>，只要能理解它们最基本的工作原理和协作方式即可。</p>
-<h3 id="_3">性能指标是什么？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">性能指标是什么？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>学习性能优化的第一步，一定是了解“性能指标”这个概念。</p>
 <p>性能优化的两个核心指标——<strong>吞吐</strong> 和 <strong>延迟</strong>。</p>
-<p>这两个指标，是<strong>从应用负载的视角</strong>，来考察性能，直接影响了产品终端的用户体验。与其对应的，是<strong>从系统资源的视角</strong>出发的指标，比如资源使用率、饱和度等。</p>
+<p>这两个指标，是<strong>从应用负载的视角</strong>，来考察性能，直接影响了产品终端的用户体验。</p>
+<p>与其对应的，是<strong>从系统资源的视角</strong>出发的指标，比如资源使用率、饱和度等。</p>
 <p><img alt="01_01_performance_indicator.png" src="https://i.loli.net/2021/03/04/xRIFmgHKBo1E9z6.png" /></p>
-<p>性能问题的本质，即是系统资源已经达到瓶颈，但是请求的处理却还不够快，无法支撑更多的请求。
-性能分析，其实就是<strong>找出应用或者系统的瓶颈，并设法去避免或者缓解它们</strong>，从而更高效地利用系统资源，处理更多地请求。一般包含以下六个步骤：</p>
+<p>性能问题的本质，即是系统资源已经达到瓶颈，但是请求的处理却还不够快，无法支撑更多的请求。</p>
+<h2 id="_3">性能分析的步骤有哪些？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>性能分析，其实就是<strong>找出应用或者系统的瓶颈，并设法去避免或者缓解它们</strong>，从而更高效地利用系统资源，处理更多地请求。一般包含以下六个步骤：</p>
 <ol>
 <li>选择指标评估因公程序和系统的性能</li>
 <li>为应用程序和系统设置性能目标</li>
@@ -4266,32 +4245,34 @@
 <li>优化系统和应用程序</li>
 <li>性能监控和告警</li>
 </ol>
-<h3 id="_4">学习重点是什么？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>想要学好性能分析和优化，<strong>建立整体系统性能的全局观</strong>是最核心的话题。
-学习的重中之重有三点——</p>
+<h2 id="_4">学习重点是什么？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>想要学好性能分析和优化，<strong>建立整体系统性能的全局观</strong>是最核心的话题。</p>
+<p>学习的重中之重有三点：</p>
 <ul>
-<li>理解最基本的几个系统知识原理</li>
-<li>掌握必要的性能工具</li>
-<li>通过实际的场景演练，贯穿不同的组件</li>
+<li><strong>理解原理</strong>：理解最基本的几个系统知识原理</li>
+<li><strong>掌握工具</strong>：掌握必要的性能工具</li>
+<li><strong>实战演练</strong>：通过实际的场景演练，贯穿不同的组件</li>
 </ul>
-<h4 id="brendan-gregg">性能优化大师：Brendan Gregg<a class="headerlink" href="#brendan-gregg" title="Permanent link">&para;</a></h4>
-<p>Linux 性能工具图谱，是Linux 性能分析最重要的参考资料之一，它指明了在 Linux不同子系统出现性能问题后，应该用什么样的工具来观测和分析。</p>
-<blockquote>
-<p>[!TIP]
-Brendan Gregg 博客： http://brendangregg.com</p>
-</blockquote>
+<h3 id="brendan-gregg">性能优化大师：Brendan Gregg<a class="headerlink" href="#brendan-gregg" title="Permanent link">&para;</a></h3>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>Linux 性能工具图谱，是 Linux 性能分析最重要的参考资料之一，它指明了在 Linux 不同子系统出现性能问题后，应该用什么样的工具来观测和分析。</p>
+</div>
 <p><img alt="01_02_performance_tool.png" src="https://i.loli.net/2021/03/04/DraFgfI92RBhseV.png" /></p>
-<p><strong>性能工具的选用</strong>很重要，一个正确的选择胜过千百次的努力。要懂得在什么场景选用什么样子的工具，以及怎么学会选择合适的工具。但是，<strong>千万不要把性能工具当成学习的全部</strong>
-，工具只是解决问题的手段，关键在于用法。只有真正理解了其背后的原理，并结合具体场景，融汇贯通系统的不同组件，才算是真正掌握它们。</p>
-<h4 id="_5">性能优化思维导图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><strong>性能工具的选用很重要</strong>，一个正确的选择胜过千百次的努力。要懂得在什么场景选用什么样子的工具，以及怎么学会选择合适的工具。</p>
+<p>但是，<strong>千万不要把性能工具当成学习的全部</strong>，工具只是解决问题的手段，关键在于用法。只有真正理解了其背后的原理，并结合具体场景，融汇贯通系统的不同组件，才算是真正掌握它们。</p>
+<h3 id="_5">性能优化思维导图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><img alt="01_03_performance_mindmap.jpg" src="https://i.loli.net/2021/03/04/B7SFyLwUbuJOlni.jpg" /></p>
 <h3 id="_6">怎么学习更高效？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><strong>技巧一：虽然系统原理很重要，但是刚开始一定不要试图抓住所有的实现细节。</strong></p>
 <p>深陷到系统实现的内部，可能会丢掉学习的重点，而且繁杂的实现逻辑，很可能会打消学习的积极性。所以，一定要适度。</p>
 <p><strong>技巧二：边学边实践，通过大量案例演习，掌握Linux 性能的分析和优化。</strong></p>
 <p><strong>技巧三：勤思考、多反思、善总结，多问为什么。</strong></p>
-<p>想真正学懂一门知识，最好的方法就是问问题。当你能提出好的问题时，就说明已经深入了解了它。</p>
+<p>想真正学懂一门知识，最好的方法就是<strong>问问题</strong>。当你能提出好的问题时，就说明已经深入了解了它。</p>
 <h2 id="_7">拓展阅读<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://brendangregg.com">Brendan Gregg 博客</a></li>
+</ul>
 
 
 
@@ -4440,6 +4421,8 @@ Brendan Gregg 博客： http://brendangregg.com</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../../assets/js/termynal.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.js"></script>
       
     
   </body>
