@@ -17,12 +17,11 @@
 [![Build Status](https://img.shields.io/travis/amzn/style-dictionary.svg?style=flat-square)](https://travis-ci.org/amzn/style-dictionary)
 [![downloads](https://img.shields.io/npm/dm/style-dictionary.svg?style=flat-square)](https://www.npmjs.com/package/style-dictionary) -->
 
-
 # Practical Linux Skills
+
 > **从实践中来，到实践中去**
 
 > *from practice, to practice*
-
 
 ## 写作初衷
 

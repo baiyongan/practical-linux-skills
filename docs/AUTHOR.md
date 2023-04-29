@@ -1,6 +1,5 @@
 # 关于作者
 
-
 | 网站                                                         | 内容简介                                                     | 最近动态                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [**BYA's Blog**](http://baiyongan.github.io)                 | 个人博客，以读书书单及书摘为主，暂时没备案，也没优化访问体验。 | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/baiyongan.github.io?logo=github&style=for-the-badge) |

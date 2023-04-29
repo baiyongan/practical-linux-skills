@@ -2,7 +2,7 @@
 
 ## 参数设置
 
-### Color parameters 
+### Color parameters
 
 - red
 - pink

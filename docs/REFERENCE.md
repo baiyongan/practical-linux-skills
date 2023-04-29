@@ -16,6 +16,7 @@
 #### 行业规范类
 
 - 认真贯彻一个权威的行业标准即可 
+  
 > do one thing, and do it well
 
 ## 开源项目
@@ -44,7 +45,6 @@
 
 [Github: wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn)
 
-
 #### 行业规范类
 
 [★★★★★ | Google 开源项目风格指南 (中文版)](https://zh-google-styleguide.readthedocs.io/en/latest/contents/#)
@@ -60,7 +60,6 @@
 [Awesome Cheatsheets](https://lecoupa.github.io/awesome-cheatsheets/)
 
 [Awesome-Linux-Software](https://luong-komorebi.github.io/Awesome-Linux-Software/)
-
 
 #### 知识归纳类
 
@@ -91,7 +90,6 @@
 
 ## 技术书籍 & 课程专栏
 
-
 [★★★★★ | The Linux Command Line](http://linuxcommand.org/tlcl.php)
 
 [《Linux命令行大全》](https://book.douban.com/subject/22226727/)
@@ -119,7 +117,6 @@
 [IBM Developer: LPIC-1 学习路线图](https://developer.ibm.com/zh/technologies/linux/tutorials/l-lpic1-map/)
 
 [Linux Shell Scripting Tutorial (LSST) v2.0](https://bash.cyberciti.biz/guide/Main_Page)
-
 
 ## 浏览器 & 社区
 

@@ -95,13 +95,15 @@ extra:
 extra_css:
   - "assets/css/custom.css"
   - "assets/css/termynal.css"
-  - "assets/css/asciinema-player.css"
+  # - "assets/css/asciinema-player.css"
+  - "https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.css"
 
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
   - "assets/js/termynal.js"
-  - "assets/js/asciinema-player.min.js"
-  
+  # - "assets/js/asciinema-player.min.jss"
+  - "https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.js"  
+
 #================================ Extensions =============================================
 markdown_extensions:
   - toc:
@@ -251,7 +253,7 @@ nav:
     - 60 | 答疑篇：容器冷启动的性能分析: part05/performance_tuning/integrate/60_QA.md
 
   - 尾篇:
-    - 61 | 结束语 | 愿你攻克性能难关: part05/performance_tuning/how_to/61_end.md
+    - 61 | 结束语：| 愿你攻克性能难关: part05/performance_tuning/how_to/61_end.md
 
   - 探索延伸:
     - 书单推荐：性能优化和 Linux 系统原理: part05/performance_tuning/disk_io/33_explore.md
@@ -426,6 +428,6 @@ nav:
   - License: LICENSE.md
   - 变更日志: CHANGELOG.md
   - 附录: APPENDIX.md
-  - 更新计划: SCHEDULE.md
+  # - 更新计划: SCHEDULE.md
   - 格式参考: SETUP.md
 

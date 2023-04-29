@@ -4,7 +4,7 @@
 
 - [x] [01 | 如何学习 Linux 性能优化？](performance_tuning/how_to/01_overview.md)
 
-## CPU 性能 13讲
+## CPU 性能 13 讲
 
 - [x] [02 | 基础篇：平均负载](performance_tuning/cpu/02_basic.md)
 - [x] [03 | 基础篇：上下文切换-上](performance_tuning/cpu/03_basic.md)
@@ -20,7 +20,7 @@
 - [ ] [13 | 答疑篇：无法模拟出 RES 中断的问题，怎么办？](performance_tuning/cpu/13_QA.md)
 - [ ] [14 | 答疑篇：如何用 perf 工具分析 Java 程序？](performance_tuning/cpu/14_QA.md)
 
-## Memory 性能 8讲
+## Memory 性能 8 讲
 
 - [x] [15 | 基础篇：Linux 内存如何工作](performance_tuning/memory/15_basic.md)
 - [x] [16 | 基础篇：理解内存中的 Buffer 和 Cache](performance_tuning/memory/16_basic.md)
@@ -31,7 +31,7 @@
 - [ ] [21 | 套路篇：“快准狠”定位系统内存的问题](performance_tuning/memory/21_routine.md)
 - [ ] [22 | 答疑篇：文件系统与磁盘的区别](performance_tuning/memory/22_QA.md)
 
-## Disk I/O 性能 10讲
+## Disk I/O 性能 10 讲
 
 - [ ] [23 | 基础篇：Linux 文件系统如何工作](performance_tuning/disk_io/23_basic.md)
 - [ ] [24 | 基础篇：Linux 磁盘 I/O 如何工作-上](performance_tuning/disk_io/24_basic.md)
@@ -45,7 +45,7 @@
 - [ ] [32 | 答疑篇：阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系](performance_tuning/disk_io/32_QA.md)
 - [ ] [33 | 书单推荐：性能优化和 Linux 系统原理](performance_tuning/disk_io/33_explore.md)
 
-## Network 性能 13讲
+## Network 性能 13 讲
 
 - [ ] [34 | 基础篇：Linux 网络必知-上](performance_tuning/network/34_basic.md)
 - [ ] [35 | 基础篇：Linux 网络必知-下](performance_tuning/network/35_basic.md)
@@ -62,7 +62,7 @@
 - [ ] [46 | 答疑篇：网络收发过程中的缓冲区位置](performance_tuning/network/46_QA.md)
 - [ ] [47 | 书单推荐：网络原理和 Linux 内核实现](performance_tuning/network/47_explore.md)
 
-## 综合实战 13讲
+## 综合实战 13 讲
 
 - [ ] [48 | 案例篇：为什么应用容器化后，启动慢了很多？](performance_tuning/integrate/48_case.md)
 - [ ] [49 | 案例篇：解决服务器总是时不时丢包的问题-上](performance_tuning/integrate/49_case.md)
