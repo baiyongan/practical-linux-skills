@@ -4,9 +4,10 @@
 
 ![03_01_computer_hardware.png](https://i.loli.net/2021/07/07/6NDdIv83mSlPc4F.png)
 
-> [!NOTE] 
-> 操作系统其实就像一个软件外包公司，其内核就相当于这家外包公司的老板。可以将自己的角色切换成这家软件外包公司的老板，设身处地地去理解操作系统是如何协调各种资源，帮客户做成事情的。
-> <br/><br/>本课程所说的“用户”，都是指操作系统的用户，“客户”则是指外包公司的客户。
+!!! note
+    操作系统其实就像一个软件外包公司，其内核就相当于这家外包公司的老板。可以将自己的角色切换成这家软件外包公司的老板，设身处地地去理解操作系统是如何协调各种资源，帮客户做成事情的。
+
+    本课程所说的“用户”，都是指操作系统的用户，“客户”则是指外包公司的客户。
 
 ## 操作系统 vs 外包公司
 
@@ -42,8 +43,8 @@
 
 操作系统中，不同的进程有不同的内存空间，但是整个电脑内存容量是固定的，所以需要统一的管理和分配，这就需要内存管理子系统（Memory Management Subsystem）。
 
-> [!TIP]
-> 如果想直观地了解某程序如何使用 CPU 和内存，可以打开任务管理器，你就能看到某程序的相应进程耗费的 CPU 和内存。
+!!! tips
+    如果想直观地了解某程序如何使用 CPU 和内存，可以打开任务管理器，你就能看到某程序的相应进程耗费的 CPU 和内存。
 
 ![03_02_system_architecture_vs_company.png](https://i.loli.net/2021/07/07/cyGMxrYAv6isOaT.png)
 
@@ -51,7 +52,7 @@
 
 ![03_03_system_kernel_architechture.png](https://i.loli.net/2021/07/07/dgUFiWBIaYTpVyx.png)
 
-## 拓展阅读 
+## 拓展阅读
 
 [Linux Source Code](https://github.com/torvalds/linux)
 
@@ -59,13 +60,14 @@
 
 [Overview of the Kernel Source](https://courses.linuxchix.org/kernel-hacking-2002/08-overview-kernel-source.html)
 
-> [!NOTE]
-> 内核版本5.0.7，目录结构：
-> - kernel 内核管理核心代码-进程管理子系统
-> - mm 内存管理代码-内存管理子系统
-> - drivers 驱动程序代码-设备管理子系统
-> - fs 文件系统代码-文件管理子系统
-> - net 网络协议代码-网络管理子系统
-> - arch 体系结构代码，如x86、arm等
-> - ipc 进程间通信子系统
-> - init Linux系统启动初始化相关代码
+!!! note
+    内核版本5.0.7，目录结构：
+
+    - kernel 内核管理核心代码-进程管理子系统
+    - mm 内存管理代码-内存管理子系统
+    - drivers 驱动程序代码-设备管理子系统
+    - fs 文件系统代码-文件管理子系统
+    - net 网络协议代码-网络管理子系统
+    - arch 体系结构代码，如x86、arm等
+    - ipc 进程间通信子系统
+    - init Linux系统启动初始化相关代码

@@ -405,8 +405,9 @@ nav:
 
 #========== Part13 ==============
 - 快捷参考:
-  - 概述: part13/overview.md
-  - 目录: part13/contents.md
+  # - 概述: part13/overview.md
+  # - 目录: part13/contents.md
+  - 草稿: part13/draft.md
   - 命令行快捷键: part13/shortcut_key.md
 
 

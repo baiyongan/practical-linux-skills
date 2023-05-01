@@ -3,13 +3,10 @@
 ## 用户与密码
 
 - 修改密码 passwd
-
 - 添加用户 useradd
-
-- 添加用户组 
-
-- 对应文件 
-  - 账户文件 /etc/passwd 
+- 添加用户组
+- 对应文件
+  - 账户文件 /etc/passwd
   - 组文件 /etc/group
 
 ## 浏览文件
@@ -20,7 +17,6 @@
 ## 安装软件
 
  Linux 现在常用的有两大体系，一个是 CentOS 体系，一个是 Ubuntu 体系，前者使用 rpm，后者使用 deb。
-
 
 ```shell
 # 安装 xxx 软件
@@ -40,8 +36,8 @@ rpm -qa | grep xxx
 dpkg -l | grep xxx
 ```
 
-> [!TIP]
-> 如果不知道关键词，可以使用 `rpm -qa | more` 和 `rpm -qa | less` 这两个命令，他们可以将很长的结果分页展示出来，便于查找。
+!!! tips
+    如果不知道关键词，可以使用 `rpm -qa | more` 和 `rpm -qa | less` 这两个命令，他们可以将很长的结果分页展示出来，便于查找。
 
 ```shell
 # 删除安装的 xxx 软件
@@ -128,7 +124,6 @@ ps -ef | grep 关键字  | awk '{print $2}'| xargs kill -9
 
 同理，对于 CentOS，会在 /usr/lib/systemd/system 目录下，创建一个 XXX.service 的配置文件，从而成为一个服务。
 
-
 ## 关机与重启
 
 - shutdown -h now 是现在就关机
@@ -136,27 +131,5 @@ ps -ef | grep 关键字  | awk '{print $2}'| xargs kill -9
 
 ![04_01_linux_common_command.png](https://i.loli.net/2021/07/09/P2YJB5lWKswDVTb.png)
 
-> [!ATTENTION]
-> ubuntu 中现在用apt，apt = apt-get、apt-cache 和 apt-config 中最常用命令选项的集合。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+!!! attention
+    ubuntu 中现在用apt，apt = apt-get、apt-cache 和 apt-config 中最常用命令选项的集合。
