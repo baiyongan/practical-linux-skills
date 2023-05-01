@@ -4564,27 +4564,17 @@
 <p>A: 还是要回到平均负载的含义上来，平均负载是指单位时间内，处于可运行状态和不可中断状态的进程数。所以，它不仅包括了正在使用 CPU 的进程，还包括等待 CPU 和等待 I/O 的进程。
 而 CPU 使用率，是单位时间内 CPU 繁忙情况的统计，跟平均负载并不一定完全对应。比如：</p>
 <ul>
-<li>
-<p>CPU 密集型进程，使用大量 CPU 会导致平均负载升高，此时这两者是一致的；</p>
-</li>
-<li>
-<p>I/O 密集型进程，等待 I/O 也会导致平均负载升高，但 CPU 使用率不一定很高；</p>
-</li>
-<li>
-<p>大量等待 CPU 的进程调度也会导致平均负载升高，此时的CPU使用率也会比较高。</p>
-</li>
+<li>CPU 密集型进程，使用大量 CPU 会导致平均负载升高，此时这两者是一致的；</li>
+<li>I/O 密集型进程，等待 I/O 也会导致平均负载升高，但 CPU 使用率不一定很高；</li>
+<li>大量等待 CPU 的进程调度也会导致平均负载升高，此时的CPU使用率也会比较高。</li>
 </ul>
 <h2 id="_7">平均负载案例分析<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="_8">环境准备与工具选用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>课程使用的案例环境配置如下：
-- 机器配置：2 CPU，8GB 内存。</p>
+<p>课程使用的案例环境配置如下：</p>
 <ul>
-<li>
-<p>预先安装 stress 和 sysstat 包，如 apt install stress sysstat。</p>
-</li>
-<li>
-<p>默认使用 root 用户运行。</p>
-</li>
+<li>机器配置：2 CPU，8GB 内存。</li>
+<li>预先安装 stress 和 sysstat 包，如 apt install stress sysstat。</li>
+<li>默认使用 root 用户运行。</li>
 </ul>
 <h3 id="_9">工具介绍<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4597,9 +4587,7 @@
 <li>
 <p>mpstat： 是一个常用的多核 CPU 性能分析工具，用来实时查看每个 CPU 的性能指标，以及所有CPU的平均指标。</p>
 </li>
-<li>
-<p>pidstat： 是一个常用的进程性能分析工具，用来实时查看进程的 CPU、内存、I/O 以及上下文切换等性能指标。</p>
-</li>
+<li>pidstat： 是一个常用的进程性能分析工具，用来实时查看进程的 CPU、内存、I/O 以及上下文切换等性能指标。</li>
 </ul>
 <h3 id="_10">测试准备<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>安装略，自行 google 解决。以下每个场景，都开三个终端，登录到同一台 Linux 机器中。
@@ -4698,15 +4686,9 @@
 <p class="admonition-title">Note</p>
 <p>平均负载提供了一个快速查看系统整体性能的手段，反映了整体的负载情况。但只看平均负载本身，我们并不能直接发现，到底是哪里出现了瓶颈。所以，在理解平均负载时，也要注意：</p>
 <ul>
-<li>
-<p>平均负载高有可能是 CPU 密集型进程导致的；</p>
-</li>
-<li>
-<p>平均负载高并不一定代表 CPU 使用率高，还有可能是 I/O 更繁忙了；</p>
-</li>
-<li>
-<p>当发现负载高的时候，你可以使用 mpstat、pidstat 等工具，辅助分析负载的来源。</p>
-</li>
+<li>平均负载高有可能是 CPU 密集型进程导致的；</li>
+<li>平均负载高并不一定代表 CPU 使用率高，还有可能是 I/O 更繁忙了；</li>
+<li>当发现负载高的时候，你可以使用 mpstat、pidstat 等工具，辅助分析负载的来源。</li>
 </ul>
 </div>
 <h2 id="_19">讨论整理<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>

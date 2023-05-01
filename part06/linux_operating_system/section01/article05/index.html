@@ -4354,11 +4354,13 @@
 <p>当分配的内存数量比较小的时候，使用 brk，会和原来的堆的数据连在一起，这就像多分配两三个工位，在原来的区域旁边搬两把椅子就行了。</p>
 <p>当分配的内存数量比较大的时候，使用 mmap，会重新划分一块区域，也就是说，当办公空间需要太多的时候，索性来个一整块。</p>
 <h2 id="_3">档案库管理与文件管理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>文件管理，无非是创建、打开、读、写等。对于文件的操作，下面这六个系统调用是最重要的：
-- 对于已经有的文件，可以使用 open 打开这个文件，close 关闭这个文件；
-- 对于没有的文件，可以使用 creat 创建文件；
-- 打开文件以后，可以使用 lseek 跳到文件的某个位置；
-- 可以对文件的内容进行读写，读的系统调用是 read，写是 write。</p>
+<p>文件管理，无非是创建、打开、读、写等。对于文件的操作，下面这六个系统调用是最重要的：</p>
+<ul>
+<li>对于已经有的文件，可以使用 open 打开这个文件，close 关闭这个文件；</li>
+<li>对于没有的文件，可以使用 creat 创建文件；</li>
+<li>打开文件以后，可以使用 lseek 跳到文件的某个位置；</li>
+<li>可以对文件的内容进行读写，读的系统调用是 read，写是 write。</li>
+</ul>
 <h3 id="linux">Linux 中一切皆文件<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <ul>
 <li>启动一个进程，需要一个程序文件，这是一个<strong>二进制文件</strong>。</li>
@@ -4370,10 +4372,10 @@
 <li>文件都被存储在文件夹里面，其实<strong>文件夹</strong>也是一个文件。</li>
 <li>进程运行起来，要想看到进程运行的情况，会在 /proc 下面有对应的<strong>进程号</strong>，还是一系列文件。</li>
 </ul>
-<blockquote>
-<p>[!TIP]
-每个文件，Linux 都会分配一个<strong>文件描述符</strong>（File Descriptor），这是一个整数。有了这个文件描述符，我们就可以使用系统调用，查看或者干预进程运行的方方面面。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>每个文件，Linux 都会分配一个<strong>文件描述符</strong>（File Descriptor），这是一个整数。有了这个文件描述符，我们就可以使用系统调用，查看或者干预进程运行的方方面面。</p>
+</div>
 <h2 id="_4">项目异常处理与信号处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>当项目遇到异常情况，就需要发送一个信号（Signal）给项目组，经常遇到的信号有以下几种：</p>
 <ul>

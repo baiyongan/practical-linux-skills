@@ -4500,12 +4500,8 @@
 <h5 id="_3">数据单元<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <p>数据单元包括 CPU 内部的缓存和寄存器组，空间很小，但是速度飞快，可以暂时存放数据和运算结果。如此一来，运算单元计算的数据就不必每次都要经过总线，到内存里面现拿，否则就太慢了。</p>
 <ul>
-<li>
-<p>CPU 内部缓存</p>
-</li>
-<li>
-<p>寄存器组</p>
-</li>
+<li>CPU 内部缓存</li>
+<li>寄存器组</li>
 </ul>
 <h5 id="_4">控制单元<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
 <p>控制单元是一个统一的指挥中心，它可以获得下一条指令，然后执行这条指令。这个指令会指导运算单元取出数据单元中的某几个数据，计算出个结果，然后放在数据单元的某个地方。</p>
@@ -4518,10 +4514,10 @@
 <p>当前的指令分两部分，一部分是做什么操作，例如是加法还是位移；一部分是操作哪些数据。</p>
 <p>要执行这条指令，就要把第一部分交给运算单元，第二部分交给数据单元。</p>
 <p>数据单元根据数据的地址，从数据段里读到数据寄存器里，就可以参与运算了。运算单元做完运算，产生的结果会暂存在数据单元的数据寄存器里。最终，会有指令将数据写回内存中的数据段。</p>
-<blockquote>
-<p>[!NOTE]
-对于不同的进程，CPU 有不同的寄存器，专门保存当前处理进程的代码段的起始地址，以及数据段的起始地址。<strong>进程切换（Process Switch）</strong>。是一个多任务系统的必备操作</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>对于不同的进程，CPU 有不同的寄存器，专门保存当前处理进程的代码段的起始地址，以及数据段的起始地址。<strong>进程切换（Process Switch）</strong>。是一个多任务系统的必备操作</p>
+</div>
 <ul>
 <li>段寄存器</li>
 </ul>
@@ -4541,10 +4537,10 @@
 <p><strong>数据总线的位数，决定了一次能拿多少个数据进来。</strong> 例如只有两位，那 CPU 一次只能从内存拿两位数。要想拿八位，就要拿四次。位数越多，一次拿的数据就越多，访问速度也就越快。</p>
 <h4 id="io">I/O 总线<a class="headerlink" href="#io" title="Permanent link">&para;</a></h4>
 <h2 id="x86">x86 开放平台<a class="headerlink" href="#x86" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!NOTE]
-能够开放自己的技术是一件了不起的事。从技术和发展的层面来讲，它会使得一项技术大面积铺开，形成行业标准。就比如现在常用的 Android 手机，如果没有开放的 Android 系统，我们也没办法享受到这么多不同类型的手机。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>能够开放自己的技术是一件了不起的事。从技术和发展的层面来讲，它会使得一项技术大面积铺开，形成行业标准。就比如现在常用的 Android 手机，如果没有开放的 Android 系统，我们也没办法享受到这么多不同类型的手机。</p>
+</div>
 <p>历史将 x86 平台推到了<strong>开放、统一、兼容</strong>的位置。</p>
 <p><img alt="06_03_x86_parameter.png" src="https://i.loli.net/2021/08/04/saHidFNmTSBMZvY.png" /></p>
 <h3 id="x86_1">x86 原理<a class="headerlink" href="#x86_1" title="Permanent link">&para;</a></h3>
@@ -4568,10 +4564,10 @@
 </ul>
 <p>如果运算中需要加载内存中的数据，需要通过 DS 找到内存中的数据，加载到通用寄存器中，应该如何加载呢？</p>
 <p>对于一个段，有一个起始的地址，而段内的具体位置，称为偏移量（Offset）。</p>
-<blockquote>
-<p>[!ATTENTION]
-在 CS 和 DS 中都存放着一个段的起始地址。代码段的偏移量在 IP 寄存器中，数据段的偏移量会放在通用寄存器中。</p>
-</blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>在 CS 和 DS 中都存放着一个段的起始地址。代码段的偏移量在 IP 寄存器中，数据段的偏移量会放在通用寄存器中。</p>
+</div>
 <p>CS 和 DS 都是 16 位的，也就是说，起始地址都是 16 位的，IP 寄存器和通用寄存器都是 16 位的，偏移量也是 16 位的，但是 8086 的地址总线地址是 20 位。怎么凑够这 20 位呢？</p>
 <p>方法就是“<strong>起始地址 *16+ 偏移量</strong>”，也就是把 CS 和 DS 中的值左移 4 位，变成 20 位的，加上 16 位的偏移量，这样就可以得到最终 20 位的数据地址。</p>
 <p>从这个计算方式可以算出，无论真正的内存多么大，对于只有 20 位地址总线的 8086 来讲，能够区分出的地址也就 2^20=1M，超过这个空间就访问不到了。如果你想访问 1M+X 的地方，这个位置已经超过 20 位了，由于地址总线只有 20 位，在总线上超过 20 位的部分根本是发不出去的，所以发出去的还是 X，最后还是会访问 1M 内的 X 的位置。</p>
@@ -4597,10 +4593,10 @@
 <p>以后的操作系统讲解中，也是主要基于 x86 架构进行讲解。
 只有了解了底层硬件的基本工作原理，将来才能理解操作系统的工作模式。</p>
 <p><img alt="06_07_x86_architecture.png" src="https://i.loli.net/2021/08/04/KC4IBdHwGzW7rsA.png" /></p>
-<blockquote>
-<p>[!TIP]
-建议重点牢记寄存器的作用，以及段的工作模式。</p>
-</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>建议重点牢记寄存器的作用，以及段的工作模式。</p>
+</div>
 <h2 id="_14">汇编命令基础<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>操作底层的寄存器往往需要使用汇编语言，操作系统的一些底层的模块也是用汇编语言写的。</p>
 <h3 id="_15">常用汇编命令<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>

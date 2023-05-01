@@ -4137,10 +4137,10 @@
 
 
 <h1 id="linux">开篇词 | 为什么要学习Linux操作系统？<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!NOTE]
-无论是从个人的职业发展角度，还是从公司招聘候选人的角度来看，扎实的基础知识是很多人的诉求。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>无论是从个人的职业发展角度，还是从公司招聘候选人的角度来看，扎实的基础知识是很多人的诉求。</p>
+</div>
 <p>大学里普遍使用的操作系统是 Windows，一种操作系统对应的是一系列的软件生态，而大学里很多课程都是围绕 Windows 软件生态展开的。</p>
 <p>例如学 C++ 用的是 Vistual Studio，学数据库用的是 SQL Server，做网站用的是 IIS 等等。</p>
 <h2 id="linux_1">Linux 操作系统是业界主流<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h2>
@@ -4157,10 +4157,18 @@
 <p>操作系统是干什么的呢？一台物理机上有很多硬件，最重要的就是 CPU、内存、硬盘、网络。同时，一台物理机上也要跑很多程序，这些资源应该给谁用呢？当然是大家轮着用，谁也别独占，谁也别饿着。为了完成资源分配这件事，操作系统承担了一个“大管家”的作用。它将硬件资源分配给不同的用户程序使用，并且在适当的时间将这些资源拿回来，再分配给其他的用户进程。</p>
 <p>假设，我们现在就是在做一家外包公司，我们的目标是把这家公司做上市。其中，操作系统就是这家外包公司的老板。我们把这家公司的发展阶段分为这样几个时期：</p>
 <ul>
-<li><strong>初创期</strong>：这个老板基于开放的营商环境（<strong>x86 体系结构</strong>），创办一家外包公司（<strong>系统的启动</strong>）。因为一开始没有其他员工，老板需要亲自接项目（<strong>实模式</strong>）。</li>
-<li><strong>发展期</strong>：公司慢慢做大，项目越接越多（<strong>保护模式、多进程</strong>），为了管理各个外包项目，建立了项目管理体系（<strong>进程管理</strong>）、会议室管理体系（<strong>内存管理</strong>）、文档资料管理系统（<strong>文件系统</strong>）、售前售后体系（<strong>输入输出设备管理</strong>）。</li>
-<li><strong>壮大期</strong>：公司越来越牛，开始促进内部项目的合作（<strong>进程间通信</strong>）和外部公司合作（<strong>网络通信</strong>）。</li>
-<li><strong>集团化</strong>：公司的业务越来越多，会成立多家子公司（<strong>虚拟化</strong>），或者鼓励内部创业（<strong>容器化</strong>），这个时候公司就变成了集团。大管家的调度能力不再局限于一家公司，而是集团公司（<strong>Linux 集群</strong>），从而成功上市（<strong>从单机操作系统到数据中心操作系统</strong>）。</li>
+<li>
+<p><strong>初创期</strong>：这个老板基于开放的营商环境（<strong>x86 体系结构</strong>），创办一家外包公司（<strong>系统的启动</strong>）。因为一开始没有其他员工，老板需要亲自接项目（<strong>实模式</strong>）。</p>
+</li>
+<li>
+<p><strong>发展期</strong>：公司慢慢做大，项目越接越多（<strong>保护模式、多进程</strong>），为了管理各个外包项目，建立了项目管理体系（<strong>进程管理</strong>）、会议室管理体系（<strong>内存管理</strong>）、文档资料管理系统（<strong>文件系统</strong>）、售前售后体系（<strong>输入输出设备管理</strong>）。</p>
+</li>
+<li>
+<p><strong>壮大期</strong>：公司越来越牛，开始促进内部项目的合作（<strong>进程间通信</strong>）和外部公司合作（<strong>网络通信</strong>）。</p>
+</li>
+<li>
+<p><strong>集团化</strong>：公司的业务越来越多，会成立多家子公司（<strong>虚拟化</strong>），或者鼓励内部创业（<strong>容器化</strong>），这个时候公司就变成了集团。大管家的调度能力不再局限于一家公司，而是集团公司（<strong>Linux 集群</strong>），从而成功上市（<strong>从单机操作系统到数据中心操作系统</strong>）。</p>
+</li>
 </ul>
 
 
