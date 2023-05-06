@@ -101,7 +101,7 @@ extra_css:
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
   - "assets/js/termynal.js"
-  # - "assets/js/asciinema-player.min.jss"
+  # - "assets/js/asciinema-player.min.js"
   - "https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.4.1/asciinema-player.js"  
 
 #================================ Extensions =============================================
