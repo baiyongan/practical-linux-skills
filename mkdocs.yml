@@ -217,7 +217,6 @@ nav:
     - 30 | 套路篇：如何迅速分析出系统 I/O 的瓶颈: part05/performance_tuning/disk_io/30_routine.md
     - 31 | 套路篇：磁盘 I/O 性能优化的几个思路: part05/performance_tuning/disk_io/31_routine.md
     - 32 | 答疑篇：阻塞、非阻塞 I/O 与同步、异步 I/O 的区别和联系: part05/performance_tuning/disk_io/32_QA.md
-  
     - 33 | 书单推荐：性能优化和Linux 系统原理: part05/performance_tuning/disk_io/33_explore.md
 
   - Network 性能 13 讲:
@@ -234,7 +233,6 @@ nav:
     - 44 | 套路篇：网络性能优化的几个思路-上: part05/performance_tuning/network/44_routine.md
     - 45 | 套路篇：网络性能优化的几个思路-下: part05/performance_tuning/network/45_routine.md
     - 46 | 答疑篇：网络收发过程中的缓冲区位置: part05/performance_tuning/network/46_QA.md
-   
     - 47 | 书单推荐：网络原理和 Linux 内核实现: part05/performance_tuning/network/47_explore.md
 
   - 综合实战 13 讲:  
