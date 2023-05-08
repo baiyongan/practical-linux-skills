@@ -1179,9 +1179,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          21 | 套路篇：“快准狠”定位系统内存的问题
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         21 | 套路篇：“快准狠”定位系统内存的问题
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内存性能指标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内存性能工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性能指标和工具的联系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何迅速分析内存的性能瓶颈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4030,6 +4089,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内存性能指标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    内存性能工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性能指标和工具的联系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    如何迅速分析内存的性能瓶颈
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4049,6 +4151,23 @@
 
 
 <h1 id="_1">套路篇：如何“快准狠”找到系统内存的问题？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">内存性能指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">内存性能工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">性能指标和工具的联系<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">如何迅速分析内存的性能瓶颈<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">小结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>内存调优最重要的就是，保证应用程序的热点数据放到内存中，并尽量减少换页和交换。</p>
+</div>
+<p>常见的优化思路：</p>
+<ol>
+<li>最好禁止 Swap。如果必须开启 Swap，降低 swappiness 的值，减少内存回收时 Swap 的使用倾向。</li>
+<li>减少内存的动态分配。比如，可以使用内存池、大页（HugePage）等。</li>
+<li>尽量使用缓存和缓冲区来访问数据。比如，可以使用堆栈明确声明内存空间，来存储需要缓存的数据，或者用 Redis 这类的外部缓存组件，优化数据的访问。</li>
+<li>使用 cgroups 等方式限制进程的内存使用情况。这样，可以确保系统内存不会被异常进程耗尽。</li>
+<li>通过 /proc/pid/oom_adj，调整核心应用的 oom_score。这样，可以保证即使内存紧张，核心应用也不会被 OOM 杀死。</li>
+</ol>
 
 
 
